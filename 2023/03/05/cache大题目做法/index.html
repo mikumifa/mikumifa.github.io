@@ -78,9 +78,9 @@
 			
 				<li><a href="/" target="_blank">主页</a></li>
 			
-				<li><a href="https://zhousiwei.gitee.io/ibooks/" target="_blank">技术笔记</a></li>
+				<li><a href="/" target="_blank">技术笔记</a></li>
 			
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/" target="_blank">随笔</a></li>
+				<li><a href="/" target="_blank">随笔</a></li>
 			
 			</ul>
 		</nav>
@@ -196,9 +196,9 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a target="_blank" rel="noopener" href="https://zhousiwei.gitee.io/ibooks/">技术笔记</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">技术笔记</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -245,28 +245,6 @@
 
     
 
-    
-    <div class="page-reward">
-      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
-        <div class="tooltip tooltip-east">
-          <span class="tooltip-item">
-            赏
-          </span>
-          <span class="tooltip-content">
-            <span class="tooltip-text">
-              <span class="tooltip-inner">
-                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
-                    class="icon icon-quo-right"></i></p>
-                <div class="reward-box">
-                  
-                  
-                </div>
-              </span>
-            </span>
-          </span>
-        </div>
-      </a>
-    </div>
     
 
     
@@ -391,6 +369,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Cache%E7%9A%84%E5%A4%A7%E9%A2%98%E7%9B%AE"><span class="toc-number">1.</span> <span class="toc-text">Cache的大题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cache%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">2.</span> <span class="toc-text">Cache的结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E6%98%A0%E5%B0%84%E6%B1%82%E4%B8%80%E4%B8%AA%E5%9C%B0%E5%9D%80%E5%9C%A8cache%E7%9A%84%E5%AD%98%E5%8F%96%E7%9A%84%E8%A1%8C%E5%8F%B7"><span class="toc-number">3.</span> <span class="toc-text">直接映射求一个地址在cache的存取的行号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82%E5%91%BD%E4%B8%AD%E7%8E%87%EF%BC%8C%E6%95%88%E7%8E%87%EF%BC%8C%E8%AE%BF%E9%97%AE%E6%97%B6%E9%97%B4"><span class="toc-number">4.</span> <span class="toc-text">求命中率，效率，访问时间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E5%BC%8F"><span class="toc-number">4.1.</span> <span class="toc-text">公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E5%91%BD%E4%B8%AD%E6%83%85%E5%86%B5"><span class="toc-number">4.2.</span> <span class="toc-text">算命中情况</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LRU%EF%BC%8CFIFO%E7%AE%97%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text">LRU，FIFO算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A5%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E5%91%BD%E4%B8%AD%E7%8E%87"><span class="toc-number">5.1.</span> <span class="toc-text">该算法分析命中率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="toc-number">5.2.</span> <span class="toc-text">页面置换算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#LRU"><span class="toc-number">5.2.1.</span> <span class="toc-text">LRU</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -450,7 +441,7 @@
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
-		toc_hide_index: true,
+		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
 		showTags: true
