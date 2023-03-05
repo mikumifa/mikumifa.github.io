@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>article title | Hexo</title>
+  <title>Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="article">
-<meta property="og:title" content="article title">
-<meta property="og:url" content="http://example.com/2023/03/05/article-title-1/index.html">
+  <meta name="description" content="面对对象c++中的继承带来的命名问题 详细见Affectless C++ P156   Derived类里面有和Base一样名字的成员函数是重载（ overload），相当于Base的类的成员函数被抹除掉了，调用只能调用Derived里面的。（就算参数不一样也可以）  在Derived中使用using Base::mf1可以让mf1在Derived的作用域里面可见，但是这种方式会让Base中的所有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/03/05/%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1c++%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%91%BD%E5%90%8D%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="面对对象c++中的继承带来的命名问题 详细见Affectless C++ P156   Derived类里面有和Base一样名字的成员函数是重载（ overload），相当于Base的类的成员函数被抹除掉了，调用只能调用Derived里面的。（就算参数不一样也可以）  在Derived中使用using Base::mf1可以让mf1在Derived的作用域里面可见，但是这种方式会让Base中的所有">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-03-05T14:02:22.000Z">
-<meta property="article:modified_time" content="2023-03-05T14:02:22.825Z">
+<meta property="article:published_time" content="2023-03-05T14:50:11.086Z">
+<meta property="article:modified_time" content="2022-12-03T12:49:35.102Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -209,60 +211,21 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-article-title-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-面对对象c++中的继承带来的命名问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-  
-  
-    <h1 class="article-title" itemprop="name">
-      article title
-    </h1>
-  
-
-
-  
-  
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/2023/03/05/article-title-1/" class="archive-article-date">
-        <time datetime="2023-03-05T14:02:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-05</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">0字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
   <div class="article-entry" itemprop="articleBody">
     
-    
+    <h1 id="面对对象c-中的继承带来的命名问题"><a href="#面对对象c-中的继承带来的命名问题" class="headerlink" title="面对对象c++中的继承带来的命名问题"></a>面对对象c++中的继承带来的命名问题</h1><blockquote>
+<p>详细见Affectless C++ P156</p>
+</blockquote>
+<ol>
+<li><p>Derived类里面有和Base一样名字的成员函数是重载（ overload），相当于Base的类的成员函数被抹除掉了，调用只能调用Derived里面的。（就算参数不一样也可以）</p>
+</li>
+<li><p>在Derived中使用<code>using Base::mf1</code>可以让mf1在Derived的作用域里面可见，但是这种方式会让Base中的所有的mf1在Derived中都可见，可以使用forwarding function（p161）来解决</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//in the Class Derived</span><br><span class="line">public:</span><br><span class="line">	void mf1()&#123;</span><br><span class="line">	Base::mf1();//Derived private 继承 Base</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
     
 
     
@@ -308,7 +271,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2023/03/05/article-title-1/" title="article title" target="_blank">http://example.com/2023/03/05/article-title-1/</a>
+          <a href="http://example.com/2023/03/05/面对对象c++中的继承带来的命名问题/" title="" target="_blank">http://example.com/2023/03/05/面对对象c++中的继承带来的命名问题/</a>
         </li>
         
         <li>
@@ -375,7 +338,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/05/article-title-1/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/05/%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1c++%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%91%BD%E5%90%8D%E9%97%AE%E9%A2%98/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -390,7 +353,7 @@
 
 <nav id="article-nav">
   
-    <a href="/2023/03/05/%E6%A6%82%E7%8E%87%E8%AE%BA%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/03/05/%E6%80%BB%E7%BA%BF%E6%9C%89%E5%85%B3%E7%9A%84%E8%AE%A1%E7%AE%97%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -400,8 +363,8 @@
     </a>
   
   
-    <a href="/2023/03/05/article-title/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">article title</div>
+    <a href="/2023/03/05/The%20application%20of%20the%20inheritance%20of%20interface%20and%20the%20inheritance%20of%20implementation/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   

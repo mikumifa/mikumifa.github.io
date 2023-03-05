@@ -6,19 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>article title | Hexo</title>
+  <title>Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="article">
-<meta property="og:title" content="article title">
-<meta property="og:url" content="http://example.com/2023/03/05/article-title-1/index.html">
+  <meta name="description" content="页的一些知识点概念页框来自内存，内存空间划分为大小相同的分区 页面来自用户的进程，把用户的进程的地址空间划分为相同的区域 页表建立，虚拟地址和物理地址的映射关系（主要是页面的映射，页面，到页框） 具体实现每一行是也该虚拟地址的页，包含虚拟地址的页号（不用再行里面表示，页表的行号就是虚拟地址的页号），和物理地址的块号，（每一行的长度就是物理地址的块号，加上一些标记位）  假设一个分页虚拟存储系统的虚">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/03/05/%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8%E8%A1%A5%E5%85%85/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="页的一些知识点概念页框来自内存，内存空间划分为大小相同的分区 页面来自用户的进程，把用户的进程的地址空间划分为相同的区域 页表建立，虚拟地址和物理地址的映射关系（主要是页面的映射，页面，到页框） 具体实现每一行是也该虚拟地址的页，包含虚拟地址的页号（不用再行里面表示，页表的行号就是虚拟地址的页号），和物理地址的块号，（每一行的长度就是物理地址的块号，加上一些标记位）  假设一个分页虚拟存储系统的虚">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-03-05T14:02:22.000Z">
-<meta property="article:modified_time" content="2023-03-05T14:02:22.825Z">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221126104823366.png">
+<meta property="article:published_time" content="2023-03-05T14:50:11.099Z">
+<meta property="article:modified_time" content="2022-11-26T02:56:44.588Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221126104823366.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -209,60 +213,44 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-article-title-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-虚拟存储器补充" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-  
-  
-    <h1 class="article-title" itemprop="name">
-      article title
-    </h1>
-  
-
-
-  
-  
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/2023/03/05/article-title-1/" class="archive-article-date">
-        <time datetime="2023-03-05T14:02:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-05</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">0字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
   <div class="article-entry" itemprop="articleBody">
     
-    
+    <h1 id="页的一些知识点"><a href="#页的一些知识点" class="headerlink" title="页的一些知识点"></a>页的一些知识点</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="页框"><a href="#页框" class="headerlink" title="页框"></a>页框</h3><p>来自内存，内存空间划分为大小相同的分区</p>
+<h3 id="页面"><a href="#页面" class="headerlink" title="页面"></a>页面</h3><p>来自用户的进程，把用户的进程的地址空间划分为相同的区域</p>
+<h3 id="页表"><a href="#页表" class="headerlink" title="页表"></a>页表</h3><p>建立，虚拟地址和物理地址的映射关系（主要是页面的映射，页面，到页框）</p>
+<h4 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h4><p>每一行是也该虚拟地址的页，包含虚拟地址的页号（不用再行里面表示，页表的行号就是虚拟地址的页号），和物理地址的块号，（每一行的长度就是物理地址的块号，加上一些标记位）</p>
+<blockquote>
+<p>假设一个分页虚拟存储系统的虚拟地址为40位，物理地址为36位，页大小为16KB，按字节编址。若页表中的有效位、存储保护位、修改位、使用位共占4位，磁盘地址不在页表中。则该存储系统中每个程序的页表大小为多少（单位：MB）？（说明：1.假设每个程序都能使用全部的虚拟内存；2.页表项的长度必须为字节的整数倍）</p>
+</blockquote>
+<p>公式：虚拟地址的页数*（物理地址页数的位数+标记位）</p>
+<h3 id="TBL"><a href="#TBL" class="headerlink" title="TBL"></a>TBL</h3><p>1.CPU首先得到的是虚拟地址，必须将虚拟地址转换为物理地址才能进行数据访问。这个过程先查TLB，若TLB命中，则得到了物理地址，进行步骤2；否则，继续查找主存中的页表。若仍不命中，则引发缺页中断进行调页。调页过程又可能引发驻留集页替换和页回写过程。</p>
+<p>2.得到物理地址之后，首先访问cache，若命中，CPU直接从cache中读取相应物理地址中的内容；若不命中，则访问主存读取数据，并且更新cache，此过程又可能引发cache的行替换和回写过程。</p>
+<h4 id="具体做题"><a href="#具体做题" class="headerlink" title="具体做题"></a>具体做题</h4><p>首先分析，各个地址的位数的分布，</p>
+<p>虚拟地址：页面号+页内地址</p>
+<p>物理地址：页框号+页内地址</p>
+<p>虚拟地址的页面号：TLB标记+具体是第几组（组号）</p>
+<p>物理地址 ：标记+具体是第几组（组号）+行（块）内地址</p>
+<blockquote>
+<p>假设一个计算机系统中有一个TLB和一个L1 data cache。该系统按字节编址，虚拟地址16位，物理地址12位；页大小为128B，TLB为4-路组相连，共有16个页表项；L1 data cache采用直接映射方式，块大小为4B，共16行。在系统运行的某一时刻，TLB、页表和L1 data cache中的部分内容如下图所示（16进制表示）：</p>
+<p>请问：</p>
+<p>a) 虚拟地址中哪几位表示虚拟页号？</p>
+<p>b) 虚拟页号的哪几位表示TLB标记？ </p>
+<p>c) 物理地址中哪几位表示物理页号？ </p>
+<p>d) 在访问cache时，物理地址哪几位表示行号？</p>
+<p>e) CPU从地址067AH中取出的值为多少？<img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221126104823366.png" alt="image-20221126104823366"></p>
+</blockquote>
+<p>虚拟地址的页数前9位，</p>
+<p>虚拟页号的7位是标记，后买2位是组号（查找要扫描组里面的全部）</p>
+<p>物理地址前5位是页号</p>
+<p>cache的前6位是标记，4位是块号，2位块内标记</p>
+<p>067A&#x3D;0000 0110 0111 1010</p>
+<p>虚拟页号是0000 001100 &#x3D;0C，先查TBL，先组号对上，然后看标记是否一样，没有03，查找页表，页框号是19</p>
+<p>110011 1110 10</p>
+<p>cache里面先查组号，是E，然后看标记为是一样的33，然后块内标记是10 于是4A</p>
+
     
 
     
@@ -308,7 +296,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2023/03/05/article-title-1/" title="article title" target="_blank">http://example.com/2023/03/05/article-title-1/</a>
+          <a href="http://example.com/2023/03/05/虚拟存储器补充/" title="" target="_blank">http://example.com/2023/03/05/虚拟存储器补充/</a>
         </li>
         
         <li>
@@ -375,7 +363,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/05/article-title-1/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/05/%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8%E8%A1%A5%E5%85%85/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -390,7 +378,7 @@
 
 <nav id="article-nav">
   
-    <a href="/2023/03/05/%E6%A6%82%E7%8E%87%E8%AE%BA%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/03/05/%E5%B9%B6%E6%9F%A5%E9%9B%86/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -400,8 +388,8 @@
     </a>
   
   
-    <a href="/2023/03/05/article-title/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">article title</div>
+    <a href="/2023/03/05/%E8%87%AA%E9%99%B7%E4%BE%8B%E7%A8%8B%E5%92%8C%E4%B8%AD%E6%96%AD/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   

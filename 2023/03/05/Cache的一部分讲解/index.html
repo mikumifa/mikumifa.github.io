@@ -6,19 +6,40 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>article title | Hexo</title>
+  <title>Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="article">
-<meta property="og:title" content="article title">
-<meta property="og:url" content="http://example.com/2023/03/05/article-title-1/index.html">
+  <meta name="description" content="CachaCache主要是为了解决内存墙带来的CPU和主存协作问题 程序访问的局部性 平均访问时间 映射直接映射、 M是块数，C是行数 上面定义了Cacha直接映射时候的地址的结构，有C行所有logC的值是Cacha的行号和块内的地址。 然后一次存储单元是8个字，所有有16个单元就是说，寻址能力是4，所有前2位是用来区分映射到不同行的不同的块  通过cache字块的地址来找到对应的行，如果标记一样">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/03/05/Cache%E7%9A%84%E4%B8%80%E9%83%A8%E5%88%86%E8%AE%B2%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="CachaCache主要是为了解决内存墙带来的CPU和主存协作问题 程序访问的局部性 平均访问时间 映射直接映射、 M是块数，C是行数 上面定义了Cacha直接映射时候的地址的结构，有C行所有logC的值是Cacha的行号和块内的地址。 然后一次存储单元是8个字，所有有16个单元就是说，寻址能力是4，所有前2位是用来区分映射到不同行的不同的块  通过cache字块的地址来找到对应的行，如果标记一样">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-03-05T14:02:22.000Z">
-<meta property="article:modified_time" content="2023-03-05T14:02:22.825Z">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031713220.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031713718.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031716762.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031716043.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031716235.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031716548.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031637483.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031639665.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031643520.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031656547.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031708270.jpeg">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031719984.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031723263.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031724694.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031743483.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031743879.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031746026.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20230131205534052.png">
+<meta property="article:published_time" content="2023-03-05T14:50:11.058Z">
+<meta property="article:modified_time" content="2023-01-31T13:35:00.666Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031713220.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -209,60 +230,89 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-article-title-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Cache的一部分讲解" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-  
-  
-    <h1 class="article-title" itemprop="name">
-      article title
-    </h1>
-  
-
-
-  
-  
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/2023/03/05/article-title-1/" class="archive-article-date">
-        <time datetime="2023-03-05T14:02:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-05</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">0字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
   <div class="article-entry" itemprop="articleBody">
     
-    
+    <h1 id="Cacha"><a href="#Cacha" class="headerlink" title="Cacha"></a>Cacha</h1><p>Cache主要是为了解决内存墙带来的CPU和主存协作问题</p>
+<h3 id="程序访问的局部性"><a href="#程序访问的局部性" class="headerlink" title="程序访问的局部性"></a>程序访问的局部性</h3><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031713220.png" alt="image-20221103171316185"></p>
+<h3 id="平均访问时间"><a href="#平均访问时间" class="headerlink" title="平均访问时间"></a>平均访问时间</h3><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031713718.png" alt="image-20221103171347687"></p>
+<h2 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h2><h3 id="直接映射"><a href="#直接映射" class="headerlink" title="直接映射"></a>直接映射</h3><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031716762.png" alt="image-20221103171611723">、</p>
+<p>M是块数，C是行数</p>
+<p>上面定义了Cacha直接映射时候的地址的结构，有C行所有logC的值是Cacha的行号和块内的地址。</p>
+<p>然后一次存储单元是8个字，所有有16个单元就是说，寻址能力是4，所有前2位是用来区分映射到不同行的不同的块</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031716043.png" alt="image-20221103171619997"></p>
+<p>通过cache字块的地址来找到对应的行，如果标记一样就命中。</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031716235.png" alt="image-20221103171629191"></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031716548.png"></p>
+<p>优点；</p>
+<ul>
+<li>简单</li>
+<li>快速映射</li>
+<li>快速检查</li>
+</ul>
+<p>缺点</p>
+<ul>
+<li>抖动现象：如果程序需要重复访问两个来自同一行不同块的字，需要不断的交换cache中，cache的命中率将会降低，</li>
+</ul>
+<p>适用于大容量的cache</p>
+<ul>
+<li>行数变多，发生冲突失效的概率降低</li>
+<li>硬件电路简单，增大容量对Tc的影响不明显</li>
+</ul>
+<h3 id="关联映射"><a href="#关联映射" class="headerlink" title="关联映射"></a>关联映射</h3><p>一主存块可以装入cache的任意一行</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031637483.png" alt="image-20221103163757442"></p>
+<p>取消行的编号，直接储存块的编号</p>
+<p>优点</p>
+<p>避免抖动</p>
+<p>缺点</p>
+<ul>
+<li>实现起来比较复杂</li>
+<li>cache搜索代价大，检测时候要访问cache的每一行</li>
+</ul>
+<p>适合小容量cache</p>
+<ul>
+<li>cache更容易产生抖动</li>
+<li>cache的搜素时间短</li>
+</ul>
+<h3 id="组关联映射"><a href="#组关联映射" class="headerlink" title="组关联映射"></a>组关联映射</h3><p>K-路组映射</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031639665.png" alt="image-20221103163949633"></p>
+<p>k，一组中有k行</p>
+<p>主存的块可以被映射到固定组的任意一行</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031643520.png" alt="image-20221103164332474"></p>
+<h2 id="替换算法"><a href="#替换算法" class="headerlink" title="替换算法"></a>替换算法</h2><p>替换算法通过硬件来实现，设计替换算法的目的是提高命中率</p>
+<h3 id="LRU"><a href="#LRU" class="headerlink" title="LRU"></a>LRU</h3><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031656547.png" alt="image-20221103165625492"></p>
+<p>标记最近使用的元素：</p>
+<p>当一个元素使用的时候，自己1，傍边的0（表示自己比傍边的经常访问)</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031708270.jpeg" alt="IMG_20221103_170753"></p>
+<p>简单点，使用了就归0，其他的加1，如果要加入新的，就把数最大的给踢了，加入最新的。</p>
+<p>需要的位数，对于每一组，要k个logk来做标记</p>
+<p>LRU的提高效果没有那么高</p>
+<h3 id="FIFO"><a href="#FIFO" class="headerlink" title="FIFO"></a>FIFO</h3><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031719984.png" alt="image-20221103171924946"></p>
+<h3 id="LFU"><a href="#LFU" class="headerlink" title="LFU"></a>LFU</h3><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031723263.png" alt="image-20221103172322225"></p>
+<h3 id="随机替换算法"><a href="#随机替换算法" class="headerlink" title="随机替换算法"></a>随机替换算法</h3><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031724694.png" alt="image-20221103172449656"></p>
+<h2 id="写策略"><a href="#写策略" class="headerlink" title="写策略"></a>写策略</h2><h3 id="写直达"><a href="#写直达" class="headerlink" title="写直达"></a>写直达</h3><p>所有写操作都同时对cache和主存进行</p>
+<p>优点</p>
+<p>确保主存中的数据总是和cache中的数据一致，总是最新的（例如多CPU 同步的场景）</p>
+<p>缺点</p>
+<p>产生大量的主存访问，减慢写操作</p>
+<h3 id="写回法"><a href="#写回法" class="headerlink" title="写回法"></a>写回法</h3><p>优点</p>
+<ul>
+<li>减少了访问主存的次数</li>
+</ul>
+<p>缺点</p>
+<ul>
+<li>部分主存的数据可能不是最新的<ul>
+<li>I&#x2F;O模块存取时可能无法获得最新的数据，为解决该问题会使得电 路设计更加复杂且有可能带来性能瓶颈</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031743483.png" alt="image-20221103174308449"></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031743879.png" alt="image-20221103174351848"></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031746026.png" alt="image-20221103174618992"></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20230131205534052.png" alt="image-20230131205534052"></p>
+
     
 
     
@@ -308,7 +358,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2023/03/05/article-title-1/" title="article title" target="_blank">http://example.com/2023/03/05/article-title-1/</a>
+          <a href="http://example.com/2023/03/05/Cache的一部分讲解/" title="" target="_blank">http://example.com/2023/03/05/Cache的一部分讲解/</a>
         </li>
         
         <li>
@@ -375,7 +425,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/05/article-title-1/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/05/Cache%E7%9A%84%E4%B8%80%E9%83%A8%E5%88%86%E8%AE%B2%E8%A7%A3/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -390,7 +440,7 @@
 
 <nav id="article-nav">
   
-    <a href="/2023/03/05/%E6%A6%82%E7%8E%87%E8%AE%BA%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/03/05/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -400,8 +450,8 @@
     </a>
   
   
-    <a href="/2023/03/05/article-title/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">article title</div>
+    <a href="/2023/03/05/%E7%A1%AC%E7%A3%81%E7%9B%98%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E8%AE%A1%E7%AE%97%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   

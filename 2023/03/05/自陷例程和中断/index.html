@@ -6,19 +6,37 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>article title | Hexo</title>
+  <title>Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="article">
-<meta property="og:title" content="article title">
-<meta property="og:url" content="http://example.com/2023/03/05/article-title-1/index.html">
+  <meta name="description" content="自陷例程序和中断造成混乱的情况I&#x2F;O行为包含很多被程序所共享的设备寄存器的使用，用户程序员没有谨慎处理，给其他用户程序造成混乱 特权硬件寄存器是有特权的，不拥有适当的特权级别的程序不能被访问 解决方案自陷（TRAP）指令 操作系统 拥有适当的特权级别 用户程序员不需要在这个层面上理解I&#x2F;O 系统调用 TRAP机制服务例程操作系统的一部分，表示用户程序执行的一组程序  TRAP向">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/03/05/%E8%87%AA%E9%99%B7%E4%BE%8B%E7%A8%8B%E5%92%8C%E4%B8%AD%E6%96%AD/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="自陷例程序和中断造成混乱的情况I&#x2F;O行为包含很多被程序所共享的设备寄存器的使用，用户程序员没有谨慎处理，给其他用户程序造成混乱 特权硬件寄存器是有特权的，不拥有适当的特权级别的程序不能被访问 解决方案自陷（TRAP）指令 操作系统 拥有适当的特权级别 用户程序员不需要在这个层面上理解I&#x2F;O 系统调用 TRAP机制服务例程操作系统的一部分，表示用户程序执行的一组程序  TRAP向">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-03-05T14:02:22.000Z">
-<meta property="article:modified_time" content="2023-03-05T14:02:22.825Z">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129202838290.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129203114948.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129204306357.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129204318563.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129211805724.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129212113509.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129212553484.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129212612157.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129213352053.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129213620462.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/IMG_20221129_224739.jpg">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/IMG_20221129_224748.jpg">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129225002234.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129225318275.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129225552509.png">
+<meta property="article:published_time" content="2023-03-05T14:50:11.095Z">
+<meta property="article:modified_time" content="2022-11-29T15:24:50.365Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129202838290.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -209,60 +227,99 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-article-title-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-自陷例程和中断" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-  
-  
-    <h1 class="article-title" itemprop="name">
-      article title
-    </h1>
-  
-
-
-  
-  
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/2023/03/05/article-title-1/" class="archive-article-date">
-        <time datetime="2023-03-05T14:02:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-05</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">0字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
   <div class="article-entry" itemprop="articleBody">
     
-    
+    <h1 id="自陷例程序和中断"><a href="#自陷例程序和中断" class="headerlink" title="自陷例程序和中断"></a>自陷例程序和中断</h1><h2 id="造成混乱的情况"><a href="#造成混乱的情况" class="headerlink" title="造成混乱的情况"></a>造成混乱的情况</h2><p>I&#x2F;O行为包含很多被程序所共享的设备寄存器的使用，用户程序员没有谨慎处理，给其他用户程序造成混乱</p>
+<h2 id="特权"><a href="#特权" class="headerlink" title="特权"></a>特权</h2><p>硬件寄存器是有特权的，不拥有适当的特权级别的程序不能被访问</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>自陷（TRAP）指令</p>
+<p>操作系统</p>
+<p>拥有适当的特权级别</p>
+<p>用户程序员不需要在这个层面上理解I&#x2F;O</p>
+<h2 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h2><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129202838290.png" alt="image-20221129202838290"></p>
+<h2 id="TRAP机制"><a href="#TRAP机制" class="headerlink" title="TRAP机制"></a>TRAP机制</h2><h3 id="服务例程"><a href="#服务例程" class="headerlink" title="服务例程"></a>服务例程</h3><p>操作系统的一部分，表示用户程序执行的一组程序</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129203114948.png" alt="image-20221129203114948"></p>
+<h3 id="TRAP向量表"><a href="#TRAP向量表" class="headerlink" title="TRAP向量表"></a>TRAP向量表</h3><p>包括了256个服务例程的起始地址的表，每一个起始地址需要占用4个连续的存储单元</p>
+<p>256个服务例程需要使用256*4个单元，这张表被存储在存储单元的x0000 0000到x0000 03FF中。</p>
+<h4 id="数据区-x2F-代码区"><a href="#数据区-x2F-代码区" class="headerlink" title="数据区&#x2F;代码区"></a>数据区&#x2F;代码区</h4><p>数据区的起始位置地址：代码区起始地址之前的x100个单元</p>
+<h2 id="TRAP指令"><a href="#TRAP指令" class="headerlink" title="TRAP指令"></a>TRAP指令</h2><p>操作系统代表用户程序执行某一个服务例程，然后把控制权交给用户程序</p>
+<p>根据TRAP向量，PC&lt;-相应服务例程首地址</p>
+<p>提供返回路径&#x2F;“链接”</p>
+<h4 id="指令阶段-1"><a href="#指令阶段-1" class="headerlink" title="指令阶段-1"></a>指令阶段-1</h4><p>取指令</p>
+<p>pc&lt;-pc+4</p>
+<p>译码；</p>
+<p>计算有效地址；</p>
+<p>​	TRAP向量扩展到32位，然后左移2位（相当于x4）</p>
+<p>访问内存</p>
+<img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129204306357.png" alt="image-20221129204306357" style="zoom: 50%;" />
+
+<p>写回</p>
+<img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129204318563.png" alt="image-20221129204318563" style="zoom:50%;" />
+
+<p>TRAP服务例程执行结束</p>
+<p>在TRAP服务例程的最后执行一条JR R31的指令，控制就可以返回到用户程序的正确位置</p>
+<h4 id="键盘输入服务例程（TRAP-X06）（GETC）"><a href="#键盘输入服务例程（TRAP-X06）（GETC）" class="headerlink" title="键盘输入服务例程（TRAP X06）（GETC）"></a>键盘输入服务例程（TRAP X06）（GETC）</h4><h4 id="字符输出服务例程（TRAP-X07）（PUT）"><a href="#字符输出服务例程（TRAP-X07）（PUT）" class="headerlink" title="字符输出服务例程（TRAP X07）（PUT）"></a>字符输出服务例程（TRAP X07）（PUT）</h4><h4 id="字符串输出服务例程（TRAP-X08）（OUT）"><a href="#字符串输出服务例程（TRAP-X08）（OUT）" class="headerlink" title="字符串输出服务例程（TRAP X08）（OUT）"></a>字符串输出服务例程（TRAP X08）（OUT）</h4><h4 id="字符输入服务例程（TRAP-X08）（IN）回显到显示器上"><a href="#字符输入服务例程（TRAP-X08）（IN）回显到显示器上" class="headerlink" title="字符输入服务例程（TRAP X08）（IN）回显到显示器上"></a>字符输入服务例程（TRAP X08）（IN）回显到显示器上</h4><h4 id="字符串输入服务例程（TRAP-X0A）（GETS）"><a href="#字符串输入服务例程（TRAP-X0A）（GETS）" class="headerlink" title="字符串输入服务例程（TRAP X0A）（GETS）"></a>字符串输入服务例程（TRAP X0A）（GETS）</h4><h3 id="寄存器的保存与恢复"><a href="#寄存器的保存与恢复" class="headerlink" title="寄存器的保存与恢复"></a>寄存器的保存与恢复</h3><p>如果一个 寄存器内的值在该寄存器被存储其他值之后再次被用到，必须在其他事情发生之前将其保存，再次使用它之前将其恢复</p>
+<h3 id="被调用者保存"><a href="#被调用者保存" class="headerlink" title="被调用者保存"></a>被调用者保存</h3><p>callee-save（键盘输入输出）</p>
+<p>由被用户程序调用的服务例程完成寄存器的保护与恢复。</p>
+<p>被调用的程序需要知道需要使用那些寄存器，而调用者不知道哪些寄存器的值将会被破坏</p>
+<p>caller-save</p>
+<p>由调用程序完成寄存器的保存与恢复</p>
+<h3 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h3><p>如果那些程序知道那些寄存器会被接下来的操作所破坏，处理保存&#x2F;恢复问题应该由那些程序保存。</p>
+<p>小总结</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129211805724.png" alt="image-20221129211805724"></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129212113509.png" alt="image-20221129212107023"></p>
+<h2 id="中断驱动的IO"><a href="#中断驱动的IO" class="headerlink" title="中断驱动的IO"></a>中断驱动的IO</h2><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129212553484.png" alt="image-20221129212553484"></p>
+<h2 id="机制"><a href="#机制" class="headerlink" title="机制"></a>机制</h2><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129212612157.png" alt="image-20221129212612157"></p>
+<h2 id="中断信号的产生"><a href="#中断信号的产生" class="headerlink" title="中断信号的产生"></a>中断信号的产生</h2><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129213352053.png" alt="image-20221129213352053"></p>
+<p>就绪位和中断允许位</p>
+<h2 id="INT信号（看书，书上详细）"><a href="#INT信号（看书，书上详细）" class="headerlink" title="INT信号（看书，书上详细）"></a>INT信号（看书，书上详细）</h2><p>中断请求信号（Interrupt Reqest，IRQ）</p>
+<p>IE位（中断允许位）和就绪位的逻辑与</p>
+<p>各个中断设备发出的IRQ信号经过或门，产生INT信号</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129213620462.png" alt="image-20221129213620462"></p>
+<h3 id="KBDR、KBSR寄存器"><a href="#KBDR、KBSR寄存器" class="headerlink" title="KBDR、KBSR寄存器"></a>KBDR、KBSR寄存器</h3><p>KBDR，键盘数据寄存器0到7位庸才存储输入字符的ASCII码</p>
+<p>KBSR，键盘状态寄存器，第15位用来存储同步信息（控制处理器和键盘的同步）</p>
+<h3 id="DDR，DSR寄存器"><a href="#DDR，DSR寄存器" class="headerlink" title="DDR，DSR寄存器"></a>DDR，DSR寄存器</h3><p>DDR输出数据寄存器，DDR【7:0】的存储输出字符的ASCII码，DSR的15位用来同步信息</p>
+<p>DSR输出状态寄存器</p>
+<h3 id="CAUSE：原因寄存器"><a href="#CAUSE：原因寄存器" class="headerlink" title="CAUSE：原因寄存器"></a>CAUSE：原因寄存器</h3><p>某个设备发出IRQ信号，就会在原因寄存器的相应位置上设为1</p>
+<p>原因寄存器是一个特殊寄存器，只有在特权模式下才可以访问，</p>
+<p>CAUSE【15:8】为中断未决位</p>
+<h2 id="测试INT信号"><a href="#测试INT信号" class="headerlink" title="测试INT信号"></a>测试INT信号</h2><p>处理器对INT信号的处理</p>
+<blockquote>
+<p>原来的指令的执行模式：取指令，译码，执行，访问内存和写回5个阶段</p>
+</blockquote>
+<p>为测试中断信号而增加的逻辑</p>
+<p>写回并检测INT信号</p>
+<p>INT为0，表示没有中断，和往常一样返回到取指令阶段</p>
+<p>INT为1，保存并改变抽象的状态，PC加载到x8000 1000执行操作系统的中断服务例程，处理该信号发出的中断请求。</p>
+<h2 id="保存以及改变程序状态"><a href="#保存以及改变程序状态" class="headerlink" title="保存以及改变程序状态"></a>保存以及改变程序状态</h2><p>在进入中断程序之前，（PC加载到x8000 1000之前）</p>
+<p>保存足够的正在运行的程序的状态信息，以便I&#x2F;O设备请求被满足之后，能够返回被中断的程序</p>
+<p>改变程序状态，以便访问恰当的资源，以及避免各种I&#x2F;O设备相互干扰</p>
+<h2 id="程序状态"><a href="#程序状态" class="headerlink" title="程序状态"></a>程序状态</h2><p>作为程序一部分的存储单元的内容</p>
+<p>所有通用寄存器的内容</p>
+<p>寄存器：PC和SR</p>
+<h2 id="PC和EPC"><a href="#PC和EPC" class="headerlink" title="PC和EPC"></a>PC和EPC</h2><p>pc存取下一跳要执行的指令的地址，必须要保持下来，以便当被中断的程序重新执行时，可以回到下一跳指令地址</p>
+<p>DLC中有特殊寄存器EPC用来保存中断发生时的PC中的值。、</p>
+<h2 id="SR"><a href="#SR" class="headerlink" title="SR"></a>SR</h2><h4 id="SR【0】"><a href="#SR【0】" class="headerlink" title="SR【0】"></a>SR【0】</h4><p>表示程序是否可以被I&#x2F;O设备中断，应该被保存(程序到中断服务进程之后会把SR【0】设置为0，表示程序不能被中断程序中断，之后要改回去)</p>
+<p>SR【1】</p>
+<p>表示正在运行的程序是处于特权还是非特权模式</p>
+<h3 id="中断优先级（这地方看书比较清楚）"><a href="#中断优先级（这地方看书比较清楚）" class="headerlink" title="中断优先级（这地方看书比较清楚）"></a>中断优先级（这地方看书比较清楚）</h3><p>DLX有6个硬件优先级，PL0，——-PL5</p>
+<ul>
+<li>数字越高，优先级越高</li>
+<li>I&#x2F;O的速度越快优先级越高</li>
+</ul>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/IMG_20221129_224739.jpg" alt="IMG_20221129_224739"></p>
+<p>+<img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/IMG_20221129_224748.jpg" alt="IMG_20221129_224739"></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129225002234.png" alt="image-20221129225002234"></p>
+<h2 id="从中断中返回"><a href="#从中断中返回" class="headerlink" title="从中断中返回"></a>从中断中返回</h2><p>首先，清空CAUSE寄存器，表示处理完所有中断</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DONE： movi2s r0，x0D； 将原因寄存器清空</span><br></pre></td></tr></table></figure>
+
+<p>然后使用RFE指令</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129225318275.png" alt="image-20221129225318275"></p>
+<h2 id="中断嵌套"><a href="#中断嵌套" class="headerlink" title="中断嵌套"></a>中断嵌套</h2><p>低优先级的允许被高优先级的设备中断</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129225552509.png" alt="image-20221129225552509"></p>
+<h2 id="C语言的I-x2F-O"><a href="#C语言的I-x2F-O" class="headerlink" title="C语言的I&#x2F;O"></a>C语言的I&#x2F;O</h2>
     
 
     
@@ -308,7 +365,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2023/03/05/article-title-1/" title="article title" target="_blank">http://example.com/2023/03/05/article-title-1/</a>
+          <a href="http://example.com/2023/03/05/自陷例程和中断/" title="" target="_blank">http://example.com/2023/03/05/自陷例程和中断/</a>
         </li>
         
         <li>
@@ -375,7 +432,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/05/article-title-1/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/05/%E8%87%AA%E9%99%B7%E4%BE%8B%E7%A8%8B%E5%92%8C%E4%B8%AD%E6%96%AD/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -390,7 +447,7 @@
 
 <nav id="article-nav">
   
-    <a href="/2023/03/05/%E6%A6%82%E7%8E%87%E8%AE%BA%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/03/05/%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8%E8%A1%A5%E5%85%85/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -400,8 +457,8 @@
     </a>
   
   
-    <a href="/2023/03/05/article-title/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">article title</div>
+    <a href="/2023/03/05/%E6%80%BB%E7%BA%BF%E6%9C%89%E5%85%B3%E7%9A%84%E8%AE%A1%E7%AE%97%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   

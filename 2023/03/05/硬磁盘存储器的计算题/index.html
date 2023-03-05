@@ -6,19 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>article title | Hexo</title>
+  <title>Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="article">
-<meta property="og:title" content="article title">
-<meta property="og:url" content="http://example.com/2023/03/05/article-title-1/index.html">
+  <meta name="description" content="硬磁盘存储器访问时间组成寻道时间磁头定位到磁道的时间 旋转延迟等待相应扇区的起始位置移动带磁头，通常是旋转半圈的时间 传送时间传输数据的时间（也就是磁头在有数据的部分都移动一遍）  平均访问时间&#x3D;平均寻道时间+平均旋转延迟+传送时间 相邻磁道，每个磁道都要考虑旋转延迟，只要考虑第一个磁道的寻道时间（题目给了具体寻道时间的话就要全部给出）。 存取情况（顺序存取）存取在相邻的磁道寻道时间只算">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/03/05/%E7%A1%AC%E7%A3%81%E7%9B%98%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E8%AE%A1%E7%AE%97%E9%A2%98/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="硬磁盘存储器访问时间组成寻道时间磁头定位到磁道的时间 旋转延迟等待相应扇区的起始位置移动带磁头，通常是旋转半圈的时间 传送时间传输数据的时间（也就是磁头在有数据的部分都移动一遍）  平均访问时间&#x3D;平均寻道时间+平均旋转延迟+传送时间 相邻磁道，每个磁道都要考虑旋转延迟，只要考虑第一个磁道的寻道时间（题目给了具体寻道时间的话就要全部给出）。 存取情况（顺序存取）存取在相邻的磁道寻道时间只算">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-03-05T14:02:22.000Z">
-<meta property="article:modified_time" content="2023-03-05T14:02:22.825Z">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221204230119632.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221204232254912.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221204232357380.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221204232604342.png">
+<meta property="article:published_time" content="2023-03-05T14:50:11.053Z">
+<meta property="article:modified_time" content="2023-01-31T15:26:24.021Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221204230119632.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -209,60 +216,39 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-article-title-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-硬磁盘存储器的计算题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-  
-  
-    <h1 class="article-title" itemprop="name">
-      article title
-    </h1>
-  
-
-
-  
-  
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/2023/03/05/article-title-1/" class="archive-article-date">
-        <time datetime="2023-03-05T14:02:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-05</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">0字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
   <div class="article-entry" itemprop="articleBody">
     
-    
+    <h1 id="硬磁盘存储器访问时间"><a href="#硬磁盘存储器访问时间" class="headerlink" title="硬磁盘存储器访问时间"></a>硬磁盘存储器访问时间</h1><h2 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h2><h3 id="寻道时间"><a href="#寻道时间" class="headerlink" title="寻道时间"></a>寻道时间</h3><p>磁头定位到磁道的时间</p>
+<h3 id="旋转延迟"><a href="#旋转延迟" class="headerlink" title="旋转延迟"></a>旋转延迟</h3><p>等待相应扇区的起始位置移动带磁头，通常是旋转半圈的时间</p>
+<h3 id="传送时间"><a href="#传送时间" class="headerlink" title="传送时间"></a>传送时间</h3><p>传输数据的时间（也就是磁头在有数据的部分都移动一遍）</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221204230119632.png" alt="image-20221204230119632"></p>
+<p>平均访问时间&#x3D;平均寻道时间+平均旋转延迟+传送时间</p>
+<p>相邻磁道，每个磁道都要考虑旋转延迟，只要考虑第一个磁道的寻道时间（题目给了具体寻道时间的话就要全部给出）。</p>
+<h3 id="存取情况（顺序存取）"><a href="#存取情况（顺序存取）" class="headerlink" title="存取情况（顺序存取）"></a>存取情况（顺序存取）</h3><h3 id="存取在相邻的磁道"><a href="#存取在相邻的磁道" class="headerlink" title="存取在相邻的磁道"></a>存取在相邻的磁道</h3><p>寻道时间只算一次，旋转延迟取转半圈的时间。传送时间正常求</p>
+<p>寻道时间+旋转延迟*磁道数+所有的传送时间</p>
+<h3 id="随机存取"><a href="#随机存取" class="headerlink" title="随机存取"></a>随机存取</h3><p>每读取一个扇区就要寻道和旋转延迟</p>
+<p>扇区数*（寻道时间+旋转延迟+一个扇区的传送时间）</p>
+<h1 id="磁盘调度"><a href="#磁盘调度" class="headerlink" title="磁盘调度"></a>磁盘调度</h1><h3 id="先来先服务（FCFS）"><a href="#先来先服务（FCFS）" class="headerlink" title="先来先服务（FCFS）"></a>先来先服务（FCFS）</h3><p>按照请求访问磁盘的先后次序进行处理</p>
+<p>优点：公平简单 </p>
+<p>缺点：如果有大量访问磁盘的任务，且请求访问的磁道很分散，则性 能上很差，寻道时间长</p>
+<p>具体计算：按照请求顺序，看移动的磁道（移动就是单纯的相减）</p>
+<h2 id="扇区传送时间可以用数据传输速度来代替（数据传输率，不只考虑纯读取时候的时间）"><a href="#扇区传送时间可以用数据传输速度来代替（数据传输率，不只考虑纯读取时候的时间）" class="headerlink" title="扇区传送时间可以用数据传输速度来代替（数据传输率，不只考虑纯读取时候的时间）"></a>扇区传送时间可以用数据传输速度来代替（数据传输率，不只考虑纯读取时候的时间）</h2><h3 id="最短寻道时间优先（SSTF）"><a href="#最短寻道时间优先（SSTF）" class="headerlink" title="最短寻道时间优先（SSTF）"></a>最短寻道时间优先（SSTF）</h3><p>优先处理起始位置与当前磁头位置最接近的读写任务</p>
+<p>优点：每次的寻道时间最短（局部最优），平均寻道时间缩短</p>
+<p>缺点：可能产生饥饿现象，尤其是位于两端的磁道请求</p>
+<p>具体计算：找最近的之后再去移动</p>
+<h3 id="扫描-x2F-电梯（SCAN）"><a href="#扫描-x2F-电梯（SCAN）" class="headerlink" title="扫描&#x2F;电梯（SCAN）"></a>扫描&#x2F;电梯（SCAN）</h3><p>总是按照一个方向进行磁盘调度，直到该方向上的边缘，然后改变方向</p>
+<p>优点：性能好，寻道时间短，不会有产生饥饿现象</p>
+<p>缺点：总是按照一个方向进行磁盘调度，直到该方向上的边缘，然后改变方向</p>
+<p>具体计算：先朝一个方向到头然后朝另一个方向到头，</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221204232254912.png" alt="image-20221204232254912"></p>
+<p>可以画数轴计算</p>
+<h3 id="循环扫描（S-SCAN）"><a href="#循环扫描（S-SCAN）" class="headerlink" title="循环扫描（S-SCAN）"></a>循环扫描（S-SCAN）</h3><p>和上面相同，不过方向不会改变</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221204232357380.png" alt="image-20221204232357380"></p>
+<h3 id="C-LOOK"><a href="#C-LOOK" class="headerlink" title="C-LOOK"></a>C-LOOK</h3><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221204232604342.png" alt="image-20221204232604342"></p>
+
     
 
     
@@ -308,7 +294,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2023/03/05/article-title-1/" title="article title" target="_blank">http://example.com/2023/03/05/article-title-1/</a>
+          <a href="http://example.com/2023/03/05/硬磁盘存储器的计算题/" title="" target="_blank">http://example.com/2023/03/05/硬磁盘存储器的计算题/</a>
         </li>
         
         <li>
@@ -375,7 +361,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/05/article-title-1/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/05/%E7%A1%AC%E7%A3%81%E7%9B%98%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E8%AE%A1%E7%AE%97%E9%A2%98/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -390,7 +376,7 @@
 
 <nav id="article-nav">
   
-    <a href="/2023/03/05/%E6%A6%82%E7%8E%87%E8%AE%BA%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/03/05/Cache%E7%9A%84%E4%B8%80%E9%83%A8%E5%88%86%E8%AE%B2%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -400,8 +386,8 @@
     </a>
   
   
-    <a href="/2023/03/05/article-title/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">article title</div>
+    <a href="/2023/03/05/%E6%A0%91%E7%9A%84%E5%BA%94%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   

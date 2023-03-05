@@ -6,19 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>article title | Hexo</title>
+  <title>Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="article">
-<meta property="og:title" content="article title">
-<meta property="og:url" content="http://example.com/2023/03/05/article-title-1/index.html">
+  <meta name="description" content="从前序与中序遍历序列构造二叉树   Category Difficulty Likes Dislikes    algorithms Medium (71.37%) 1777 -   Tags  Companies  给定两个整数数组 preorder 和 inorder ，其中 preorder 是二叉树的先序遍历， inorder 是同一棵树的中序遍历，请构造二叉树并返回其根节点。 示例 1:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/03/05/2022-10-31-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E4%B8%AD%E5%BA%8F%E5%92%8C%E5%89%8D%E5%BA%8F%E7%BB%84%E6%88%90%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="从前序与中序遍历序列构造二叉树   Category Difficulty Likes Dislikes    algorithms Medium (71.37%) 1777 -   Tags  Companies  给定两个整数数组 preorder 和 inorder ，其中 preorder 是二叉树的先序遍历， inorder 是同一棵树的中序遍历，请构造二叉树并返回其根节点。 示例 1:">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-03-05T14:02:22.000Z">
-<meta property="article:modified_time" content="2023-03-05T14:02:22.825Z">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2021/02/19/tree.jpg">
+<meta property="article:published_time" content="2023-03-05T14:50:11.210Z">
+<meta property="article:modified_time" content="2022-10-31T13:39:22.882Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://assets.leetcode.com/uploads/2021/02/19/tree.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -209,60 +213,54 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-article-title-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2022-10-31-每日一题-中序和前序组成二叉树" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-  
-  
-    <h1 class="article-title" itemprop="name">
-      article title
-    </h1>
-  
-
-
-  
-  
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/2023/03/05/article-title-1/" class="archive-article-date">
-        <time datetime="2023-03-05T14:02:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-05</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">0字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
   <div class="article-entry" itemprop="articleBody">
     
-    
+    <h1 id="从前序与中序遍历序列构造二叉树"><a href="#从前序与中序遍历序列构造二叉树" class="headerlink" title="从前序与中序遍历序列构造二叉树"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/">从前序与中序遍历序列构造二叉树</a></h1><table>
+<thead>
+<tr>
+<th align="center">Category</th>
+<th align="center">Difficulty</th>
+<th align="center">Likes</th>
+<th align="center">Dislikes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">algorithms</td>
+<td align="center">Medium (71.37%)</td>
+<td align="center">1777</td>
+<td align="center">-</td>
+</tr>
+</tbody></table>
+<details style="color: rgb(238, 255, 255); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe WPC&quot;, &quot;Segoe UI&quot;, system-ui, Ubuntu, &quot;Droid Sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><summary><strong>Tags</strong></summary><p style="margin-top: 0px; margin-bottom: 0.7em;"><a target="_blank" rel="noopener" href="https://leetcode.com/tag/array" title="https://leetcode.com/tag/array" style="color: var(--vscode-textLink-foreground); text-decoration: none;"><code style="color: var(--vscode-textLink-foreground); font-family: var(--vscode-editor-font-family, &quot;SF Mono&quot;, Monaco, Menlo, Consolas, &quot;Ubuntu Mono&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Courier New&quot;, monospace); font-size: 1em; line-height: 1.357em; white-space: pre-wrap;"></code></a><a target="_blank" rel="noopener" href="https://leetcode.com/tag/tree" title="https://leetcode.com/tag/tree" style="color: var(--vscode-textLink-foreground); text-decoration: none;"><code style="color: var(--vscode-textLink-foreground); font-family: var(--vscode-editor-font-family, &quot;SF Mono&quot;, Monaco, Menlo, Consolas, &quot;Ubuntu Mono&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Courier New&quot;, monospace); font-size: 1em; line-height: 1.357em; white-space: pre-wrap;"></code></a><a target="_blank" rel="noopener" href="https://leetcode.com/tag/depth-first-search" title="https://leetcode.com/tag/depth-first-search" style="color: var(--vscode-textLink-foreground); text-decoration: none;"><code style="color: var(--vscode-textLink-foreground); font-family: var(--vscode-editor-font-family, &quot;SF Mono&quot;, Monaco, Menlo, Consolas, &quot;Ubuntu Mono&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Courier New&quot;, monospace); font-size: 1em; line-height: 1.357em; white-space: pre-wrap;"></code></a></p></details>
+
+<details style="color: rgb(238, 255, 255); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe WPC&quot;, &quot;Segoe UI&quot;, system-ui, Ubuntu, &quot;Droid Sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><summary><strong>Companies</strong></summary><p style="margin-top: 0px; margin-bottom: 0.7em;"><code style="color: var(--vscode-textPreformat-foreground); font-family: var(--vscode-editor-font-family, &quot;SF Mono&quot;, Monaco, Menlo, Consolas, &quot;Ubuntu Mono&quot;, &quot;Liberation Mono&quot;, &quot;DejaVu Sans Mono&quot;, &quot;Courier New&quot;, monospace); font-size: 1em; line-height: 1.357em; white-space: pre-wrap;"></code></p></details>
+
+<p>给定两个整数数组 <code>preorder</code> 和 <code>inorder</code> ，其中 <code>preorder</code> 是二叉树的<strong>先序遍历</strong>， <code>inorder</code> 是同一棵树的<strong>中序遍历</strong>，请构造二叉树并返回其根节点。</p>
+<p><strong>示例 1:</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2021/02/19/tree.jpg" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]</span><br><span class="line">输出: [3,9,20,null,null,15,7]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: preorder = [-1], inorder = [-1]</span><br><span class="line">输出: [-1]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= preorder.length &lt;= 3000</code></li>
+<li><code>inorder.length == preorder.length</code></li>
+<li><code>-3000 &lt;= preorder[i], inorder[i] &lt;= 3000</code></li>
+<li><code>preorder</code> 和 <code>inorder</code> 均 <strong>无重复</strong> 元素</li>
+<li><code>inorder</code> 均出现在 <code>preorder</code></li>
+<li><code>preorder</code> <strong>保证</strong> 为二叉树的前序遍历序列</li>
+<li><code>inorder</code> <strong>保证</strong> 为二叉树的中序遍历序列</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode *<span class="title">buildTree</span><span class="params">(vector&lt;<span class="type">int</span>&gt; &amp;preorder, vector&lt;<span class="type">int</span>&gt; &amp;inorder)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">/*The first element in preorder array can divide inorder array into two parts.</span></span><br><span class="line"><span class="comment">        Then we can divide preorder array into two parts. Make this element a node.</span></span><br><span class="line"><span class="comment">        And the left sub-tree of this node is the left part,</span></span><br><span class="line"><span class="comment">        right sub-tree of this node is the right part.</span></span><br><span class="line"><span class="comment">        This problem can be solved following this logic.*/</span></span><br><span class="line">        <span class="keyword">if</span> (preorder.<span class="built_in">size</span>() == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="type">int</span> rootValue = preorder[<span class="number">0</span>];</span><br><span class="line">        <span class="type">int</span> rootIndex = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; inorder.<span class="built_in">size</span>(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (inorder[i] == rootValue)</span><br><span class="line">            &#123;</span><br><span class="line">                rootIndex = i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode *head = <span class="keyword">new</span> <span class="built_in">TreeNode</span>(rootValue);</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; n1 = <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(preorder.<span class="built_in">begin</span>() + <span class="number">1</span>, preorder.<span class="built_in">begin</span>() + rootIndex + <span class="number">1</span>);</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; n2 = <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(inorder.<span class="built_in">begin</span>(), inorder.<span class="built_in">begin</span>() + rootIndex);</span><br><span class="line">        head-&gt;left = <span class="built_in">buildTree</span>(n1, n2);</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; n3 = <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(preorder.<span class="built_in">begin</span>() + rootIndex + <span class="number">1</span>, preorder.<span class="built_in">end</span>());</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; n4 = <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(inorder.<span class="built_in">begin</span>() + rootIndex + <span class="number">1</span>, inorder.<span class="built_in">end</span>());</span><br><span class="line">        head-&gt;right = <span class="built_in">buildTree</span>(n3, n4);</span><br><span class="line">        <span class="comment">/*the way of using vector and initialization*/</span></span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector初始化，注意下表，和为0的边界情况</span><br></pre></td></tr></table></figure>
+
+
     
 
     
@@ -308,7 +306,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2023/03/05/article-title-1/" title="article title" target="_blank">http://example.com/2023/03/05/article-title-1/</a>
+          <a href="http://example.com/2023/03/05/2022-10-31-每日一题-中序和前序组成二叉树/" title="" target="_blank">http://example.com/2023/03/05/2022-10-31-每日一题-中序和前序组成二叉树/</a>
         </li>
         
         <li>
@@ -375,7 +373,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/05/article-title-1/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/05/2022-10-31-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E4%B8%AD%E5%BA%8F%E5%92%8C%E5%89%8D%E5%BA%8F%E7%BB%84%E6%88%90%E4%BA%8C%E5%8F%89%E6%A0%91/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -390,7 +388,7 @@
 
 <nav id="article-nav">
   
-    <a href="/2023/03/05/%E6%A6%82%E7%8E%87%E8%AE%BA%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/03/05/2022-10-31-%20%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -400,8 +398,8 @@
     </a>
   
   
-    <a href="/2023/03/05/article-title/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">article title</div>
+    <a href="/2023/03/05/2022-11-1-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   

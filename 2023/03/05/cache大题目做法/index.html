@@ -6,19 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>article title | Hexo</title>
+  <title>Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="article">
-<meta property="og:title" content="article title">
-<meta property="og:url" content="http://example.com/2023/03/05/article-title-1/index.html">
+  <meta name="description" content="Cache的大题目主存容量，字长，块大小，cache容量，求直接映射，全相连映射，组相连映射的格式 1.主存容量可以得到地址的总位数 2.cache的容量除以一行的容量得到cache有多少行，直接映射，就是行号，组相连映射除以路数就是组号 3.无论那种，行内地址的长度和是log一行的容量 Cache的结构标记项（有效位（1位），标记位（同地址的标记位），控制修改位，替换错误位），数据位（cache">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/03/05/cache%E5%A4%A7%E9%A2%98%E7%9B%AE%E5%81%9A%E6%B3%95/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Cache的大题目主存容量，字长，块大小，cache容量，求直接映射，全相连映射，组相连映射的格式 1.主存容量可以得到地址的总位数 2.cache的容量除以一行的容量得到cache有多少行，直接映射，就是行号，组相连映射除以路数就是组号 3.无论那种，行内地址的长度和是log一行的容量 Cache的结构标记项（有效位（1位），标记位（同地址的标记位），控制修改位，替换错误位），数据位（cache">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-03-05T14:02:22.000Z">
-<meta property="article:modified_time" content="2023-03-05T14:02:22.825Z">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221113201339274.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221113201345483.png">
+<meta property="article:published_time" content="2023-03-05T14:50:11.116Z">
+<meta property="article:modified_time" content="2022-11-13T12:24:49.442Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221113201339274.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -209,60 +214,35 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-article-title-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-cache大题目做法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-  
-  
-    <h1 class="article-title" itemprop="name">
-      article title
-    </h1>
-  
-
-
-  
-  
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/2023/03/05/article-title-1/" class="archive-article-date">
-        <time datetime="2023-03-05T14:02:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-05</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">0字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
   <div class="article-entry" itemprop="articleBody">
     
-    
+    <h2 id="Cache的大题目"><a href="#Cache的大题目" class="headerlink" title="Cache的大题目"></a>Cache的大题目</h2><p>主存容量，字长，块大小，cache容量，求直接映射，全相连映射，组相连映射的格式</p>
+<p>1.主存容量可以得到地址的总位数</p>
+<p>2.cache的容量除以一行的容量得到cache有多少行，直接映射，就是行号，组相连映射除以路数就是组号</p>
+<p>3.无论那种，行内地址的长度和是log一行的容量</p>
+<h2 id="Cache的结构"><a href="#Cache的结构" class="headerlink" title="Cache的结构"></a>Cache的结构</h2><p>标记项（有效位（1位），标记位（同地址的标记位），控制修改位，替换错误位），数据位（cache的内容，行大小）</p>
+<h2 id="直接映射求一个地址在cache的存取的行号"><a href="#直接映射求一个地址在cache的存取的行号" class="headerlink" title="直接映射求一个地址在cache的存取的行号"></a>直接映射求一个地址在cache的存取的行号</h2><p>把地址写成二进制的形式，然后对应直接映射的内存的格式。</p>
+<p>数组如何求地址，计算地址<br>$$<br>&amp;a[x]&#x3D;a+x*T_{a的数据类型的长度站多少字节(按字符寻址)}<br>$$<br>地址除以行的元素数量，在mod行数可以得到，直接映射到哪一行。</p>
+<p>或者，计算地址，除以一行的容量（向下取整 ），结果mod一个cache有多少块</p>
+<h2 id="求命中率，效率，访问时间"><a href="#求命中率，效率，访问时间" class="headerlink" title="求命中率，效率，访问时间"></a>求命中率，效率，访问时间</h2><h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p>$$<br>h_{命中率}&#x3D;\frac{N_c}{N_c+N_m}<br>$$</p>
+<p>$$<br>t_a&#x3D;ht_c+(1-h)ta<br>$$</p>
+<p>$$<br>e&#x3D;\frac{t_c}{t_a}<br>$$</p>
+<h3 id="算命中情况"><a href="#算命中情况" class="headerlink" title="算命中情况"></a>算命中情况</h3><p>访问线性的元素，访问一个cache没有的元素的时候，cache的一整行都会放进去，那么以后的元素就不用担心了。</p>
+<h2 id="LRU，FIFO算法"><a href="#LRU，FIFO算法" class="headerlink" title="LRU，FIFO算法"></a>LRU，FIFO算法</h2><h3 id="该算法分析命中率"><a href="#该算法分析命中率" class="headerlink" title="该算法分析命中率"></a>该算法分析命中率</h3><p>对于循环，首先分析第一次循环（可以求访问主存的次数然后求减法）。</p>
+<p>对于后面的循环，可以想象成遍历的每一行在每一组里面轮流的放，如果满了就替换，如果有不放。</p>
+<p>思考问题的时候，要把<code>遍历的每一行在每一组里面轮流的放</code>这个事件全部想象一遍。</p>
+<h3 id="页面置换算法"><a href="#页面置换算法" class="headerlink" title="页面置换算法"></a>页面置换算法</h3><blockquote>
+<p>适用的情况，把cache的是盛放快的容器，对于不断放入的快，使用最少的替换（最小的单位是块）</p>
+</blockquote>
+<h4 id="LRU"><a href="#LRU" class="headerlink" title="LRU"></a>LRU</h4><p>主存中12345映射到一个组里面，主存访问顺序{1,2,3,4,1,2,5,1,2,3,4,5}</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221113201339274.png" alt="image-20221113201339274"></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221113201345483.png" alt="image-20221113201345483"></p>
+<p>LRU算法实际上就是一个队列，删去队列，每次队列人数满了的时候就删去出队，然后进队，再写表的时候保证就改一个位置的值，</p>
+<p>FIFO算法实际上就是一个队列，，不同的是，当队列里面有这个元素的时候，不操作，（LRU会把那个元素移动到末尾）</p>
+
     
 
     
@@ -308,7 +288,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2023/03/05/article-title-1/" title="article title" target="_blank">http://example.com/2023/03/05/article-title-1/</a>
+          <a href="http://example.com/2023/03/05/cache大题目做法/" title="" target="_blank">http://example.com/2023/03/05/cache大题目做法/</a>
         </li>
         
         <li>
@@ -375,7 +355,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/05/article-title-1/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/05/cache%E5%A4%A7%E9%A2%98%E7%9B%AE%E5%81%9A%E6%B3%95/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -390,7 +370,7 @@
 
 <nav id="article-nav">
   
-    <a href="/2023/03/05/%E6%A6%82%E7%8E%87%E8%AE%BA%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/03/05/DRAM%E7%9A%84%E5%88%B7%E6%96%B0%E6%96%B9%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -400,8 +380,8 @@
     </a>
   
   
-    <a href="/2023/03/05/article-title/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">article title</div>
+    <a href="/2023/03/05/%E5%A0%86%E6%A8%A1%E6%9D%BF+vscode%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   

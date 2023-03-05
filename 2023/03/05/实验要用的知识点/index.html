@@ -6,19 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>article title | Hexo</title>
+  <title>Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="article">
-<meta property="og:title" content="article title">
-<meta property="og:url" content="http://example.com/2023/03/05/article-title-1/index.html">
+  <meta name="description" content="RIP配置的命令格式12Router(config)#router ripRouter(config-router)#network &lt;network-number&gt; #属于上面的网络都运行RIP路由协议  基本知识点 RIP 是一种距离向量协议，它以预定间隔将其整个路由表广播到每个邻居路由器。默认间隔为30秒。 RIP使用跳数作为度量标准，最大跳数为15，达到16跳的报文自动抛弃。、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/03/05/%E5%AE%9E%E9%AA%8C%E8%A6%81%E7%94%A8%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="RIP配置的命令格式12Router(config)#router ripRouter(config-router)#network &lt;network-number&gt; #属于上面的网络都运行RIP路由协议  基本知识点 RIP 是一种距离向量协议，它以预定间隔将其整个路由表广播到每个邻居路由器。默认间隔为30秒。 RIP使用跳数作为度量标准，最大跳数为15，达到16跳的报文自动抛弃。、">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-03-05T14:02:22.000Z">
-<meta property="article:modified_time" content="2023-03-05T14:02:22.825Z">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20230103234438456.png">
+<meta property="article:published_time" content="2023-03-05T14:50:11.072Z">
+<meta property="article:modified_time" content="2023-01-03T17:13:58.991Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20230103234438456.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -209,60 +213,88 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-article-title-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-实验要用的知识点" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-  
-  
-    <h1 class="article-title" itemprop="name">
-      article title
-    </h1>
-  
-
-
-  
-  
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/2023/03/05/article-title-1/" class="archive-article-date">
-        <time datetime="2023-03-05T14:02:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-05</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">0字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
   <div class="article-entry" itemprop="articleBody">
     
-    
+    <h2 id="RIP"><a href="#RIP" class="headerlink" title="RIP"></a>RIP</h2><h3 id="配置的命令格式"><a href="#配置的命令格式" class="headerlink" title="配置的命令格式"></a>配置的命令格式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Router(config)#router rip</span><br><span class="line">Router(config-router)#network &lt;network-number&gt; #属于上面的网络都运行RIP路由协议</span><br></pre></td></tr></table></figure>
+
+<h3 id="基本知识点"><a href="#基本知识点" class="headerlink" title="基本知识点"></a>基本知识点</h3><ol>
+<li>RIP 是一种距离向量协议，它以预定间隔将其整个路由表广播到每个邻居路由器。默认间隔为<strong>30秒</strong>。</li>
+<li>RIP使用<strong>跳数</strong>作为度量标准，最大跳数为<strong>15</strong>，达到16跳的报文自动抛弃。、</li>
+<li>RIP v1能够在多达六个等价路径上进行**负载平衡(Load Balancing)**，默认情况下为四个路径，最多6个，跳数相同才能完成负载均衡，跳数不同不满足条件、</li>
+<li>它不会在其更新中发送子网掩码信息:意味着必须用同样的子网掩码，不支持VLSM或无类域间路由(CIDR，Classless Interdomain Routing)。</li>
+<li>它以255.255.255.255的广播形式发送更新:只能发给邻居，不能通过路由器转发。</li>
+<li>它不支持身份验证(authentication):只要启动RIP就可以接受到信息，也就意味着只要接入网络并且启动RIP进程，就可以了解到整个网络拓扑</li>
+</ol>
+<h3 id="RIP的更新规则"><a href="#RIP的更新规则" class="headerlink" title="RIP的更新规则"></a>RIP的更新规则</h3><ol>
+<li>把发来的路由表的下一跳都改为发来的路由器编号，距离都加1</li>
+<li>如果原来的路由表没有目的网络，更新<br>如果原来的路由表有下一跳和目的网络一样的，不管距离大小，都更新<br>如果原来的路由表，有相同目的网络的但是下一跳不一样，保留距离小的。<br>没有的物理表，保持原样</li>
+</ol>
+<p>路由表ex：</p>
+<table>
+<thead>
+<tr>
+<th>目的网络</th>
+<th>距离</th>
+<th>下一跳路由器</th>
+</tr>
+</thead>
+</table>
+<h2 id="VLAN和Trunk"><a href="#VLAN和Trunk" class="headerlink" title="VLAN和Trunk"></a>VLAN和Trunk</h2><h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><p>骨干（backbone&#x2F;trunk link）：交换设备和交换设备之间所使用的连接（不然有几个 VLAN 就需要几条线，浪费端<br>口）</p>
+<p>（1）Access Links（接入链路）：<br>接入链路是在交换机上只属于一个 VLAN 的链路，任何接入的设备并不知情有 VLAN 的存在（VLAN 对每台设备<br>是透明的）<br>（2）Trunk VLANS（中继链路）：<br>点对点，支持多个 VLANs；主要用来连接交换机和交换机；不需要属于某个特定的 VLAN；可能有一个本地 VLAN；<br>支持在快速以太网和 G 比特以太网；节省端口</p>
+<h3 id="配置的命令格式-1"><a href="#配置的命令格式-1" class="headerlink" title="配置的命令格式"></a>配置的命令格式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int f0/2</span><br><span class="line">switchport mode access</span><br><span class="line">switchport access vlan 2</span><br><span class="line">int f0/3</span><br><span class="line">switchport mode trunk</span><br></pre></td></tr></table></figure>
+
+<h2 id="静态NAT"><a href="#静态NAT" class="headerlink" title="静态NAT"></a>静态NAT</h2><p>​	1、指定NAT内部接口&#96;</p>
+<p>​         在内网相应接口的接口配置模式下执行：<code>ip nat inside</code></p>
+<p>​	2、指定NAT外部接口&#96;</p>
+<p>​         在外网相应接口的接口配置模式下执行：<code>ip nat outside</code></p>
+<p>​	3、在内部本地地址与内部全局地址之间建立静态地址转换关系：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip nat inside source static 内部本地地址 内部全局地址</span><br></pre></td></tr></table></figure>
+
+<p>​    4、(实际上用第三条就可以了)在外部全局地址与外部本地地址之间建立静态地址转换关系：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip nat outside source static 外部全局地址 外部本地地址</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="5">
+<li><code>show ip nat translations</code>   展示配置的情况</li>
+</ol>
+<h2 id="ACL"><a href="#ACL" class="headerlink" title="ACL"></a>ACL</h2><h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><p><code>Router(config)#access-list &lt;access-list-number&gt; &lt;permit/deny&gt; &lt;test-conditions&gt;</code></p>
+<p><code>&lt;test-conditions&gt;</code>参数是IP掩码和通配符掩码</p>
+<p><code>show access-list</code>展示ACL配置</p>
+<p><code>&lt;protocol&gt; access-group access-list-number &lt;in/out&gt;</code></p>
+<p>IP掩码：Ipv4地址</p>
+<p>通配符掩码：</p>
+<ul>
+<li><p><strong>0位表示检查该位位置</strong></p>
+</li>
+<li><p><strong>1表示忽略该位位置</strong></p>
+</li>
+</ul>
+<h3 id="扩展ACL"><a href="#扩展ACL" class="headerlink" title="扩展ACL"></a>扩展ACL</h3><p>扩展ACL的编号范围为100-199，并”扩展”了标准ACL的功能。</p>
+<p>可以基于目的地址，<strong>ip协议的部分(更加细分):您可以编写语句以仅拒绝”ICMP”等协议或”RIP”和”IGRP”之类的路由协议</strong>，协议套件的上层（TFTP”或”HTTP”之类的协议，eq，gt，lt和neq(等于，大于，小于和不等于)之类的操作数来指定如何处理特定协议）</p>
+<ul>
+<li>由于扩展的ACL具有目标信息，因此<strong>您希望将其放置在尽可能靠近源的位置。</strong></li>
+</ul>
+<h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><p>在<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%B7%AF%E7%94%B1%E5%99%A8&spm=1001.2101.3001.7020">路由器</a>上读取第三层及第四层包头中的信息如源地址，目的地址，源端口，目的端口等，根据预先定 义好的规则对包进行过滤，从而达到访问控制的目的。</p>
+<p>类型：</p>
+<p>标准访问控制列表：一般应用在out出站接口。建议配置在离目标端最近的路由上</p>
+<p>扩展访问控制列表：配置在离源端最近的路由上，一般应用在入站in方向</p>
+<p>命名访问控制列表：允许在标准和扩展访问列表中使用名称代替表号</p>
+<p>准则：</p>
+<ul>
+<li><p>按照顺序对ACL语句进行测试</p>
+</li>
+<li><p>ACL末尾有一个隐含的”deny any”语句:如果数据包与ACL中的任何语句都不匹配，则将其丢弃。</p>
+</li>
+</ul>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20230103234438456.png" alt="image-20230103234438456"></p>
+<p><strong>ICMP（Internet Control Message Protocol）网际控制报文协议</strong></p>
+<p>允许主机或路由器报告差错情况和提供有关异常情况的报告，为了更有效的转发ip数据报和提高交付成功的机会。</p>
+<p>包括ICMP差错报告报文、ICMP询问报文。</p>
+
     
 
     
@@ -308,7 +340,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2023/03/05/article-title-1/" title="article title" target="_blank">http://example.com/2023/03/05/article-title-1/</a>
+          <a href="http://example.com/2023/03/05/实验要用的知识点/" title="" target="_blank">http://example.com/2023/03/05/实验要用的知识点/</a>
         </li>
         
         <li>
@@ -375,7 +407,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/05/article-title-1/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/05/%E5%AE%9E%E9%AA%8C%E8%A6%81%E7%94%A8%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -390,7 +422,7 @@
 
 <nav id="article-nav">
   
-    <a href="/2023/03/05/%E6%A6%82%E7%8E%87%E8%AE%BA%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/03/05/c++%E6%A0%BC%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -400,8 +432,8 @@
     </a>
   
   
-    <a href="/2023/03/05/article-title/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">article title</div>
+    <a href="/2023/03/05/%E6%A0%B7%E6%9C%AC%E7%BB%9F%E8%AE%A1,%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1%EF%BC%8C%E7%9F%A9%E4%BC%B0%E8%AE%A1%EF%BC%8C%E6%97%A0%E5%81%8F%E6%80%A7/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -6,19 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>article title | Hexo</title>
+  <title>Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="article">
-<meta property="og:title" content="article title">
-<meta property="og:url" content="http://example.com/2023/03/05/article-title-1/index.html">
+  <meta name="description" content="二叉树的确定先序中序确定二叉树，后序和中序确定二叉树，必须要有中序， 先序和后序提供了根节点，然后通过根节点确定左右子树        已知先&#x2F;后和中，求后&#x2F;先遍历     写出前，中，后序遍历 （根左右）前序： 左根右，中序： 左右根，后序：  先写出根节点的顺序，间隔大一点，然后按照跟左右的方式像外面扩展 几种非递归的遍历12345678910111213141516171">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/03/05/%E6%A0%91%E9%81%8D%E5%8E%86%E7%9B%B8%E5%85%B3%E7%9A%84/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="二叉树的确定先序中序确定二叉树，后序和中序确定二叉树，必须要有中序， 先序和后序提供了根节点，然后通过根节点确定左右子树        已知先&#x2F;后和中，求后&#x2F;先遍历     写出前，中，后序遍历 （根左右）前序： 左根右，中序： 左右根，后序：  先写出根节点的顺序，间隔大一点，然后按照跟左右的方式像外面扩展 几种非递归的遍历12345678910111213141516171">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-03-05T14:02:22.000Z">
-<meta property="article:modified_time" content="2023-03-05T14:02:22.825Z">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221106152803415.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221106153909323.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221106154327905.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221106170727280.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221106170915883.png">
+<meta property="og:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221106171117343.png">
+<meta property="article:published_time" content="2023-03-05T14:50:11.177Z">
+<meta property="article:modified_time" content="2022-11-06T09:23:06.772Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221106152803415.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -209,60 +218,54 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-article-title-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-树遍历相关的" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-  
-  
-    <h1 class="article-title" itemprop="name">
-      article title
-    </h1>
-  
-
-
-  
-  
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/2023/03/05/article-title-1/" class="archive-article-date">
-        <time datetime="2023-03-05T14:02:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-05</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">0字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
   <div class="article-entry" itemprop="articleBody">
     
-    
+    <h2 id="二叉树的确定"><a href="#二叉树的确定" class="headerlink" title="二叉树的确定"></a>二叉树的确定</h2><p>先序中序确定二叉树，后序和中序确定二叉树，必须要有中序，</p>
+<p>先序和后序提供了根节点，然后通过根节点确定左右子树</p>
+<iframe src="//player.bilibili.com/player.html?aid=250115889&bvid=BV1Wv411A71h&cid=397257876&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221106152803415.png" alt="image-20221106152803415"></p>
+<iframe src="//player.bilibili.com/player.html?aid=506254678&bvid=BV1Xu411d7qf&cid=431424735&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p>已知先&#x2F;后和中，求后&#x2F;先遍历</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221106153909323.png" alt="image-20221106153909323"></p>
+<iframe src="//player.bilibili.com/player.html?aid=928609724&bvid=BV1eT4y1N7tV&cid=279071947&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p>写出前，中，后序遍历</p>
+<p>（根左右）前序：</p>
+<p>左根右，中序：</p>
+<p>左右根，后序：</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221106154327905.png" alt="image-20221106154327905"></p>
+<p>先写出根节点的顺序，间隔大一点，然后按照跟左右的方式像外面扩展</p>
+<h2 id="几种非递归的遍历"><a href="#几种非递归的遍历" class="headerlink" title="几种非递归的遍历"></a>几种非递归的遍历</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">postOrderIterative</span><span class="params">(treeNode *root)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">NULL</span> == root)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">// 空树</span></span><br><span class="line"></span><br><span class="line">    stack&lt;treeNode *&gt; nodeStack;  <span class="comment">// 创建一个栈保存节点</span></span><br><span class="line">    treeNode *currentNode = root; <span class="comment">// 维护一个当前节点指针</span></span><br><span class="line">    treeNode *visitedNode = root; <span class="comment">// 保存上次一访问的节点, 初始化为root是利用二叉树是无环图</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 当前节点非空，或栈非空时迭代处理</span></span><br><span class="line">    <span class="keyword">while</span> (currentNode || !nodeStack.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 当前节点非空，沿着左子树方向入栈</span></span><br><span class="line">        <span class="keyword">while</span> (currentNode)</span><br><span class="line">        &#123;</span><br><span class="line">            nodeStack.<span class="built_in">push</span>(currentNode);</span><br><span class="line">            currentNode = currentNode-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        currentNode = nodeStack.<span class="built_in">top</span>(); <span class="comment">// 取栈顶元素</span></span><br><span class="line">        <span class="comment">// 如果栈顶元素有右子树，且未被访问</span></span><br><span class="line">        <span class="keyword">if</span> (currentNode-&gt;right &amp;&amp; currentNode-&gt;right != visitedNode)</span><br><span class="line">        &#123;</span><br><span class="line">            currentNode = currentNode-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="comment">// 子树为空或被访问过</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, currentNode-&gt;data); <span class="comment">// 访问节点数据</span></span><br><span class="line">            visitedNode = currentNode;        <span class="comment">// 记录当前访问的节点</span></span><br><span class="line">            currentNode = <span class="literal">NULL</span>;               <span class="comment">// 当前节点置为NULL，防止重复访问左子树</span></span><br><span class="line">            nodeStack.<span class="built_in">pop</span>();                  <span class="comment">// 出栈</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">inOrderIterative</span><span class="params">(treeNode *root)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">NULL</span> == root)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">// 空树</span></span><br><span class="line"></span><br><span class="line">    stack&lt;treeNode *&gt; nodeStack;  <span class="comment">// 创建一个栈保存节点</span></span><br><span class="line">    treeNode *currentNode = root; <span class="comment">// 维护一个当前节点指针</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 当前节点非空，或栈非空时迭代处理</span></span><br><span class="line">    <span class="keyword">while</span> (currentNode || !nodeStack.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 当前节点非空，沿着左子树方向入栈</span></span><br><span class="line">        <span class="keyword">while</span> (currentNode)</span><br><span class="line">        &#123;</span><br><span class="line">            nodeStack.<span class="built_in">push</span>(currentNode);</span><br><span class="line">            currentNode = currentNode-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 此时栈顶节点没有左子树，或已经访问完左子树</span></span><br><span class="line">        currentNode = nodeStack.<span class="built_in">top</span>();    <span class="comment">// 取栈顶节点</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, currentNode-&gt;data); <span class="comment">// 访问节点数据</span></span><br><span class="line">        nodeStack.<span class="built_in">pop</span>();                  <span class="comment">// 出栈</span></span><br><span class="line">        currentNode = currentNode-&gt;right; <span class="comment">// 将当前节点设为右子节点</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">preOrderIterative</span><span class="params">(treeNode *root)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">NULL</span> == root)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">// 空树</span></span><br><span class="line"></span><br><span class="line">    stack&lt;treeNode *&gt; nodeStack; <span class="comment">// 创建一个栈保存节点</span></span><br><span class="line">    nodeStack.<span class="built_in">push</span>(root);        <span class="comment">// 根节点进栈</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (!nodeStack.<span class="built_in">empty</span>()) <span class="comment">// 栈非空时迭代处理</span></span><br><span class="line">    &#123;</span><br><span class="line">        treeNode *node = nodeStack.<span class="built_in">top</span>(); <span class="comment">// 保存栈顶节点</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, node-&gt;data);        <span class="comment">// 访问节点数据</span></span><br><span class="line">        nodeStack.<span class="built_in">pop</span>();                  <span class="comment">// 栈顶节点出栈</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 子节点入栈</span></span><br><span class="line">        <span class="keyword">if</span> (node-&gt;right)</span><br><span class="line">            nodeStack.<span class="built_in">push</span>(node-&gt;right);</span><br><span class="line">        <span class="keyword">if</span> (node-&gt;left)</span><br><span class="line">            nodeStack.<span class="built_in">push</span>(node-&gt;left);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>B树的关键字的个数</p>
+<iframe src="//player.bilibili.com/player.html?aid=556014915&bvid=BV11e4y1X7h9&cid=778224013&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p>关键字数：</p>
+<p>先知道B数一个节点最多最少有多少关键字数，</p>
+<p>然后至少就是用最少关键字来构造最多就是用最多的关键数来构造，分支数是关键数加+1，（<strong>注意至少的时候，根节点最少是1个关键字</strong>）</p>
+<p>53个关键字构造最短的二叉树</p>
+<p><code>1+2(2+2*3+2*3*3)=53</code></p>
+<h2 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h2><p>log<del>2</del>（n+1）上取整，到，n</p>
+<p>n个节点，n-1条边。</p>
+<p>度数2的节点数+1&#x3D;叶节点数</p>
+<h2 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h2><p>有左孩子则必有有孩子，有有孩子则必有左孩子</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221106170727280.png" alt="image-20221106170727280"></p>
+<p>树转化为二叉树，先序遍历相同，后序遍历等于二叉树的中序遍历</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221106170915883.png" alt="image-20221106170915883"></p>
+<p>森林</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221106171117343.png" alt="image-20221106171117343"></p>
+<p>把根节点连起来即可</p>
+<p>森林的root是第一课树的root，左子树的节点数+1&#x3D;tree1的节点数</p>
+
     
 
     
@@ -308,7 +311,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2023/03/05/article-title-1/" title="article title" target="_blank">http://example.com/2023/03/05/article-title-1/</a>
+          <a href="http://example.com/2023/03/05/树遍历相关的/" title="" target="_blank">http://example.com/2023/03/05/树遍历相关的/</a>
         </li>
         
         <li>
@@ -375,7 +378,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/05/article-title-1/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/05/%E6%A0%91%E9%81%8D%E5%8E%86%E7%9B%B8%E5%85%B3%E7%9A%84/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -390,7 +393,7 @@
 
 <nav id="article-nav">
   
-    <a href="/2023/03/05/%E6%A6%82%E7%8E%87%E8%AE%BA%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/03/05/Beautiful%20C++%20-%20STL%20Algorithms%20C++/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -400,8 +403,8 @@
     </a>
   
   
-    <a href="/2023/03/05/article-title/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">article title</div>
+    <a href="/2023/03/05/bungeecord%E8%B7%A8%E6%9C%8D%E5%BC%80%E6%9C%8D/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   
