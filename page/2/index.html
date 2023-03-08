@@ -1,23 +1,2016 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
-{% block title %}{{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %}{% endblock %}
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
 
-{% block content %}
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="恢复二叉搜索树给你二叉搜索树的根节点 root ，该树中的 恰好 两个节点的值被错误地交换。请在不改变其结构的情况下，恢复这棵树 。 示例 1：  123输入：root &#x3D; [1,3,null,null,2]输出：[3,1,null,null,2]解释：3 不能是 1 的左孩子，因为 3 &gt; 1 。交换 1 和 3 使二叉搜索树有效。  示例 2：  123输入：root &#x3D; [3,1,4,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/03/05/2022-10-31-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%81%A2%E5%A4%8D%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="恢复二叉搜索树给你二叉搜索树的根节点 root ，该树中的 恰好 两个节点的值被错误地交换。请在不改变其结构的情况下，恢复这棵树 。 示例 1：  123输入：root &#x3D; [1,3,null,null,2]输出：[3,1,null,null,2]解释：3 不能是 1 的左孩子，因为 3 &gt; 1 。交换 1 和 3 使二叉搜索树有效。  示例 2：  123输入：root &#x3D; [3,1,4,">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/10/28/recover1.jpg">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/10/28/recover2.jpg">
+<meta property="article:published_time" content="2023-03-05T14:50:11.219Z">
+<meta property="article:modified_time" content="2022-10-31T07:43:21.772Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://assets.leetcode.com/uploads/2020/10/28/recover1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Muse',
+    version: '6.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://example.com/2023/03/05/2022-10-31-每日一题-恢复二叉树/"/>
+
+
+
+
+
+  <title>Hexo</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
   <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/bungeecord%E8%B7%A8%E6%9C%8D%E5%BC%80%E6%9C%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2023/03/05/bungeecord%E8%B7%A8%E6%9C%8D%E5%BC%80%E6%9C%8D/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="bungeecord跨服"><a href="#bungeecord跨服" class="headerlink" title="bungeecord跨服"></a>bungeecord跨服</h1><h2 id="前置："><a href="#前置：" class="headerlink" title="前置："></a>前置：</h2><p>资源下载：<a target="_blank" rel="noopener" href="https://ci.md-5.net/job/BungeeCord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar">点击下载</a></p>
+<p>linux创建<code>start.sh</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$( dirname -- <span class="string">&quot;<span class="variable">$0</span>&quot;</span> )</span>&quot;</span></span><br><span class="line">java -Xms512M -Xmx512M -jar BungeeCord.jar</span><br></pre></td></tr></table></figure>
+
+<p>windows创建<code>start.bat</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line">java -Xms512M -Xmx512M -jar BungeeCord.jar</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+<h2 id="服务器创建"><a href="#服务器创建" class="headerlink" title="服务器创建"></a>服务器创建</h2><p>使用自己已经有的服务器，要有java8的环境</p>
+<h2 id="拷贝文件到服务器内"><a href="#拷贝文件到服务器内" class="headerlink" title="拷贝文件到服务器内"></a>拷贝文件到服务器内</h2><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221106181438714.png" alt="image-20221106181438714"></p>
+<p>BC文件夹里面是<code>start.sh</code>和<code>BungeeCord.jar</code>文件</p>
+<p>mc2是我的mc服务器</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> BC</span><br><span class="line"><span class="built_in">chmod</span> u+x start.sh <span class="comment">#使用这个指令之后才有权限否则会出现Permission denied</span></span><br><span class="line">./start.sh <span class="comment">#启动</span></span><br></pre></td></tr></table></figure>
+
+<p>成功之后会出现下面</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">18:08:25 [INFO] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.19-R0.1-SNAPSHOT:2d369e8:1664 by SpigotMC</span><br><span class="line">18:08:25 [INFO] Loaded plugin cmd_find version git:cmd_find:1.19-R0.1-SNAPSHOT:2d369e8:1664 by SpigotMC</span><br><span class="line">18:08:25 [INFO] Loaded plugin cmd_server version git:cmd_server:1.19-R0.1-SNAPSHOT:2d369e8:1664 by SpigotMC</span><br><span class="line">18:08:25 [INFO] Loaded plugin cmd_alert version git:cmd_alert:1.19-R0.1-SNAPSHOT:2d369e8:1664 by SpigotMC</span><br><span class="line">18:08:25 [INFO] Loaded plugin cmd_send version git:cmd_send:1.19-R0.1-SNAPSHOT:2d369e8:1664 by SpigotMC</span><br><span class="line">18:08:25 [INFO] Loaded plugin cmd_list version git:cmd_list:1.19-R0.1-SNAPSHOT:2d369e8:1664 by SpigotMC</span><br><span class="line">18:08:25 [WARNING] Forced host server pvp is not defined</span><br><span class="line">18:08:25 [INFO] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.19-R0.1-SNAPSHOT:2d369e8:1664 by SpigotMC</span><br><span class="line">18:08:25 [INFO] Enabled plugin cmd_find version git:cmd_find:1.19-R0.1-SNAPSHOT:2d369e8:1664 by SpigotMC</span><br><span class="line">18:08:25 [INFO] Enabled plugin cmd_server version git:cmd_server:1.19-R0.1-SNAPSHOT:2d369e8:1664 by SpigotMC</span><br><span class="line">18:08:25 [INFO] Enabled plugin cmd_alert version git:cmd_alert:1.19-R0.1-SNAPSHOT:2d369e8:1664 by SpigotMC</span><br><span class="line">18:08:25 [INFO] Enabled plugin cmd_send version git:cmd_send:1.19-R0.1-SNAPSHOT:2d369e8:1664 by SpigotMC</span><br><span class="line">18:08:25 [INFO] Enabled plugin cmd_list version git:cmd_list:1.19-R0.1-SNAPSHOT:2d369e8:1664 by SpigotMC</span><br><span class="line">18:08:25 [INFO] Listening on /0.0.0.0:25577</span><br></pre></td></tr></table></figure>
+
+<p>退出是输入<code>end</code></p>
+<h2 id="config-yml的配置"><a href="#config-yml的配置" class="headerlink" title="config.yml的配置"></a>config.yml的配置</h2><p>这里随便使用编译器了，我使用vim和vscode都差不多，不过服务器暂时没配vscode，所以用vim.</p>
+<p><a target="_blank" rel="noopener" href="https://www.spigotmc.org/wiki/bungeecord-configuration-guide/">参考的wiki链接</a></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim config.yml <span class="comment">#进入config.yml</span></span><br></pre></td></tr></table></figure>
+
+<p>进入后输入&#x2F;ip_forword,查找ip_forword，<code>i</code>键进入<code>insert</code>模式改为true</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221106182415018.png" alt="image-20221106182415018"></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#列举一下哪些要改</span></span><br><span class="line"><span class="attr">force_default_server:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">ip_forword:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">max_players:</span> <span class="number">20</span></span><br><span class="line"><span class="attr">query_port:</span> <span class="number">25577</span> <span class="comment">#这个看情况，不过要记住，BC端进入的端口就是这个端口</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">force_default_server</span> <span class="comment">#说白了就是强制登录在一个特定服务器里面</span></span><br><span class="line"><span class="attr">Default:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">Type:</span> <span class="string">Boolean</span></span><br><span class="line"><span class="attr">Description:</span> <span class="string">If</span> <span class="literal">true</span><span class="string">,</span> <span class="string">the</span> <span class="string">player</span> <span class="string">will</span> <span class="string">always</span> <span class="string">connect</span> <span class="string">to</span> <span class="string">the</span> <span class="string">default</span> <span class="string">servers</span> <span class="string">specified</span> <span class="string">in</span> <span class="string">the</span> <span class="string">priorities</span> <span class="string">list</span> <span class="string">when</span> <span class="string">they</span> <span class="string">join</span> <span class="string">the</span> <span class="string">server.</span> <span class="string">If</span> <span class="literal">false</span><span class="string">,</span> <span class="attr">the player will join the server they were last connected to. Note:</span> <span class="string">forced_hosts</span> <span class="string">does</span> <span class="string">NOT</span> <span class="string">override</span> <span class="string">this.</span> <span class="string">To</span> <span class="string">make</span> <span class="string">the</span> <span class="string">forced_hosts</span> <span class="string">setting</span> <span class="string">work,</span> <span class="string">set</span> <span class="string">this</span> <span class="string">to</span> <span class="string">false.</span> <span class="string">Should</span> <span class="string">be</span> <span class="string">kept</span> <span class="string">on</span> <span class="string">for</span> <span class="string">cracked</span> <span class="string">server!</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">ip_forward</span></span><br><span class="line"><span class="attr">Default:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">Type:</span> <span class="string">Boolean</span></span><br><span class="line"><span class="attr">Description:</span> <span class="string">Whether</span> <span class="string">to</span> <span class="string">enable</span> <span class="string">IP</span> <span class="string">(which</span> <span class="string">forwards</span> <span class="string">the</span> <span class="string">players</span> <span class="literal">true</span> <span class="string">IP</span> <span class="string">to</span> <span class="string">Bukkit,</span> <span class="string">rather</span> <span class="string">than</span> <span class="string">the</span> <span class="string">proxy</span> <span class="string">IP)</span> <span class="string">and</span> <span class="string">UUID</span> <span class="string">forwarding</span> <span class="string">(which</span> <span class="string">forwards</span> <span class="string">the</span> <span class="string">players</span> <span class="literal">true</span> <span class="string">online-mode</span> <span class="string">UUID</span> <span class="string">to</span> <span class="string">Bukkit,</span> <span class="string">rather</span> <span class="string">than</span> <span class="string">an</span> <span class="string">offline-mode</span> <span class="string">username</span> <span class="string">hash!)</span></span><br><span class="line"><span class="string">If</span> <span class="string">you&#x27;re</span> <span class="attr">running an online-mode:</span> <span class="literal">true</span> <span class="string">server,</span> <span class="string">It</span> <span class="string">is</span> <span class="string">highly</span> <span class="string">recommended</span> <span class="string">you</span> <span class="string">use</span> <span class="string">this</span> <span class="string">option!</span></span><br><span class="line"><span class="string">If</span> <span class="string">using</span> <span class="string">this</span> <span class="string">option,</span> <span class="string">please</span> <span class="string">follow</span> <span class="string">this</span> <span class="string">guide</span> <span class="string">to</span> <span class="string">ensure</span> <span class="string">that</span> <span class="string">you</span> <span class="string">have</span> <span class="string">enabled</span> <span class="string">it</span> <span class="string">correctly.</span></span><br></pre></td></tr></table></figure>
+
+<p>有什么其他想改的可以自己改</p>
+<h4 id="下面是servers的配置"><a href="#下面是servers的配置" class="headerlink" title="下面是servers的配置"></a>下面是servers的配置</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">skyCraft:</span></span><br><span class="line"> <span class="attr">address:</span> <span class="string">localhost:25565</span></span><br><span class="line"> <span class="attr">restricted:</span> <span class="literal">false</span></span><br><span class="line"> <span class="attr">motd:</span> <span class="string">&#x27;&amp;1Just another BungeeCord - Forced Host&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>Note: restricted prevents players from joining the server unless they have the bungeecord.server.[servername] permission<br>Type:</em> Map<br><em>Description:</em> Within this section, you will list all the servers that will be connected to via the BungeeCord instance. It is recommended to use lowercase for the names of the servers.</p>
+<p>按照自己的服务器要求来</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#修改之后设置进服之后是哪个服，我设置的是skyCraft,名字要servers设置的一样</span></span><br><span class="line"><span class="attr">priorities:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">skyCraft</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="然后发现FabricProxy只支持1-18以下的，所以失败了，润！！！！！"><a href="#然后发现FabricProxy只支持1-18以下的，所以失败了，润！！！！！" class="headerlink" title="然后发现FabricProxy只支持1.18以下的，所以失败了，润！！！！！"></a>然后发现<strong>FabricProxy</strong>只支持1.18以下的，所以失败了，润！！！！！</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/Velocity%E4%BA%92%E9%80%9A%E6%9C%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2023/03/05/Velocity%E4%BA%92%E9%80%9A%E6%9C%8D/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Velocity互通服"><a href="#Velocity互通服" class="headerlink" title="Velocity互通服"></a>Velocity互通服</h2><h2 id="前置"><a href="#前置" class="headerlink" title="前置"></a>前置</h2><p><a target="_blank" rel="noopener" href="https://papermc.io/downloads#Velocity">Velocity下载</a></p>
+<p><a target="_blank" rel="noopener" href="https://modrinth.com/mod/fabricproxy-lite/versions">FabricProxy-Lite下载</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>老样子，放Velocity到一个文件夹，然后</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar velocityxxxxx.jar <span class="comment">#根据自己的版本来看</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[19:19:27 INFO]: Booting up Velocity 3.1.2-SNAPSHOT (git-1a1391a5-b155)...</span><br><span class="line">[19:19:27 INFO]: Loading localizations...</span><br><span class="line">[19:19:28 INFO]: Connections will use epoll channels, libdeflate (Linux x86_64) compression, OpenSSL 1.0.x (Linux x86_64) ciphers</span><br><span class="line">[19:19:28 WARN]: Player info forwarding is disabled! All players will appear to be connecting from the proxy and will have offline-mode UUIDs.</span><br><span class="line">[19:19:28 INFO]: Loading plugins...</span><br><span class="line">[19:19:28 INFO]: Loaded 0 plugins</span><br><span class="line">[19:19:28 INFO]: Listening on /[0:0:0:0:0:0:0:0%0]:25577</span><br><span class="line">[19:19:28 INFO]: Velocity and some of its plugins collect metrics and send them to bStats (https://bStats.org).</span><br><span class="line">[19:19:28 INFO]: bStats collects some basic information for plugin authors, like how many people use</span><br><span class="line">[19:19:28 INFO]: their plugin and their total player count. It&#x27;s recommended to keep bStats enabled, but</span><br><span class="line">[19:19:28 INFO]: if you&#x27;re not comfortable with this, you can opt-out by editing the config.txt file in</span><br><span class="line">[19:19:28 INFO]: the &#x27;/plugins/bStats/&#x27; folder and setting enabled to false.</span><br><span class="line">[19:19:28 INFO]: Done (1.07s)!</span><br></pre></td></tr></table></figure>
+
+<p>上面是成功的提示，端口25577</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>配置<code>velocity.toml</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi velocity.toml</span><br></pre></td></tr></table></figure>
+
+<p>bind项为绑定的ip和端口号，一般只需要修改端口号即可，保持前面的0.0.0.0不变</p>
+<p>motd为服务器的描述文字</p>
+<p>online-mode是否开启正版验证</p>
+<p>force-key-authentication 改成false</p>
+<p>player-info-forwarding-mode项将引号中的内容改为modern</p>
+<p>ping-passthrough项将引号中的内容改为all</p>
+<p>[servers]中是子服务器列表</p>
+<p>try中的内容是尝试登录服务器的顺序，将默认登录的子服务器放在第一位，多个服务器以逗号隔开</p>
+<p>[query]下的port项，和bind中的端口号保持一致即可 </p>
+<p><a target="_blank" rel="noopener" href="https://docs.papermc.io/velocity">官方文档</a></p>
+<h2 id="服务器配置"><a href="#服务器配置" class="headerlink" title="服务器配置"></a>服务器配置</h2><p>装一下<a target="_blank" rel="noopener" href="https://modrinth.com/mod/fabricproxy-lite/versions">FabricProxy-Lite</a>下载这个mod</p>
+<p>服务器启动一下，然后关掉</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> config/</span><br><span class="line">vi FabricProxy-Lite.toml</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221106194139863.png" alt="image-20221106194139863"></p>
+<p>内容改成这样，其中<code>secret</code>是<code>Velocity</code>路径下的<code>forwarding .secret</code></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221106194244546.png" alt="image-20221106194244546"></p>
+<h2 id="小写一个start-sh"><a href="#小写一个start-sh" class="headerlink" title="小写一个start.sh"></a>小写一个start.sh</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">java -jar velocity-3.1.2-SNAPSHOT-155.jar</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> u+x start.sh <span class="comment">#给特权</span></span><br><span class="line">./start.sh <span class="comment">#启动</span></span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%88%86%E7%89%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2023/03/05/%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%88%86%E7%89%87/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="数据报分片"><a href="#数据报分片" class="headerlink" title="数据报分片"></a>数据报分片</h2><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/40.png" alt="img"></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/3.png" alt="img"><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/40.png" alt="img"><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/4.png" alt="img"></p>
+<ul>
+<li>区分数据部分长度和数据报的长度，数据报的长度是数据部分长度加上首部长度</li>
+<li>标识，相同的标识号会合并(相同标识号的报文是一个大报文，可以合并的)</li>
+<li>DF标志位（Don’t fragment）1不允许做分片，0允许做分片</li>
+<li>MF(more fragment)标志位：0表示最后一个分片,1是指后面还有分片</li>
+<li>片偏移单位是8个字节，为每一个分片的开头标一个数字，除以8</li>
+</ul>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><blockquote>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/CDMA,%E5%9C%B0%E5%9D%80%E8%81%9A%E5%90%88,%E8%B7%AF%E7%94%B1%E8%A1%A8%E6%9B%B4%E6%96%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2023/03/05/CDMA,%E5%9C%B0%E5%9D%80%E8%81%9A%E5%90%88,%E8%B7%AF%E7%94%B1%E8%A1%A8%E6%9B%B4%E6%96%B0/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="码分复用-CDM-Code-Division-Multiplexing"><a href="#码分复用-CDM-Code-Division-Multiplexing" class="headerlink" title="码分复用 CDM (Code Division Multiplexing)"></a>码分复用 CDM (Code Division Multiplexing)</h1><ul>
+<li><p>要求不同基站的1的编码是相互正交的，基站2产生的01序列编码不能对基站1的序列编码产生影响。</p>
+</li>
+<li><p>多个基站使用互相正交的编码，互相不影响，进行复用</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221107091035459.png" alt="image-20221107091035459"></p>
+</li>
+</ul>
+<h1 id="地址聚合"><a href="#地址聚合" class="headerlink" title="地址聚合"></a>地址聚合</h1><p>化成二进制然后找最长的前缀</p>
+<h1 id="路由表更新"><a href="#路由表更新" class="headerlink" title="路由表更新"></a>路由表更新</h1><h2 id="内部网关协议的分类：DVP（Distance-Vector-Protocols）-and-LSP（Link-State-Protocols）"><a href="#内部网关协议的分类：DVP（Distance-Vector-Protocols）-and-LSP（Link-State-Protocols）" class="headerlink" title="内部网关协议的分类：DVP（Distance-Vector Protocols） and LSP（Link State Protocols）"></a>内部网关协议的分类：DVP（Distance-Vector Protocols） and LSP（Link State Protocols）</h2><p>距离矢量协议(Distance-Vector Protocols，RIP, IGRP)</p>
+<p>链路状态协议(Link State Protocols, OSPF)</p>
+<h2 id="下面的应该是距离矢量协议"><a href="#下面的应该是距离矢量协议" class="headerlink" title="下面的应该是距离矢量协议"></a>下面的应该是距离矢量协议</h2><p>RIP路由更新（Routing Information Protocol)（有，就是给你原表，给出相邻节点提供的表，更新一下）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 把发来的路由表的下一跳都改为发来的路由器编号，距离都加1</span><br><span class="line">2. 如果原来的路由表没有目的网络，更新</span><br><span class="line">   如果原来的路由表有，下一跳和目的网络一样的，不管距离大小，都更新</span><br><span class="line">   如果原来的路由表，有相同目的网络的但是下一跳不一样，保留距离小的。</span><br><span class="line">   没有的物理表，保持原样</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/IP%E5%9C%B0%E5%9D%80%E7%9A%84%E5%88%92%E5%88%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2023/03/05/IP%E5%9C%B0%E5%9D%80%E7%9A%84%E5%88%92%E5%88%86/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="IP地址的划分"><a href="#IP地址的划分" class="headerlink" title="IP地址的划分"></a>IP地址的划分</h2><ol>
+<li>IP地址主要通过第一个字节进行划分</li>
+<li>0–127 Class A address A类地址（0和127不可以指派）</li>
+<li>128-191 Class B address B类地址（0和全1不要指派）</li>
+<li>192–223 Class C address C类地址（0和全1不要指派）</li>
+<li>224–239 Class D – Multicast D类地址：多播：视频点播的原理也是组播(多播)（组播地址）</li>
+<li>240–255 Class E - Research E类地址：研究</li>
+</ol>
+<p>私有（内网）IP地址范围：（private address）</p>
+<p>A类：10.0.0.0-10.255.255.255<br>B类：172.16.0.0-172.31.255.255<br>C类：192.168.0.0-192.168.255.255</p>
+<p>上述地址都是用作局域网的内部网段。</p>
+<p>所谓私有地址就是在A、B、C三类IP地址中保留下来为企业内部网络分配地址时所使用的IP地址。</p>
+<p>上面的数字都要记住</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/2022-11-09-%E6%9C%89%E6%95%88%E6%95%B0%E5%AD%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2023/03/05/2022-11-09-%E6%9C%89%E6%95%88%E6%95%B0%E5%AD%97/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="有效数字"><a href="#有效数字" class="headerlink" title="有效数字"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/valid-number/description/">有效数字</a></h1><table>
+<thead>
+<tr>
+<th align="center">Category</th>
+<th align="center">Difficulty</th>
+<th align="center">Likes</th>
+<th align="center">Dislikes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">algorithms</td>
+<td align="center">Hard (27.50%)</td>
+<td align="center">334</td>
+<td align="center">-</td>
+</tr>
+</tbody></table>
+<details style="color: rgb(238, 255, 255); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe WPC&quot;, &quot;Segoe UI&quot;, system-ui, Ubuntu, &quot;Droid Sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><summary><strong>Tags</strong></summary><p><a target="_blank" rel="noopener" href="https://leetcode.com/tag/math" title="https://leetcode.com/tag/math" style="color: var(--vscode-textLink-foreground);"><code style="color: var(--vscode-textLink-foreground); white-space: pre-wrap;"></code></a><a target="_blank" rel="noopener" href="https://leetcode.com/tag/string" title="https://leetcode.com/tag/string" style="color: var(--vscode-textLink-foreground);"><code style="color: var(--vscode-textLink-foreground); white-space: pre-wrap;"></code></a></p></details>
+
+<details style="color: rgb(238, 255, 255); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe WPC&quot;, &quot;Segoe UI&quot;, system-ui, Ubuntu, &quot;Droid Sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><summary><strong>Companies</strong></summary><p><code style="color: var(--vscode-textPreformat-foreground); white-space: pre-wrap;"></code></p></details>
+
+<p><strong>有效数字</strong>（按顺序）可以分成以下几个部分：</p>
+<ol>
+<li>一个 <strong>小数</strong> 或者 <strong>整数</strong></li>
+<li>（可选）一个 <code>&#39;e&#39;</code> 或 <code>&#39;E&#39;</code> ，后面跟着一个 <strong>整数</strong></li>
+</ol>
+<p><strong>小数</strong>（按顺序）可以分成以下几个部分：</p>
+<ol>
+<li>（可选）一个符号字符（<code>&#39;+&#39;</code> 或 <code>&#39;-&#39;</code>）</li>
+<li>下述格式之一：<ol>
+<li>至少一位数字，后面跟着一个点 <code>&#39;.&#39;</code></li>
+<li>至少一位数字，后面跟着一个点 <code>&#39;.&#39;</code> ，后面再跟着至少一位数字</li>
+<li>一个点 <code>&#39;.&#39;</code> ，后面跟着至少一位数字</li>
+</ol>
+</li>
+</ol>
+<p><strong>整数</strong>（按顺序）可以分成以下几个部分：</p>
+<ol>
+<li>（可选）一个符号字符（<code>&#39;+&#39;</code> 或 <code>&#39;-&#39;</code>）</li>
+<li>至少一位数字</li>
+</ol>
+<p>部分有效数字列举如下：<code>[&quot;2&quot;, &quot;0089&quot;, &quot;-0.1&quot;, &quot;+3.14&quot;, &quot;4.&quot;, &quot;-.9&quot;, &quot;2e10&quot;, &quot;-90E3&quot;, &quot;3e+7&quot;, &quot;+6e-1&quot;, &quot;53.5e93&quot;, &quot;-123.456e789&quot;]</code></p>
+<p>部分无效数字列举如下：<code>[&quot;abc&quot;, &quot;1a&quot;, &quot;1e&quot;, &quot;e3&quot;, &quot;99e2.5&quot;, &quot;--6&quot;, &quot;-+3&quot;, &quot;95a54e53&quot;]</code></p>
+<p>给你一个字符串 <code>s</code> ，如果 <code>s</code> 是一个 <strong>有效数字</strong> ，请返回 <code>true</code> 。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;0&quot;</span><br><span class="line">输出：true</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;e&quot;</span><br><span class="line">输出：false</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;.&quot;</span><br><span class="line">输出：false</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 20</code></li>
+<li><code>s</code> 仅含英文字母（大写和小写），数字（<code>0-9</code>），加号 <code>&#39;+&#39;</code> ，减号 <code>&#39;-&#39;</code> ，或者点 <code>&#39;.&#39;</code> 。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isSmall</span><span class="params">(string s)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s.<span class="built_in">empty</span>())</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (s[<span class="number">0</span>] == <span class="string">&#x27;+&#x27;</span> || s[<span class="number">0</span>] == <span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            s = s.<span class="built_in">substr</span>(<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (s.<span class="built_in">empty</span>())</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (s[<span class="number">0</span>] == <span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            s = s.<span class="built_in">substr</span>(<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">if</span> (s.<span class="built_in">empty</span>())</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (s[i] &lt; <span class="string">&#x27;0&#x27;</span> || s[i] &gt; <span class="string">&#x27;9&#x27;</span>)</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (s[<span class="number">0</span>] &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; s[<span class="number">0</span>] &lt;= <span class="string">&#x27;9&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> i;</span><br><span class="line">            <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>() &amp;&amp; s[i] != <span class="string">&#x27;.&#x27;</span>; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (s[i] &lt; <span class="string">&#x27;0&#x27;</span> || s[i] &gt; <span class="string">&#x27;9&#x27;</span>)</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i == s.<span class="built_in">size</span>())</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">for</span> (i++; i &lt; s.<span class="built_in">size</span>(); i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (s[i] &lt; <span class="string">&#x27;0&#x27;</span> || s[i] &gt; <span class="string">&#x27;9&#x27;</span>)</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isInt</span><span class="params">(string s)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s.<span class="built_in">empty</span>())</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (s[<span class="number">0</span>] == <span class="string">&#x27;+&#x27;</span> || s[<span class="number">0</span>] == <span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            s = s.<span class="built_in">substr</span>(<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (s.<span class="built_in">empty</span>())</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (s[i] &lt; <span class="string">&#x27;0&#x27;</span> || s[i] &gt; <span class="string">&#x27;9&#x27;</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isNumber</span><span class="params">(string s)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="type">int</span> len = s.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">isSmall</span>(s) || <span class="built_in">isInt</span>(s))</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (s[i] == <span class="string">&#x27;e&#x27;</span> || s[i] == <span class="string">&#x27;E&#x27;</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> ((<span class="built_in">isSmall</span>(s.<span class="built_in">substr</span>(<span class="number">0</span>, i)) || <span class="built_in">isInt</span>(s.<span class="built_in">substr</span>(<span class="number">0</span>, i))) &amp;&amp; <span class="built_in">isInt</span>(s.<span class="built_in">substr</span>(i + <span class="number">1</span>)))</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>自动机的做法等等再写</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/%E5%A4%96%E9%83%A8%E5%AD%98%E5%82%A8%E5%99%A8%E5%82%A8%E5%AD%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2023/03/05/%E5%A4%96%E9%83%A8%E5%AD%98%E5%82%A8%E5%99%A8%E5%82%A8%E5%AD%98/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="磁盘存储器"><a href="#磁盘存储器" class="headerlink" title="磁盘存储器"></a>磁盘存储器</h2><p>磁盘是由涂有可磁化材料的非磁性材料（基材）构成的圆形盘片</p>
+<p>材料：铝，铝合金，玻璃</p>
+<h3 id="玻璃基材的优势（稳定可靠、为存储更多信息提供基础）"><a href="#玻璃基材的优势（稳定可靠、为存储更多信息提供基础）" class="headerlink" title="玻璃基材的优势（稳定可靠、为存储更多信息提供基础）"></a>玻璃基材的优势（稳定可靠、为存储更多信息提供基础）</h3><p>• 改善磁膜表面的均匀性，提高磁盘的可靠性 </p>
+<p>• 显著减少整体表面瑕疵，以帮助减少读写错误 </p>
+<p>• 能够支持（磁头）较低的飞行高度</p>
+<p> • 更高的硬度，使磁盘转动时更加稳定 </p>
+<p>• 更强的抗冲击和抗损伤能力</p>
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>略<img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111092036516.png" alt="image-20221111092036516"></p>
+<p>磁盘存储器每个盘片表面有一个读写磁头， 所有磁头通过机械方式固定在一起，同时 移动</p>
+<p>在任何时候，所有磁头都位于距磁盘中心 等距离的磁道上</p>
+<ul>
+<li><p>磁头：产生电磁场来正确的读写</p>
+<ul>
+<li>磁头越窄，电磁感应越弱，离磁盘越近</li>
+<li>更高的数据密度要求更窄的磁头和磁道，有更高的出错风险</li>
+<li>硬盘密封</li>
+</ul>
+</li>
+<li><p>读写机制</p>
+<ul>
+<li>磁盘静止，而盘片在其下方旋转</li>
+<li>磁头的数量<ul>
+<li>单词头，读和写公用一个磁头</li>
+<li>双磁头，使用一个单独的磁头读写。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111093222787.png" alt="image-20221111093222787"></p>
+<h3 id="数据组织"><a href="#数据组织" class="headerlink" title="数据组织"></a>数据组织</h3><p>盘片上的数据组织为同心圆心环，磁道</p>
+<p>数据以扇区的形式传输到磁盘或者传出（默认值为512B）</p>
+<p>相邻磁道和扇区之间有间隙，磁道的编号从外向内递增，磁头静止时在磁道0的外侧</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111095357374.png" alt="image-20221111095357374"></p>
+<p>总结：同心圆磁道，从外向内递增。扇形扇区</p>
+<p>扇区划分</p>
+<p>恒定角速度，（恒定的数据传输率），优点：能以磁道号和扇区号直接寻址各个数据块</p>
+<p>缺点：磁盘存储容量受到了最内层磁道所能实现的最大记录密度的限制、</p>
+<p><strong>多带式记录，多重区域记录</strong></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111100001726.png" alt="image-20221111100001726"></p>
+</li>
+</ul>
+<h3 id="柱面"><a href="#柱面" class="headerlink" title="柱面"></a>柱面</h3><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111100320718.png" alt="image-20221111100320718"></p>
+<h3 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h3><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111100501798.png" alt="image-20221111100501798"></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111100825296.png" alt="image-20221111100825296"></p>
+<h3 id="I-x2F-O操作"><a href="#I-x2F-O操作" class="headerlink" title="I&#x2F;O操作"></a>I&#x2F;O操作</h3><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111101004303.png" alt="image-20221111101004303"></p>
+<p>定位磁道-》定位扇区，数据传输</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111101452895.png" alt="image-20221111101452895"></p>
+<p>寻道时间只考虑一次。</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111101754294.png" alt="image-20221111101754294"></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111101809350.png" alt="image-20221111101809350"></p>
+<p>转速延迟1&#x2F;（2*15000&#x2F;60）&#x3D;2ms</p>
+<p>读取500个扇区，1&#x2F;（15000&#x2F;60）&#x3D;4ms（就是旋转一圈的时间）</p>
+<p>顺序的话，寻道时间就计算一次，</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111102436496.png" alt="image-20221111102436496"></p>
+<p>随机的话，每一个磁道都要去找，一个扇区的时间是（就是旋转一圈的时间&#x2F;500）&#x3D;0.008ms</p>
+<p>所以可以求出总时间；</p>
+<h2 id="磁头寻道-x2F-磁盘调度算法"><a href="#磁头寻道-x2F-磁盘调度算法" class="headerlink" title="磁头寻道&#x2F;磁盘调度算法"></a>磁头寻道&#x2F;磁盘调度算法</h2><p>目标：当有多个访问磁盘任务时候，寻道时间最短</p>
+<p>常见的磁头寻址&#x2F;磁盘调度算法</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111102935478.png" alt="image-20221111102935478"></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111102957903.png" alt="image-20221111102957903"></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111103003048.png" alt="image-20221111103003048"></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111103007873.png" alt="image-20221111103007873"></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111103012991.png" alt="image-20221111103012991"></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111103018440.png" alt="image-20221111103018440"></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111103024305.png" alt="image-20221111103024305"></p>
+<h2 id="光存储器"><a href="#光存储器" class="headerlink" title="光存储器"></a>光存储器</h2><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221110162302322.png" alt="image-20221110162302322"></p>
+<h3 id="CD-和CD-ROM"><a href="#CD-和CD-ROM" class="headerlink" title="CD 和CD-ROM"></a>CD 和CD-ROM</h3><p>使用高强度激光制作一个母盘</p>
+<p>以母盘为模板压印出复制品</p>
+<p>在凹坑的表面上堵上一层高反射的材料。</p>
+<h3 id="读取方式"><a href="#读取方式" class="headerlink" title="读取方式"></a>读取方式</h3><p>如果激光束照在凹坑（pit）上，由于凹坑表面有些不平，因此光被散 射，反射回低强度的激光</p>
+<p>如果激光束照在台（land）上，台的表面光滑平坦，反射回来的是高 强度的激光</p>
+<p>CD是单螺旋的轨道，轨道上的所有扇区长度相同</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221110163830131.png" alt="image-20221110163830131"></p>
+<p>盘片是变速的，轨道上扇区的长度相同，扇片是变速的（从内圈到外圈，逐渐变慢），凸槽被相同的线速度读出</p>
+<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><p>优：储存有信息的光盘可以廉价的进行大量的复制，光盘更换方便</p>
+<p>缺点：他是只读的，不能更改，存取时间比磁盘存储器长得多</p>
+<h3 id="高清晰光盘"><a href="#高清晰光盘" class="headerlink" title="高清晰光盘"></a>高清晰光盘</h3><p>通过使用更短波长的激光（在蓝-紫光范围），可以实现更高的位密度（数据 凹坑相对更小）</p>
+<h2 id="磁带"><a href="#磁带" class="headerlink" title="磁带"></a>磁带</h2><h3 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h3><p>介质是柔韧的聚脂膜带，外涂磁性材料</p>
+<h3 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h3><ul>
+<li>磁带只能顺序读取</li>
+<li>磁盘可以直接读取</li>
+<li><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221110165906398.png" alt="image-20221110165906398"></li>
+</ul>
+<p>上面是蛇型，下面是并行</p>
+<p>便宜，寿命长，适合数据的重型冷备份</p>
+<h2 id="快闪"><a href="#快闪" class="headerlink" title="快闪"></a>快闪</h2><p>快闪存储器（Flash EEPROM）可随机寻址，应用于内部存储。电子可擦除可编程只读存储器</p>
+<p>（内部存储器的名称要记忆，哪种方式擦除，擦除的什么类型）</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/%E7%A3%81%E7%9B%98%E8%AE%BF%E9%97%AE%E5%90%84%E7%A7%8D%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2023/03/05/%E7%A3%81%E7%9B%98%E8%AE%BF%E9%97%AE%E5%90%84%E7%A7%8D%E6%96%B9%E6%B3%95/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <table>
+<thead>
+<tr>
+<th>名字</th>
+<th>方法</th>
+<th>优点</th>
+<th>缺点</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>最短寻道时间优先（Shortest Seek Time First，SSTF）</td>
+<td>按照请求访问磁盘的先后次序进行处理</td>
+<td>公平简单</td>
+<td>如果有大量访问磁盘的任务，且请求访问的磁道很分散，则性 能上很差，寻道时间长</td>
+<td><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111104504638.png" alt="image-20221111104504638"></td>
+<td></td>
+</tr>
+<tr>
+<td>FCFS,先来先服务，First Come First Service</td>
+<td>优先处理起始位置与当前磁头位置最接近的读写任务</td>
+<td>每次的寻道时间最短（局部最优），平均寻道时间缩短</td>
+<td>可能产生饥饿现象，尤其是位于两端的磁道请求</td>
+<td><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111104452460.png" alt="image-20221111104452460"></td>
+<td></td>
+</tr>
+<tr>
+<td>扫描&#x2F;电梯（SCAN）</td>
+<td>总是按照一个方向进行磁盘调度，直到该方向上的边缘，然后改变方向</td>
+<td>性能较好，平均寻道时间短，不会产生饥饿现象</td>
+<td>只有到最边上的磁道才能改变磁头的移动方向，对于各个位置磁 道响应<strong>频率不平均</strong></td>
+<td><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111104538822.png" alt="image-20221111104538822"></td>
+<td></td>
+</tr>
+<tr>
+<td>循环扫描（C-SCAN）</td>
+<td>只有磁头朝某个方向移动时才会响应请求，移动到边缘后立即让磁头返 回起点，返回途中不做任何处理</td>
+<td>与SCAN算法相比，对于各位置磁道的<strong>响应频率平均</strong></td>
+<td>与SCAN算法相比，平均寻道时间更长</td>
+<td><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111104604510.png" alt="image-20221111104604510"></td>
+<td></td>
+</tr>
+<tr>
+<td>LOOK</td>
+<td>SCAN算法的升级，只要磁头移动方向上不再有请求就立即改变磁头的 方向</td>
+<td></td>
+<td></td>
+<td><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111104633311.png" alt="image-20221111104633311"></td>
+<td></td>
+</tr>
+<tr>
+<td>C-LOOK</td>
+<td>C-SCAN算法的改进，只要在磁头移动方向上不再有请求，就立即让磁 头返回起点</td>
+<td></td>
+<td></td>
+<td><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111104645527.png" alt="image-20221111104645527"></td>
+<td></td>
+</tr>
+</tbody></table>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/%E5%AD%98%E5%82%A8%E5%99%A8%E6%80%BB%E7%BB%93%E5%9B%BE%E5%83%8F%E7%89%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2023/03/05/%E5%AD%98%E5%82%A8%E5%99%A8%E6%80%BB%E7%BB%93%E5%9B%BE%E5%83%8F%E7%89%88/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>半导体存储器的类型</p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111132220833.png" alt="image-20221111132220833"></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111133922947.png" alt="image-20221111133356317"></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111134022490.png" alt="image-20221111134022490"></p>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221111133753141.png" alt="image-20221111133753141"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/2022-11-11%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%AE%9E%E7%8E%B0LFU/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2023/03/05/2022-11-11%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E5%AE%9E%E7%8E%B0LFU/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="LFU-缓存"><a href="#LFU-缓存" class="headerlink" title="LFU 缓存"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lfu-cache/description/">LFU 缓存</a></h1><table>
+<thead>
+<tr>
+<th align="center">Category</th>
+<th align="center">Difficulty</th>
+<th align="center">Likes</th>
+<th align="center">Dislikes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">algorithms</td>
+<td align="center">Hard (44.38%)</td>
+<td align="center">616</td>
+<td align="center">-</td>
+</tr>
+</tbody></table>
+<details style="color: rgb(238, 255, 255); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe WPC&quot;, &quot;Segoe UI&quot;, system-ui, Ubuntu, &quot;Droid Sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><summary><strong>Tags</strong></summary><p><a target="_blank" rel="noopener" href="https://leetcode.com/tag/design" title="https://leetcode.com/tag/design" style="color: var(--vscode-textLink-foreground);"><code style="color: var(--vscode-textLink-foreground); white-space: pre-wrap;"></code></a></p></details>
+
+<details style="color: rgb(238, 255, 255); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe WPC&quot;, &quot;Segoe UI&quot;, system-ui, Ubuntu, &quot;Droid Sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><summary><strong>Companies</strong></summary><p><code style="color: var(--vscode-textPreformat-foreground); white-space: pre-wrap;"></code><code style="color: var(--vscode-textPreformat-foreground); white-space: pre-wrap;"></code></p></details>
+
+<p>请你为 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BC%93%E5%AD%98%E7%AE%97%E6%B3%95">最不经常使用（LFU）</a>缓存算法设计并实现数据结构。</p>
+<p>实现 <code>LFUCache</code> 类：</p>
+<ul>
+<li><code>LFUCache(int capacity)</code> - 用数据结构的容量 <code>capacity</code> 初始化对象</li>
+<li><code>int get(int key)</code> - 如果键 <code>key</code> 存在于缓存中，则获取键的值，否则返回 <code>-1</code> 。</li>
+<li><code>void put(int key, int value)</code> - 如果键 <code>key</code> 已存在，则变更其值；如果键不存在，请插入键值对。当缓存达到其容量 <code>capacity</code> 时，则应该在插入新项之前，移除最不经常使用的项。在此问题中，当存在平局（即两个或更多个键具有相同使用频率）时，应该去除 <strong>最近最久未使用</strong> 的键。</li>
+</ul>
+<p>为了确定最不常使用的键，可以为缓存中的每个键维护一个 <strong>使用计数器</strong> 。使用计数最小的键是最久未使用的键。</p>
+<p>当一个键首次插入到缓存中时，它的使用计数器被设置为 <code>1</code> (由于 put 操作)。对缓存中的键执行 <code>get</code> 或 <code>put</code> 操作，使用计数器的值将会递增。</p>
+<p>函数 <code>get</code> 和 <code>put</code> 必须以 <code>O(1)</code> 的平均时间复杂度运行。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">输入：</span><br><span class="line">[&quot;LFUCache&quot;, &quot;put&quot;, &quot;put&quot;, &quot;get&quot;, &quot;put&quot;, &quot;get&quot;, &quot;get&quot;, &quot;put&quot;, &quot;get&quot;, &quot;get&quot;, &quot;get&quot;]</span><br><span class="line">[[2], [1, 1], [2, 2], [1], [3, 3], [2], [3], [4, 4], [1], [3], [4]]</span><br><span class="line">输出：</span><br><span class="line">[null, null, null, 1, null, -1, 3, null, -1, 3, 4]</span><br><span class="line"></span><br><span class="line">解释：</span><br><span class="line">// cnt(x) = 键 x 的使用计数</span><br><span class="line">// cache=[] 将显示最后一次使用的顺序（最左边的元素是最近的）</span><br><span class="line">LFUCache lfu = new LFUCache(2);</span><br><span class="line">lfu.put(1, 1);   // cache=[1,_], cnt(1)=1</span><br><span class="line">lfu.put(2, 2);   // cache=[2,1], cnt(2)=1, cnt(1)=1</span><br><span class="line">lfu.get(1);      // 返回 1</span><br><span class="line">                 // cache=[1,2], cnt(2)=1, cnt(1)=2</span><br><span class="line">lfu.put(3, 3);   // 去除键 2 ，因为 cnt(2)=1 ，使用计数最小</span><br><span class="line">                 // cache=[3,1], cnt(3)=1, cnt(1)=2</span><br><span class="line">lfu.get(2);      // 返回 -1（未找到）</span><br><span class="line">lfu.get(3);      // 返回 3</span><br><span class="line">                 // cache=[3,1], cnt(3)=2, cnt(1)=2</span><br><span class="line">lfu.put(4, 4);   // 去除键 1 ，1 和 3 的 cnt 相同，但 1 最久未使用</span><br><span class="line">                 // cache=[4,3], cnt(4)=1, cnt(3)=2</span><br><span class="line">lfu.get(1);      // 返回 -1（未找到）</span><br><span class="line">lfu.get(3);      // 返回 3</span><br><span class="line">                 // cache=[3,4], cnt(4)=1, cnt(3)=3</span><br><span class="line">lfu.get(4);      // 返回 4</span><br><span class="line">                 // cache=[3,4], cnt(4)=2, cnt(3)=3</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>0 &lt;= capacity &lt;= 104</code></li>
+<li><code>0 &lt;= key &lt;= 105</code></li>
+<li><code>0 &lt;= value &lt;= 109</code></li>
+<li>最多调用 <code>2 * 105</code> 次 <code>get</code> 和 <code>put</code> 方法</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> key, val, freq;</span><br><span class="line">    <span class="built_in">Node</span>(<span class="type">int</span> _key, <span class="type">int</span> _val, <span class="type">int</span> _freq) : <span class="built_in">key</span>(_key), <span class="built_in">val</span>(_val), <span class="built_in">freq</span>(_freq) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">LFUCache</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> minfreq, capacity;</span><br><span class="line">    unordered_map&lt;<span class="type">int</span>, list&lt;Node&gt;::iterator&gt; key_table;</span><br><span class="line">    unordered_map&lt;<span class="type">int</span>, list&lt;Node&gt;&gt; freq_table;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">LFUCache</span>(<span class="type">int</span> _capacity)</span><br><span class="line">    &#123;</span><br><span class="line">        minfreq = <span class="number">0</span>;</span><br><span class="line">        capacity = _capacity;</span><br><span class="line">        key_table.<span class="built_in">clear</span>();</span><br><span class="line">        freq_table.<span class="built_in">clear</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">get</span><span class="params">(<span class="type">int</span> key)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (capacity == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">auto</span> it = key_table.<span class="built_in">find</span>(key);</span><br><span class="line">        <span class="keyword">if</span> (it == key_table.<span class="built_in">end</span>())</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        list&lt;Node&gt;::iterator node = it-&gt;second;</span><br><span class="line">        <span class="type">int</span> val = node-&gt;val, freq = node-&gt;freq;</span><br><span class="line">        freq_table[freq].<span class="built_in">erase</span>(node);</span><br><span class="line">        <span class="comment">// 如果当前链表为空，我们需要在哈希表中删除，且更新minFreq</span></span><br><span class="line">        <span class="keyword">if</span> (freq_table[freq].<span class="built_in">size</span>() == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            freq_table.<span class="built_in">erase</span>(freq);</span><br><span class="line">            <span class="keyword">if</span> (minfreq == freq)</span><br><span class="line">                minfreq += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 插入到 freq + 1 中</span></span><br><span class="line">        freq_table[freq + <span class="number">1</span>].<span class="built_in">push_front</span>(<span class="built_in">Node</span>(key, val, freq + <span class="number">1</span>));</span><br><span class="line">        key_table[key] = freq_table[freq + <span class="number">1</span>].<span class="built_in">begin</span>();</span><br><span class="line">        <span class="keyword">return</span> val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">put</span><span class="params">(<span class="type">int</span> key, <span class="type">int</span> value)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (capacity == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">auto</span> it = key_table.<span class="built_in">find</span>(key);</span><br><span class="line">        <span class="keyword">if</span> (it == key_table.<span class="built_in">end</span>())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 缓存已满，需要进行删除操作</span></span><br><span class="line">            <span class="keyword">if</span> (key_table.<span class="built_in">size</span>() == capacity)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 通过 minFreq 拿到 freq_table[minFreq] 链表的末尾节点</span></span><br><span class="line">                <span class="keyword">auto</span> it2 = freq_table[minfreq].<span class="built_in">back</span>();</span><br><span class="line">                key_table.<span class="built_in">erase</span>(it2.key);</span><br><span class="line">                freq_table[minfreq].<span class="built_in">pop_back</span>();</span><br><span class="line">                <span class="keyword">if</span> (freq_table[minfreq].<span class="built_in">size</span>() == <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    freq_table.<span class="built_in">erase</span>(minfreq);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            freq_table[<span class="number">1</span>].<span class="built_in">push_front</span>(<span class="built_in">Node</span>(key, value, <span class="number">1</span>));</span><br><span class="line">            key_table[key] = freq_table[<span class="number">1</span>].<span class="built_in">begin</span>();</span><br><span class="line">            minfreq = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 与 get 操作基本一致，除了需要更新缓存的值</span></span><br><span class="line">            list&lt;Node&gt;::iterator node = it-&gt;second;</span><br><span class="line">            <span class="type">int</span> freq = node-&gt;freq;</span><br><span class="line">            freq_table[freq].<span class="built_in">erase</span>(node);</span><br><span class="line">            <span class="keyword">if</span> (freq_table[freq].<span class="built_in">size</span>() == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                freq_table.<span class="built_in">erase</span>(freq);</span><br><span class="line">                <span class="keyword">if</span> (minfreq == freq)</span><br><span class="line">                    minfreq += <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            freq_table[freq + <span class="number">1</span>].<span class="built_in">push_front</span>(<span class="built_in">Node</span>(key, value, freq + <span class="number">1</span>));</span><br><span class="line">            key_table[key] = freq_table[freq + <span class="number">1</span>].<span class="built_in">begin</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>这道题要是从链表开始自己实现就吐了，可以看出来STL有多厉害了</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

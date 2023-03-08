@@ -1,37 +1,722 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="恢复二叉搜索树给你二叉搜索树的根节点 root ，该树中的 恰好 两个节点的值被错误地交换。请在不改变其结构的情况下，恢复这棵树 。 示例 1：  123输入：root &#x3D; [1,3,null,null,2]输出：[3,1,null,null,2]解释：3 不能是 1 的左孩子，因为 3 &gt; 1 。交换 1 和 3 使二叉搜索树有效。  示例 2：  123输入：root &#x3D; [3,1,4,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/03/05/2022-10-31-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%81%A2%E5%A4%8D%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="恢复二叉搜索树给你二叉搜索树的根节点 root ，该树中的 恰好 两个节点的值被错误地交换。请在不改变其结构的情况下，恢复这棵树 。 示例 1：  123输入：root &#x3D; [1,3,null,null,2]输出：[3,1,null,null,2]解释：3 不能是 1 的左孩子，因为 3 &gt; 1 。交换 1 和 3 使二叉搜索树有效。  示例 2：  123输入：root &#x3D; [3,1,4,">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/10/28/recover1.jpg">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/10/28/recover2.jpg">
+<meta property="article:published_time" content="2023-03-05T14:50:11.219Z">
+<meta property="article:modified_time" content="2022-10-31T07:43:21.772Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://assets.leetcode.com/uploads/2020/10/28/recover1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Muse',
+    version: '6.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://example.com/2023/03/05/2022-10-31-每日一题-恢复二叉树/"/>
+
+
+
+
+
+  <title> | Hexo</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/%E5%AE%9E%E9%AA%8C%E8%A6%81%E7%94%A8%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="RIP"><a href="#RIP" class="headerlink" title="RIP"></a>RIP</h2><h3 id="配置的命令格式"><a href="#配置的命令格式" class="headerlink" title="配置的命令格式"></a>配置的命令格式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Router(config)#router rip</span><br><span class="line">Router(config-router)#network &lt;network-number&gt; #属于上面的网络都运行RIP路由协议</span><br></pre></td></tr></table></figure>
+
+<h3 id="基本知识点"><a href="#基本知识点" class="headerlink" title="基本知识点"></a>基本知识点</h3><ol>
+<li>RIP 是一种距离向量协议，它以预定间隔将其整个路由表广播到每个邻居路由器。默认间隔为<strong>30秒</strong>。</li>
+<li>RIP使用<strong>跳数</strong>作为度量标准，最大跳数为<strong>15</strong>，达到16跳的报文自动抛弃。、</li>
+<li>RIP v1能够在多达六个等价路径上进行**负载平衡(Load Balancing)**，默认情况下为四个路径，最多6个，跳数相同才能完成负载均衡，跳数不同不满足条件、</li>
+<li>它不会在其更新中发送子网掩码信息:意味着必须用同样的子网掩码，不支持VLSM或无类域间路由(CIDR，Classless Interdomain Routing)。</li>
+<li>它以255.255.255.255的广播形式发送更新:只能发给邻居，不能通过路由器转发。</li>
+<li>它不支持身份验证(authentication):只要启动RIP就可以接受到信息，也就意味着只要接入网络并且启动RIP进程，就可以了解到整个网络拓扑</li>
+</ol>
+<h3 id="RIP的更新规则"><a href="#RIP的更新规则" class="headerlink" title="RIP的更新规则"></a>RIP的更新规则</h3><ol>
+<li>把发来的路由表的下一跳都改为发来的路由器编号，距离都加1</li>
+<li>如果原来的路由表没有目的网络，更新<br>如果原来的路由表有下一跳和目的网络一样的，不管距离大小，都更新<br>如果原来的路由表，有相同目的网络的但是下一跳不一样，保留距离小的。<br>没有的物理表，保持原样</li>
+</ol>
+<p>路由表ex：</p>
+<table>
+<thead>
+<tr>
+<th>目的网络</th>
+<th>距离</th>
+<th>下一跳路由器</th>
+</tr>
+</thead>
+</table>
+<h2 id="VLAN和Trunk"><a href="#VLAN和Trunk" class="headerlink" title="VLAN和Trunk"></a>VLAN和Trunk</h2><h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><p>骨干（backbone&#x2F;trunk link）：交换设备和交换设备之间所使用的连接（不然有几个 VLAN 就需要几条线，浪费端<br>口）</p>
+<p>（1）Access Links（接入链路）：<br>接入链路是在交换机上只属于一个 VLAN 的链路，任何接入的设备并不知情有 VLAN 的存在（VLAN 对每台设备<br>是透明的）<br>（2）Trunk VLANS（中继链路）：<br>点对点，支持多个 VLANs；主要用来连接交换机和交换机；不需要属于某个特定的 VLAN；可能有一个本地 VLAN；<br>支持在快速以太网和 G 比特以太网；节省端口</p>
+<h3 id="配置的命令格式-1"><a href="#配置的命令格式-1" class="headerlink" title="配置的命令格式"></a>配置的命令格式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int f0/2</span><br><span class="line">switchport mode access</span><br><span class="line">switchport access vlan 2</span><br><span class="line">int f0/3</span><br><span class="line">switchport mode trunk</span><br></pre></td></tr></table></figure>
+
+<h2 id="静态NAT"><a href="#静态NAT" class="headerlink" title="静态NAT"></a>静态NAT</h2><p>​	1、指定NAT内部接口&#96;</p>
+<p>​         在内网相应接口的接口配置模式下执行：<code>ip nat inside</code></p>
+<p>​	2、指定NAT外部接口&#96;</p>
+<p>​         在外网相应接口的接口配置模式下执行：<code>ip nat outside</code></p>
+<p>​	3、在内部本地地址与内部全局地址之间建立静态地址转换关系：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip nat inside source static 内部本地地址 内部全局地址</span><br></pre></td></tr></table></figure>
+
+<p>​    4、(实际上用第三条就可以了)在外部全局地址与外部本地地址之间建立静态地址转换关系：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip nat outside source static 外部全局地址 外部本地地址</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="5">
+<li><code>show ip nat translations</code>   展示配置的情况</li>
+</ol>
+<h2 id="ACL"><a href="#ACL" class="headerlink" title="ACL"></a>ACL</h2><h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><p><code>Router(config)#access-list &lt;access-list-number&gt; &lt;permit/deny&gt; &lt;test-conditions&gt;</code></p>
+<p><code>&lt;test-conditions&gt;</code>参数是IP掩码和通配符掩码</p>
+<p><code>show access-list</code>展示ACL配置</p>
+<p><code>&lt;protocol&gt; access-group access-list-number &lt;in/out&gt;</code></p>
+<p>IP掩码：Ipv4地址</p>
+<p>通配符掩码：</p>
+<ul>
+<li><p><strong>0位表示检查该位位置</strong></p>
+</li>
+<li><p><strong>1表示忽略该位位置</strong></p>
+</li>
+</ul>
+<h3 id="扩展ACL"><a href="#扩展ACL" class="headerlink" title="扩展ACL"></a>扩展ACL</h3><p>扩展ACL的编号范围为100-199，并”扩展”了标准ACL的功能。</p>
+<p>可以基于目的地址，<strong>ip协议的部分(更加细分):您可以编写语句以仅拒绝”ICMP”等协议或”RIP”和”IGRP”之类的路由协议</strong>，协议套件的上层（TFTP”或”HTTP”之类的协议，eq，gt，lt和neq(等于，大于，小于和不等于)之类的操作数来指定如何处理特定协议）</p>
+<ul>
+<li>由于扩展的ACL具有目标信息，因此<strong>您希望将其放置在尽可能靠近源的位置。</strong></li>
+</ul>
+<h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><p>在<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%B7%AF%E7%94%B1%E5%99%A8&spm=1001.2101.3001.7020">路由器</a>上读取第三层及第四层包头中的信息如源地址，目的地址，源端口，目的端口等，根据预先定 义好的规则对包进行过滤，从而达到访问控制的目的。</p>
+<p>类型：</p>
+<p>标准访问控制列表：一般应用在out出站接口。建议配置在离目标端最近的路由上</p>
+<p>扩展访问控制列表：配置在离源端最近的路由上，一般应用在入站in方向</p>
+<p>命名访问控制列表：允许在标准和扩展访问列表中使用名称代替表号</p>
+<p>准则：</p>
+<ul>
+<li><p>按照顺序对ACL语句进行测试</p>
+</li>
+<li><p>ACL末尾有一个隐含的”deny any”语句:如果数据包与ACL中的任何语句都不匹配，则将其丢弃。</p>
+</li>
+</ul>
+<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20230103234438456.png" alt="image-20230103234438456"></p>
+<p><strong>ICMP（Internet Control Message Protocol）网际控制报文协议</strong></p>
+<p>允许主机或路由器报告差错情况和提供有关异常情况的报告，为了更有效的转发ip数据报和提高交付成功的机会。</p>
+<p>包括ICMP差错报告报文、ICMP询问报文。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2023/03/05/%E6%A0%B7%E6%9C%AC%E7%BB%9F%E8%AE%A1,%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1%EF%BC%8C%E7%9F%A9%E4%BC%B0%E8%AE%A1%EF%BC%8C%E6%97%A0%E5%81%8F%E6%80%A7/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2023/03/05/c++%E6%A0%BC%E5%BC%8F/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          </div>
+          
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RIP"><span class="nav-number">1.</span> <span class="nav-text">RIP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%9A%84%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">配置的命令格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="nav-number">1.2.</span> <span class="nav-text">基本知识点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RIP%E7%9A%84%E6%9B%B4%E6%96%B0%E8%A7%84%E5%88%99"><span class="nav-number">1.3.</span> <span class="nav-text">RIP的更新规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VLAN%E5%92%8CTrunk"><span class="nav-number">2.</span> <span class="nav-text">VLAN和Trunk</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="nav-number">2.1.</span> <span class="nav-text">知识点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%9A%84%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F-1"><span class="nav-number">2.2.</span> <span class="nav-text">配置的命令格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E6%80%81NAT"><span class="nav-number">3.</span> <span class="nav-text">静态NAT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ACL"><span class="nav-number">4.</span> <span class="nav-text">ACL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4"><span class="nav-number">4.1.</span> <span class="nav-text">指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A9%E5%B1%95ACL"><span class="nav-number">4.2.</span> <span class="nav-text">扩展ACL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-1"><span class="nav-number">4.3.</span> <span class="nav-text">知识点</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

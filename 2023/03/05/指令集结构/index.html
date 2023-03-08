@@ -1,37 +1,790 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="恢复二叉搜索树给你二叉搜索树的根节点 root ，该树中的 恰好 两个节点的值被错误地交换。请在不改变其结构的情况下，恢复这棵树 。 示例 1：  123输入：root &#x3D; [1,3,null,null,2]输出：[3,1,null,null,2]解释：3 不能是 1 的左孩子，因为 3 &gt; 1 。交换 1 和 3 使二叉搜索树有效。  示例 2：  123输入：root &#x3D; [3,1,4,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/03/05/2022-10-31-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%81%A2%E5%A4%8D%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="恢复二叉搜索树给你二叉搜索树的根节点 root ，该树中的 恰好 两个节点的值被错误地交换。请在不改变其结构的情况下，恢复这棵树 。 示例 1：  123输入：root &#x3D; [1,3,null,null,2]输出：[3,1,null,null,2]解释：3 不能是 1 的左孩子，因为 3 &gt; 1 。交换 1 和 3 使二叉搜索树有效。  示例 2：  123输入：root &#x3D; [3,1,4,">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/10/28/recover1.jpg">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/10/28/recover2.jpg">
+<meta property="article:published_time" content="2023-03-05T14:50:11.219Z">
+<meta property="article:modified_time" content="2022-10-31T07:43:21.772Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://assets.leetcode.com/uploads/2020/10/28/recover1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Muse',
+    version: '6.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://example.com/2023/03/05/2022-10-31-每日一题-恢复二叉树/"/>
+
+
+
+
+
+  <title> | Hexo</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/%E6%8C%87%E4%BB%A4%E9%9B%86%E7%BB%93%E6%9E%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="指令集结构"><a href="#指令集结构" class="headerlink" title="指令集结构"></a>指令集结构</h2><h3 id="DLX简述"><a href="#DLX简述" class="headerlink" title="DLX简述"></a>DLX简述</h3><ul>
+<li><p>MIPS指令集简化，有2^32个单元的地址空间，</p>
+<ul>
+<li><p>地址表示法32位，4字节，8位16进制数</p>
+</li>
+<li><p>寻址能力8位，字节寻址</p>
+</li>
+</ul>
+</li>
+<li><p>每一个存储单元的数据位数是8位	</p>
+<ul>
+<li><p>ASCII码只需要一个存储单元</p>
+</li>
+<li><p>访问字只需要起始地址</p>
+</li>
+<li><p>起始地址必须是4的倍数，边界对齐</p>
+</li>
+</ul>
+</li>
+<li><p>采用大端法，</p>
+</li>
+<li><p>有32个通用寄存器，使用5位编码来标识寄存器，被标记为R0，R1，R2，R3，R4。。。。。。。。。R0寄存器必须是0</p>
+</li>
+<li><p>有32个浮点寄存器，用于单精度和双精度计算（DLX有32个浮点寄存器和32个通用寄存器）</p>
+</li>
+<li><p>指令（操作码，和操作数）</p>
+</li>
+</ul>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/fd448bf566a2f.png"></p>
+<p>DLX共有91条指令</p>
+<ul>
+<li><p>DLX的寻址模式，只有基址+偏移量</p>
+</li>
+<li><p>DLX的数据类型，整数包括8,16,32位，浮点数32位单精度和64位双精度。</p>
+</li>
+</ul>
+<h2 id="算术-x2F-逻辑运算指令"><a href="#算术-x2F-逻辑运算指令" class="headerlink" title="算术&#x2F;逻辑运算指令"></a>算术&#x2F;逻辑运算指令</h2><p>I型imm16立即数符号扩展。SR1和DR是寄存器的标号，DR是目的操作数，（但是DR和SR1可以相同，一个寄存器可以作为源操作数，也可以作为目的操作数）</p>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/cd6a87eaa5525.png"></p>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/efb9f9420d01c.png"></p>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/e75f6f395bf04.png"></p>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/a9d9feb04f78e.png"></p>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/af9b8d8a4f259.png"></p>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/a5e534abf319f.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SLEI和SLTI，一个是小于等于，一个是小于，是第一个源寄存器和imm来比较，目的寄存器会被置0或置1</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.mikumifa.cn/2022/11/02/38669043f5148.png"></p>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/4022d903a639e.png"></p>
+<p><img src="/https://pic.mikumifa.cn/2022/11/02/6814f14f91c80.png" alt="image-20221102170120739"></p>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/6a6c92eac971d.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LHI比较特别，左移动16位之后赋值（准确来说是加法）到一个寄存器上面，主要是为了把大的常数赋值到寄存器上面</span><br></pre></td></tr></table></figure>
+
+<h4 id="R型运算指令。"><a href="#R型运算指令。" class="headerlink" title="R型运算指令。"></a>R型运算指令。</h4><p>操作数是000000，什么操作主要看函数，有2个源操作数，1个目的操作数</p>
+<p>处理LHI之外都有其他指令，解释类似</p>
+<h2 id="数据传送指令"><a href="#数据传送指令" class="headerlink" title="数据传送指令"></a>数据传送指令</h2><p>加载：将数据从存储器移动到寄存器的过程</p>
+<p>存储：将数据从寄存器移动到存储器的过程</p>
+<p>LB和SB 字节</p>
+<p>LW和SW是加载和存储字（32位，4字节）&#x2F;&#x2F;和gun汇编语言差不多</p>
+<h3 id="基址寄存器-偏移量"><a href="#基址寄存器-偏移量" class="headerlink" title="基址寄存器+偏移量"></a>基址寄存器+偏移量</h3><p>将16位的偏移量进行符号扩展后，和一个基址寄存器相加</p>
+<p>对于SW，LW基址寄存器+偏移量必须是4的倍数（边界对齐）</p>
+<p>pc-pc+4（一条指令4个字节）</p>
+<h2 id="控制指令"><a href="#控制指令" class="headerlink" title="控制指令"></a>控制指令</h2><ul>
+<li>条件分支</li>
+<li>无条件跳转</li>
+<li>子例程调用</li>
+<li>TRAP</li>
+<li>从异常&#x2F;中断返回</li>
+</ul>
+<h3 id="BEQZ"><a href="#BEQZ" class="headerlink" title="BEQZ"></a>BEQZ</h3><p>立即数是跳转的量，SR1用来判断</p>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/bdae571937265.png"></p>
+<p>注意pc+4已经完成。</p>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/ff659216889dd.png"></p>
+<p>地址限制</p>
+<ol>
+<li>加上imm的偏移量之前PC已经加4</li>
+<li>所以范围<img src="https://pic.mikumifa.cn/2022/11/02/537a0ec78eb2d.png"></li>
+</ol>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/c5f1f1e2ee0f5.png"></p>
+<p>无条件的跳转指令</p>
+<h3 id="JR指令，直接从寄存器里面找地址"><a href="#JR指令，直接从寄存器里面找地址" class="headerlink" title="JR指令，直接从寄存器里面找地址"></a>JR指令，直接从寄存器里面找地址</h3><p>I型<img src="https://pic.mikumifa.cn/2022/11/02/01820c6cf449d.png"></p>
+<h3 id="J型指令，，超长的立即数"><a href="#J型指令，，超长的立即数" class="headerlink" title="J型指令，，超长的立即数"></a>J型指令，，超长的立即数</h3><p><img src="https://pic.mikumifa.cn/2022/11/02/4adb788cc1671.png"></p>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/cb7080d1b1a76.png"></p>
+<h3 id="TRAP指令"><a href="#TRAP指令" class="headerlink" title="TRAP指令"></a>TRAP指令</h3><p>操作码110000，[25:0]是TRAP向量，标明程序希望操作系统执行哪一个服务调用</p>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/1024e8e5e3a49.png"></p>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/bb1076934fa83.png"></p>
+<p>汇编语言的目的是靠近操作码的，但是在物理储存上不是这样。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">LHI R1 x3000 #R1初始化为x3000</span><br><span class="line"></span><br><span class="line">ANDI R3 R3 $0 #R3初始化为0（ 区分ANDI和ADDI）</span><br><span class="line"></span><br><span class="line">ADDI R2 R0 $10 #R2初始化为10</span><br><span class="line"></span><br><span class="line">BEQZ R2 x14 # 看一下R2是否为0，如果R2为0了，直接跳出程序</span><br><span class="line"></span><br><span class="line">不为0就继续超下面执行</span><br><span class="line"></span><br><span class="line">LW R4 0（R1） #从储存器里面加载数据，保存到R4里面</span><br><span class="line"></span><br><span class="line">ADD R3 R3 R4 #R4的值加到R3里面</span><br><span class="line"></span><br><span class="line">ADDI R1 R1 #4 #R1的值加4（下边读取的地址加4）</span><br><span class="line"></span><br><span class="line">SUBI R2 R2 #1, #R1的值减1</span><br><span class="line"></span><br><span class="line">J #-24往后跳5个智力，也就是判断那里</span><br></pre></td></tr></table></figure>
+
+<h2 id="DLX的指令的处理"><a href="#DLX的指令的处理" class="headerlink" title="DLX的指令的处理"></a>DLX的指令的处理</h2><p><img src="https://pic.mikumifa.cn/2022/11/02/b012536e34eec.png"></p>
+<p>IR指令寄存器，PC程序计数器，MDR数据寄存器，MAR地址寄存器</p>
+<p>实心是数据元素，空心是数据处理的控制信号，有限状态机的所有输出都是空心剪头。</p>
+<p>AMUX选择的是PC和寄存器SR1内数据，</p>
+<p>BMUX是4和立即数还有SR2的地址</p>
+<p>【5:0】是用来选择ALU的就散哪种的。</p>
+<p>队友【20:16】和【15:11】DR可能是上面的其中一种，所以有DRMUX</p>
+<p>PC也有可能因为JR指令所有有32位的赋值</p>
+<h2 id="DLX的指令执行阶段"><a href="#DLX的指令执行阶段" class="headerlink" title="DLX的指令执行阶段"></a>DLX的指令执行阶段</h2><ul>
+<li>取指令(同时PC+4)<ul>
+<li>PC-&gt;MAR<ul>
+<li>PC+4-&gt;ALUOut</li>
+</ul>
+</li>
+<li>M[MAR]-&gt;MDR<ul>
+<li>AlUout-&gt;PC</li>
+</ul>
+</li>
+<li>MDR-&gt;IR</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/7fe1408c9a1a7.png"></p>
+<ul>
+<li>译码&#x2F;取寄存器<ul>
+<li>IR[31:26]用来决定余下的26位有什么工作</li>
+<li>IR[25:21]-&gt;A</li>
+<li>IR[20:16]-&gt;B</li>
+<li>PC+4+SEXT(IR[15:0])-&gt;ALUOUT</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/4790379819541.png"></p>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/9e8d61ead8dcb.png"></p>
+<ul>
+<li>执行&#x2F;有效地址&#x2F;完成分支</li>
+</ul>
+<p>A op B,或者计算地址，或者完成分支</p>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/c4dbdc59cf5b1.png"></p>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/9e7a26cbf9daf.png"></p>
+<p>ADD：A+B-》ALUOut</p>
+<p>LW：A+SEXT（IR【15:0】）-》ALUOUt</p>
+<p>BEQZ：A&#x3D;&#x3D;0-》Z</p>
+<p>if（Z）</p>
+<p>​	ALUOUT-》PC</p>
+<ul>
+<li>访问内存</li>
+</ul>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/89bbbc383f1b5.png"></p>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/4c54bf0bd435f.png"></p>
+<ul>
+<li>写回</li>
+</ul>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/a4852f4ae6603.png"></p>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/43acb165a67d2.png"></p>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/2b8ee3568eebc.png"></p>
+<p><img src="https://pic.mikumifa.cn/2022/11/02/603471c8f97ef.png"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2023/03/05/%E6%A6%82%E7%BB%9F%E4%B9%A0%E9%A2%98%E5%92%8C%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2023/03/05/c++%E8%A1%A5%E5%85%85-1/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          </div>
+          
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4%E9%9B%86%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">指令集结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DLX%E7%AE%80%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">DLX简述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%9C%AF-x2F-%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E6%8C%87%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">算术&#x2F;逻辑运算指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#R%E5%9E%8B%E8%BF%90%E7%AE%97%E6%8C%87%E4%BB%A4%E3%80%82"><span class="nav-number">2.0.1.</span> <span class="nav-text">R型运算指令。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4"><span class="nav-number">3.</span> <span class="nav-text">数据传送指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E5%9D%80%E5%AF%84%E5%AD%98%E5%99%A8-%E5%81%8F%E7%A7%BB%E9%87%8F"><span class="nav-number">3.1.</span> <span class="nav-text">基址寄存器+偏移量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E6%8C%87%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">控制指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BEQZ"><span class="nav-number">4.1.</span> <span class="nav-text">BEQZ</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JR%E6%8C%87%E4%BB%A4%EF%BC%8C%E7%9B%B4%E6%8E%A5%E4%BB%8E%E5%AF%84%E5%AD%98%E5%99%A8%E9%87%8C%E9%9D%A2%E6%89%BE%E5%9C%B0%E5%9D%80"><span class="nav-number">4.2.</span> <span class="nav-text">JR指令，直接从寄存器里面找地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#J%E5%9E%8B%E6%8C%87%E4%BB%A4%EF%BC%8C%EF%BC%8C%E8%B6%85%E9%95%BF%E7%9A%84%E7%AB%8B%E5%8D%B3%E6%95%B0"><span class="nav-number">4.3.</span> <span class="nav-text">J型指令，，超长的立即数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TRAP%E6%8C%87%E4%BB%A4"><span class="nav-number">4.4.</span> <span class="nav-text">TRAP指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DLX%E7%9A%84%E6%8C%87%E4%BB%A4%E7%9A%84%E5%A4%84%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">DLX的指令的处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DLX%E7%9A%84%E6%8C%87%E4%BB%A4%E6%89%A7%E8%A1%8C%E9%98%B6%E6%AE%B5"><span class="nav-number">6.</span> <span class="nav-text">DLX的指令执行阶段</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,37 +1,905 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="恢复二叉搜索树给你二叉搜索树的根节点 root ，该树中的 恰好 两个节点的值被错误地交换。请在不改变其结构的情况下，恢复这棵树 。 示例 1：  123输入：root &#x3D; [1,3,null,null,2]输出：[3,1,null,null,2]解释：3 不能是 1 的左孩子，因为 3 &gt; 1 。交换 1 和 3 使二叉搜索树有效。  示例 2：  123输入：root &#x3D; [3,1,4,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/03/05/2022-10-31-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%81%A2%E5%A4%8D%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="恢复二叉搜索树给你二叉搜索树的根节点 root ，该树中的 恰好 两个节点的值被错误地交换。请在不改变其结构的情况下，恢复这棵树 。 示例 1：  123输入：root &#x3D; [1,3,null,null,2]输出：[3,1,null,null,2]解释：3 不能是 1 的左孩子，因为 3 &gt; 1 。交换 1 和 3 使二叉搜索树有效。  示例 2：  123输入：root &#x3D; [3,1,4,">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/10/28/recover1.jpg">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/10/28/recover2.jpg">
+<meta property="article:published_time" content="2023-03-05T14:50:11.219Z">
+<meta property="article:modified_time" content="2022-10-31T07:43:21.772Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://assets.leetcode.com/uploads/2020/10/28/recover1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Muse',
+    version: '6.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://example.com/2023/03/05/2022-10-31-每日一题-恢复二叉树/"/>
+
+
+
+
+
+  <title> | Hexo</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/c++%E6%A0%BC%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="C-cout成员方法格式化输出"><a href="#C-cout成员方法格式化输出" class="headerlink" title="C++ cout成员方法格式化输出"></a>C++ cout成员方法格式化输出</h2><p>《<a target="_blank" rel="noopener" href="http://c.biancheng.net/view/7559.html">C++输入流和输出流</a>》一节中，已经针对 cout 讲解了一些常用成员方法的用法。除此之外，ostream 类中还包含一些可实现格式化输出的成员方法，这些成员方法都是从 ios 基类（以及 ios_base 类）中继承来的，cout（以及 cerr、clog）也能调用。</p>
+<p>下面 罗列了 ostream 类中可实现格式化输出的常用成员方法，以及它们各自的用法。</p>
+<table>
+<thead>
+<tr>
+<th>成员函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>flags(fmtfl)</td>
+<td>当前格式状态全部替换为 fmtfl。注意，fmtfl 可以表示一种格式，也可以表示多种格式。</td>
+</tr>
+<tr>
+<td>precision(n)</td>
+<td>设置输出浮点数的精度为 n。</td>
+</tr>
+<tr>
+<td>width(w)</td>
+<td>指定输出宽度为 w 个字符。</td>
+</tr>
+<tr>
+<td>fill(c)</td>
+<td>在指定输出宽度的情况下，输出的宽度不足时用字符 c 填充（默认情况是用空格填充）。</td>
+</tr>
+<tr>
+<td>setf(fmtfl, mask)</td>
+<td>在当前格式的基础上，追加 fmtfl 格式，并删除 mask 格式。其中，mask 参数可以省略。</td>
+</tr>
+<tr>
+<td>unsetf(mask)</td>
+<td>在当前格式的基础上，删除 mask 格式。</td>
+</tr>
+</tbody></table>
+<p>其中，对于表 1 中 flags() 函数的 fmtfl 参数、setf() 函数中的 fmtfl 参数和 mask 参数以及 unsetf() 函数 mask 参数，可以选择表 2 中列出的这些值。</p>
+<table>
+<thead>
+<tr>
+<th>标 志</th>
+<th>作 用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ios::boolapha</td>
+<td>把 true 和 false 输出为字符串</td>
+</tr>
+<tr>
+<td>ios::left</td>
+<td>输出数据在本域宽范围内向左对齐</td>
+</tr>
+<tr>
+<td>ios::right</td>
+<td>输出数据在本域宽范围内向右对齐</td>
+</tr>
+<tr>
+<td>ios::internal</td>
+<td>数值的符号位在域宽内左对齐，数值右对齐，中间由填充字符填充</td>
+</tr>
+<tr>
+<td>ios::dec</td>
+<td>设置整数的基数为 10</td>
+</tr>
+<tr>
+<td>ios::oct</td>
+<td>设置整数的基数为 8</td>
+</tr>
+<tr>
+<td>ios::hex</td>
+<td>设置整数的基数为 16</td>
+</tr>
+<tr>
+<td>ios::showbase</td>
+<td>强制输出整数的基数（八进制数以 0 开头，十六进制数以 0x 打头）</td>
+</tr>
+<tr>
+<td>ios::showpoint</td>
+<td>强制输出浮点数的小点和尾数 0</td>
+</tr>
+<tr>
+<td>ios::uppercase</td>
+<td>在以科学记数法格式 E 和以十六进制输出字母时以大写表示</td>
+</tr>
+<tr>
+<td>ios::showpos</td>
+<td>对正数显示“+”号</td>
+</tr>
+<tr>
+<td>ios::scientific</td>
+<td>浮点数以科学记数法格式输出</td>
+</tr>
+<tr>
+<td>ios::fixed</td>
+<td>浮点数以定点格式（小数形式）输出</td>
+</tr>
+<tr>
+<td>ios::unitbuf</td>
+<td>每次输出之后刷新所有的流</td>
+</tr>
+</tbody></table>
+<p>举个例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;    </span><br><span class="line">	double a = 1.23;    //设定后续输出的浮点数的精度为 4 </span><br><span class="line">	cout.precision(4);   </span><br><span class="line">	cout &lt;&lt;&quot;precision: &quot;&lt;&lt; a &lt;&lt; endl;    //设定后续以科学计数法的方式输出浮点数   </span><br><span class="line">	cout.setf(ios::scientific); </span><br><span class="line">	cout &lt;&lt;&quot;scientific：&quot;&lt;&lt; a &lt;&lt; endl;  </span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>程序执行结果为：</p>
+<p>precision: 1.23<br>scientific：1.2300e+00</p>
+<blockquote>
+<p>注意，当 cout 采用此方式进行格式化输出时，其后不能立即输出数据，而只能像示例程序中那样，再用一个 cout 输出数据。</p>
+</blockquote>
+<p>值得一提的是，当调用 unsetf() 或者 2 个参数的 setf() 函数时，为了提高编写代码的效率，可以给 mask 参数传递如下 3 个组合格式：</p>
+<ul>
+<li>ios::adjustfield：等价于 ios::left | ios::right | ios::internal；</li>
+<li>ios::basefield：等价于 ios::dec | ios::oct | ios::hex；</li>
+<li>ios::floatfield：等价于 ios::scientific | ios::fixed。</li>
+</ul>
+<p>举个例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;using namespace std;int main()&#123;    double f = 123;    //设定后续以科学计数法表示浮点数    cout.setf(ios::scientific);    cout &lt;&lt; f &lt;&lt; &#x27;\n&#x27;;    //删除之前有关浮点表示的设定    cout.unsetf(ios::floatfield);    cout &lt;&lt; f;    return 0;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>程序执行结果为：</p>
+<p>1.230000e+02<br>123</p>
+<h2 id="使用流操纵算子格式化输出"><a href="#使用流操纵算子格式化输出" class="headerlink" title="使用流操纵算子格式化输出"></a>使用流操纵算子格式化输出</h2><p>表 3 罗列了 <iomanip> 头文件中定义的一些常用的格式控制符，它们都可用于格式化输出。</p>
+<table>
+<thead>
+<tr>
+<th>流操纵算子</th>
+<th>作  用</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>*dec</td>
+<td>以十进制形式输出整数</td>
+<td>常用</td>
+</tr>
+<tr>
+<td>hex</td>
+<td>以十六进制形式输出整数</td>
+<td></td>
+</tr>
+<tr>
+<td>oct</td>
+<td>以八进制形式输出整数</td>
+<td></td>
+</tr>
+<tr>
+<td>fixed</td>
+<td>以普通小数形式输出浮点数</td>
+<td></td>
+</tr>
+<tr>
+<td>scientific</td>
+<td>以科学计数法形式输出浮点数</td>
+<td></td>
+</tr>
+<tr>
+<td>left</td>
+<td>左对齐，即在宽度不足时将填充字符添加到右边</td>
+<td></td>
+</tr>
+<tr>
+<td>*right</td>
+<td>右对齐，即在宽度不足时将填充字符添加到左边</td>
+<td></td>
+</tr>
+<tr>
+<td>setbase(b)</td>
+<td>设置输出整数时的进制，b&#x3D;8、10 或 16</td>
+<td></td>
+</tr>
+<tr>
+<td>setw(w)</td>
+<td>指定输出宽度为 w 个字符，或输入字符串时读入 w 个字符。注意，该函数所起的作用是一次性的，即只影响下一次 cout 输出。</td>
+<td></td>
+</tr>
+<tr>
+<td>setfill(c)</td>
+<td>在指定输出宽度的情况下，输出的宽度不足时用字符 c 填充（默认情况是用空格填充）</td>
+<td></td>
+</tr>
+<tr>
+<td>setprecision(n)</td>
+<td>设置输出浮点数的精度为 n。  在使用非 fixed 且非 scientific 方式输出的情况下，n 即为有效数字最多的位数，如果有效数字位数超过 n，则小数部分四舍五人，或自动变为科学计 数法输出并保留一共 n 位有效数字。  在使用 fixed 方式和 scientific 方式输出的情况下，n 是小数点后面应保留的位数。</td>
+<td></td>
+</tr>
+<tr>
+<td>setiosflags(mask)</td>
+<td>在当前格式状态下，追加 mask 格式，mask 参数可选择表 2 中的所有值。</td>
+<td></td>
+</tr>
+<tr>
+<td>resetiosflags(mask)</td>
+<td>在当前格式状态下，删除 mask 格式，mask 参数可选择表 2 中的所有值。</td>
+<td></td>
+</tr>
+<tr>
+<td>boolapha</td>
+<td>把 true 和 false 输出为字符串</td>
+<td>不常用</td>
+</tr>
+<tr>
+<td>*noboolalpha</td>
+<td>把 true 和 false 输出为 0、1</td>
+<td></td>
+</tr>
+<tr>
+<td>showbase</td>
+<td>输出表示数值的进制的前缀</td>
+<td></td>
+</tr>
+<tr>
+<td>*noshowbase</td>
+<td>不输出表示数值的进制.的前缀</td>
+<td></td>
+</tr>
+<tr>
+<td>showpoint</td>
+<td>总是输出小数点</td>
+<td></td>
+</tr>
+<tr>
+<td>*noshowpoint</td>
+<td>只有当小数部分存在时才显示小数点</td>
+<td></td>
+</tr>
+<tr>
+<td>showpos</td>
+<td>在非负数值中显示 +</td>
+<td></td>
+</tr>
+<tr>
+<td>*noshowpos</td>
+<td>在非负数值中不显示 +</td>
+<td></td>
+</tr>
+<tr>
+<td>uppercase</td>
+<td>十六进制数中使用 A~E。若输出前缀，则前缀输出 0X，科学计数法中输出 E</td>
+<td></td>
+</tr>
+<tr>
+<td>*nouppercase</td>
+<td>十六进制数中使用 a~e。若输出前缀，则前缀输出 0x，科学计数法中输出 e。</td>
+<td></td>
+</tr>
+<tr>
+<td>internal</td>
+<td>数值的符号（正负号）在指定宽度内左对齐，数值右对 齐，中间由填充字符填充。</td>
+<td></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>注意：“流操纵算子”一栏带有星号 * 的格式控制符，默认情况下就会使用。例如在默认情况下，整数是用十进制形式输出的，等效于使用了 dec 格式控制符。</p>
+</blockquote>
+<p>和 cout 成员方法的用法不同，下面程序演示了表 3 中这些格式控制符的用法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;iomanip&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;    //以十六进制输出整数   </span><br><span class="line">cout &lt;&lt; hex &lt;&lt; 16 &lt;&lt; endl;  //删除之前设定的进制格式，以默认的 10 进制输出整数 </span><br><span class="line">cout &lt;&lt; resetiosflags(ios::basefield)&lt;&lt; 16 &lt;&lt; endl;  </span><br><span class="line">double a = 123;    //以科学计数法的方式输出浮点数  </span><br><span class="line">cout &lt;&lt; scientific &lt;&lt; a &lt;&lt; endl;    //删除之前设定的科学计数法的方法  </span><br><span class="line">cout &lt;&lt; resetiosflags(ios::scientific) &lt;&lt; a &lt;&lt; endl; </span><br><span class="line">return 0;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>程序执行结果为：</p>
+<p>10<br>16<br>1.230000e+02<br>123</p>
+<blockquote>
+<p>注意，如果两个相互矛盾的标志同时被设置，如先设置 setiosflags(ios::fixed)，然后又设置 setiosflags(ios::scientific)，那么结果可能就是两个标志都不起作用。因此，在设置了某标志，又要设置其他与之矛盾的标志时，就应该用 resetiosflags 清除原先的标志。</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2023/03/05/%E5%AE%9E%E9%AA%8C%E8%A6%81%E7%94%A8%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2023/03/05/The%20application%20of%20the%20inheritance%20of%20interface%20and%20the%20inheritance%20of%20implementation/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          </div>
+          
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-cout%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA"><span class="nav-number">1.</span> <span class="nav-text">C++ cout成员方法格式化输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%B5%81%E6%93%8D%E7%BA%B5%E7%AE%97%E5%AD%90%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA"><span class="nav-number">2.</span> <span class="nav-text">使用流操纵算子格式化输出</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
