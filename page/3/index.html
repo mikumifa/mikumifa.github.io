@@ -1,1941 +1,307 @@
-<!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="en">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="恢复二叉搜索树给你二叉搜索树的根节点 root ，该树中的 恰好 两个节点的值被错误地交换。请在不改变其结构的情况下，恢复这棵树 。 示例 1：  123输入：root &#x3D; [1,3,null,null,2]输出：[3,1,null,null,2]解释：3 不能是 1 的左孩子，因为 3 &gt; 1 。交换 1 和 3 使二叉搜索树有效。  示例 2：  123输入：root &#x3D; [3,1,4,">
-<meta property="og:type" content="article">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/2023/03/05/2022-10-31-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%81%A2%E5%A4%8D%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
+<meta property="og:url" content="http://example.com/page/3/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="恢复二叉搜索树给你二叉搜索树的根节点 root ，该树中的 恰好 两个节点的值被错误地交换。请在不改变其结构的情况下，恢复这棵树 。 示例 1：  123输入：root &#x3D; [1,3,null,null,2]输出：[3,1,null,null,2]解释：3 不能是 1 的左孩子，因为 3 &gt; 1 。交换 1 和 3 使二叉搜索树有效。  示例 2：  123输入：root &#x3D; [3,1,4,">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/10/28/recover1.jpg">
-<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/10/28/recover2.jpg">
-<meta property="article:published_time" content="2023-03-05T14:50:11.219Z">
-<meta property="article:modified_time" content="2022-10-31T07:43:21.772Z">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://assets.leetcode.com/uploads/2020/10/28/recover1.jpg">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '',
-    scheme: 'Muse',
-    version: '6.0.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/page/3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
     }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://example.com/2023/03/05/2022-10-31-每日一题-恢复二叉树/"/>
-
-
-
-
-
-  <title>Hexo</title>
-  
-
-
-
-
-
-
-
-
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> <div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/%E5%AE%9E%E7%8E%B0LFU%EF%BC%8C%E5%A2%9E%E5%8A%A0%E6%B3%A8%E9%87%8A%E7%9A%84%E4%BB%A3%E7%A0%81/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/03/05/%E5%AE%9E%E7%8E%B0LFU%EF%BC%8C%E5%A2%9E%E5%8A%A0%E6%B3%A8%E9%87%8A%E7%9A%84%E4%BB%A3%E7%A0%81/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="LFU-缓存"><a href="#LFU-缓存" class="headerlink" title="LFU 缓存"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lfu-cache/description/">LFU 缓存</a></h1><table>
-<thead>
-<tr>
-<th align="center">Category</th>
-<th align="center">Difficulty</th>
-<th align="center">Likes</th>
-<th align="center">Dislikes</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">algorithms</td>
-<td align="center">Hard (44.38%)</td>
-<td align="center">616</td>
-<td align="center">-</td>
-</tr>
-</tbody></table>
-<details style="color: rgb(238, 255, 255); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe WPC&quot;, &quot;Segoe UI&quot;, system-ui, Ubuntu, &quot;Droid Sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><summary><strong>Tags</strong></summary><p><a target="_blank" rel="noopener" href="https://leetcode.com/tag/design" title="https://leetcode.com/tag/design" style="color: var(--vscode-textLink-foreground);"><code style="color: var(--vscode-textLink-foreground); white-space: pre-wrap;"></code></a></p></details>
-
-<details style="color: rgb(238, 255, 255); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe WPC&quot;, &quot;Segoe UI&quot;, system-ui, Ubuntu, &quot;Droid Sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;"><summary><strong>Companies</strong></summary><p><code style="color: var(--vscode-textPreformat-foreground); white-space: pre-wrap;"></code><code style="color: var(--vscode-textPreformat-foreground); white-space: pre-wrap;"></code></p></details>
-
-<p>请你为 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BC%93%E5%AD%98%E7%AE%97%E6%B3%95">最不经常使用（LFU）</a>缓存算法设计并实现数据结构。</p>
-<p>实现 <code>LFUCache</code> 类：</p>
-<ul>
-<li><code>LFUCache(int capacity)</code> - 用数据结构的容量 <code>capacity</code> 初始化对象</li>
-<li><code>int get(int key)</code> - 如果键 <code>key</code> 存在于缓存中，则获取键的值，否则返回 <code>-1</code> 。</li>
-<li><code>void put(int key, int value)</code> - 如果键 <code>key</code> 已存在，则变更其值；如果键不存在，请插入键值对。当缓存达到其容量 <code>capacity</code> 时，则应该在插入新项之前，移除最不经常使用的项。在此问题中，当存在平局（即两个或更多个键具有相同使用频率）时，应该去除 <strong>最近最久未使用</strong> 的键。</li>
-</ul>
-<p>为了确定最不常使用的键，可以为缓存中的每个键维护一个 <strong>使用计数器</strong> 。使用计数最小的键是最久未使用的键。</p>
-<p>当一个键首次插入到缓存中时，它的使用计数器被设置为 <code>1</code> (由于 put 操作)。对缓存中的键执行 <code>get</code> 或 <code>put</code> 操作，使用计数器的值将会递增。</p>
-<p>函数 <code>get</code> 和 <code>put</code> 必须以 <code>O(1)</code> 的平均时间复杂度运行。</p>
-<p><strong>示例：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">输入：</span><br><span class="line">[&quot;LFUCache&quot;, &quot;put&quot;, &quot;put&quot;, &quot;get&quot;, &quot;put&quot;, &quot;get&quot;, &quot;get&quot;, &quot;put&quot;, &quot;get&quot;, &quot;get&quot;, &quot;get&quot;]</span><br><span class="line">[[2], [1, 1], [2, 2], [1], [3, 3], [2], [3], [4, 4], [1], [3], [4]]</span><br><span class="line">输出：</span><br><span class="line">[null, null, null, 1, null, -1, 3, null, -1, 3, 4]</span><br><span class="line"></span><br><span class="line">解释：</span><br><span class="line">// cnt(x) = 键 x 的使用计数</span><br><span class="line">// cache=[] 将显示最后一次使用的顺序（最左边的元素是最近的）</span><br><span class="line">LFUCache lfu = new LFUCache(2);</span><br><span class="line">lfu.put(1, 1);   // cache=[1,_], cnt(1)=1</span><br><span class="line">lfu.put(2, 2);   // cache=[2,1], cnt(2)=1, cnt(1)=1</span><br><span class="line">lfu.get(1);      // 返回 1</span><br><span class="line">                 // cache=[1,2], cnt(2)=1, cnt(1)=2</span><br><span class="line">lfu.put(3, 3);   // 去除键 2 ，因为 cnt(2)=1 ，使用计数最小</span><br><span class="line">                 // cache=[3,1], cnt(3)=1, cnt(1)=2</span><br><span class="line">lfu.get(2);      // 返回 -1（未找到）</span><br><span class="line">lfu.get(3);      // 返回 3</span><br><span class="line">                 // cache=[3,1], cnt(3)=2, cnt(1)=2</span><br><span class="line">lfu.put(4, 4);   // 去除键 1 ，1 和 3 的 cnt 相同，但 1 最久未使用</span><br><span class="line">                 // cache=[4,3], cnt(4)=1, cnt(3)=2</span><br><span class="line">lfu.get(1);      // 返回 -1（未找到）</span><br><span class="line">lfu.get(3);      // 返回 3</span><br><span class="line">                 // cache=[3,4], cnt(4)=1, cnt(3)=3</span><br><span class="line">lfu.get(4);      // 返回 4</span><br><span class="line">                 // cache=[3,4], cnt(4)=2, cnt(3)=3</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>0 &lt;= capacity &lt;= 104</code></li>
-<li><code>0 &lt;= key &lt;= 105</code></li>
-<li><code>0 &lt;= value &lt;= 109</code></li>
-<li>最多调用 <code>2 * 105</code> 次 <code>get</code> 和 <code>put</code> 方法</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> key, val, freq;</span><br><span class="line">    <span class="built_in">Node</span>(<span class="type">int</span> _key, <span class="type">int</span> _val, <span class="type">int</span> _freq) : <span class="built_in">key</span>(_key), <span class="built_in">val</span>(_val), <span class="built_in">freq</span>(_freq) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">LFUCache</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> minfreq, capacity;</span><br><span class="line">    unordered_map&lt;<span class="type">int</span>, list&lt;Node&gt;::iterator&gt; key_table;</span><br><span class="line">    unordered_map&lt;<span class="type">int</span>, list&lt;Node&gt;&gt; freq_table;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">LFUCache</span>(<span class="type">int</span> _capacity)</span><br><span class="line">    &#123;</span><br><span class="line">        minfreq = <span class="number">0</span>;</span><br><span class="line">        capacity = _capacity;</span><br><span class="line">        key_table.<span class="built_in">clear</span>();</span><br><span class="line">        freq_table.<span class="built_in">clear</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">get</span><span class="params">(<span class="type">int</span> key)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (capacity == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">auto</span> it = key_table.<span class="built_in">find</span>(key);</span><br><span class="line">        <span class="keyword">if</span> (it == key_table.<span class="built_in">end</span>())</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        list&lt;Node&gt;::iterator node = it-&gt;second;</span><br><span class="line">        <span class="type">int</span> val = node-&gt;val, freq = node-&gt;freq;</span><br><span class="line">        freq_table[freq].<span class="built_in">erase</span>(node);</span><br><span class="line">        <span class="comment">// 如果当前链表为空，我们需要在哈希表中删除，且更新minFreq</span></span><br><span class="line">        <span class="keyword">if</span> (freq_table[freq].<span class="built_in">size</span>() == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            freq_table.<span class="built_in">erase</span>(freq);</span><br><span class="line">            <span class="keyword">if</span> (minfreq == freq)</span><br><span class="line">                minfreq += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 插入到 freq + 1 中</span></span><br><span class="line">        freq_table[freq + <span class="number">1</span>].<span class="built_in">push_front</span>(<span class="built_in">Node</span>(key, val, freq + <span class="number">1</span>));</span><br><span class="line">        key_table[key] = freq_table[freq + <span class="number">1</span>].<span class="built_in">begin</span>();</span><br><span class="line">        <span class="keyword">return</span> val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">put</span><span class="params">(<span class="type">int</span> key, <span class="type">int</span> value)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (capacity == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">auto</span> it = key_table.<span class="built_in">find</span>(key);</span><br><span class="line">        <span class="keyword">if</span> (it == key_table.<span class="built_in">end</span>())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 缓存已满，需要进行删除操作</span></span><br><span class="line">            <span class="keyword">if</span> (key_table.<span class="built_in">size</span>() == capacity)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// 通过 minFreq 拿到 freq_table[minFreq] 链表的末尾节点</span></span><br><span class="line">                <span class="keyword">auto</span> it2 = freq_table[minfreq].<span class="built_in">back</span>();</span><br><span class="line">                key_table.<span class="built_in">erase</span>(it2.key);</span><br><span class="line">                freq_table[minfreq].<span class="built_in">pop_back</span>();</span><br><span class="line">                <span class="keyword">if</span> (freq_table[minfreq].<span class="built_in">size</span>() == <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    freq_table.<span class="built_in">erase</span>(minfreq);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            freq_table[<span class="number">1</span>].<span class="built_in">push_front</span>(<span class="built_in">Node</span>(key, value, <span class="number">1</span>));</span><br><span class="line">            key_table[key] = freq_table[<span class="number">1</span>].<span class="built_in">begin</span>();</span><br><span class="line">            minfreq = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 与 get 操作基本一致，除了需要更新缓存的值</span></span><br><span class="line">            list&lt;Node&gt;::iterator node = it-&gt;second;</span><br><span class="line">            <span class="type">int</span> freq = node-&gt;freq;</span><br><span class="line">            freq_table[freq].<span class="built_in">erase</span>(node);</span><br><span class="line">            <span class="keyword">if</span> (freq_table[freq].<span class="built_in">size</span>() == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                freq_table.<span class="built_in">erase</span>(freq);</span><br><span class="line">                <span class="keyword">if</span> (minfreq == freq)</span><br><span class="line">                    minfreq += <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            freq_table[freq + <span class="number">1</span>].<span class="built_in">push_front</span>(<span class="built_in">Node</span>(key, value, freq + <span class="number">1</span>));</span><br><span class="line">            key_table[key] = freq_table[freq + <span class="number">1</span>].<span class="built_in">begin</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>这道题要是从链表开始自己实现就吐了，可以看出来STL有多厉害了</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;header.h&quot;</span></span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @lc app=leetcode.cn id=460 lang=cpp</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * [460] LFU 缓存</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * https://leetcode.cn/problems/lfu-cache/description/</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * algorithms</span></span><br><span class="line"><span class="comment"> * Hard (44.38%)</span></span><br><span class="line"><span class="comment"> * Likes:    616</span></span><br><span class="line"><span class="comment"> * Dislikes: 0</span></span><br><span class="line"><span class="comment"> * Total Accepted:    57.9K</span></span><br><span class="line"><span class="comment"> * Total Submissions: 130.5K</span></span><br><span class="line"><span class="comment"> * Testcase Example:</span></span><br><span class="line"><span class="comment"> * &#x27;[&quot;LFUCache&quot;,&quot;put&quot;,&quot;put&quot;,&quot;get&quot;,&quot;put&quot;,&quot;get&quot;,&quot;get&quot;,&quot;put&quot;,&quot;get&quot;,&quot;get&quot;,&quot;get&quot;]\n[[2],[1,1],[2,2],[1],[3,3],[2],[3],[4,4],[1],[3],[4]]&#x27;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 请你为 最不经常使用（LFU）缓存算法设计并实现数据结构。</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 实现 LFUCache 类：</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * LFUCache(int capacity) - 用数据结构的容量 capacity 初始化对象</span></span><br><span class="line"><span class="comment"> * int get(int key) - 如果键 key 存在于缓存中，则获取键的值，否则返回 -1 。</span></span><br><span class="line"><span class="comment"> * void put(int key, int value) - 如果键 key</span></span><br><span class="line"><span class="comment"> * 已存在，则变更其值；如果键不存在，请插入键值对。当缓存达到其容量 capacity</span></span><br><span class="line"><span class="comment"> * 时，则应该在插入新项之前，移除最不经常使用的项。在此问题中，当存在平局（即两个或更多个键具有相同使用频率）时，应该去除</span></span><br><span class="line"><span class="comment"> * 最近最久未使用 的键。</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 为了确定最不常使用的键，可以为缓存中的每个键维护一个 使用计数器</span></span><br><span class="line"><span class="comment"> * 。使用计数最小的键是最久未使用的键。</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 当一个键首次插入到缓存中时，它的使用计数器被设置为 1 (由于 put</span></span><br><span class="line"><span class="comment"> * 操作)。对缓存中的键执行 get 或 put 操作，使用计数器的值将会递增。</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 函数 get 和 put 必须以 O(1) 的平均时间复杂度运行。</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 示例：</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 输入：</span></span><br><span class="line"><span class="comment"> * [&quot;LFUCache&quot;, &quot;put&quot;, &quot;put&quot;, &quot;get&quot;, &quot;put&quot;, &quot;get&quot;, &quot;get&quot;, &quot;put&quot;, &quot;get&quot;, &quot;get&quot;,</span></span><br><span class="line"><span class="comment"> * &quot;get&quot;]</span></span><br><span class="line"><span class="comment"> * [[2], [1, 1], [2, 2], [1], [3, 3], [2], [3], [4, 4], [1], [3], [4]]</span></span><br><span class="line"><span class="comment"> * 输出：</span></span><br><span class="line"><span class="comment"> * [null, null, null, 1, null, -1, 3, null, -1, 3, 4]</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 解释：</span></span><br><span class="line"><span class="comment"> * // cnt(x) = 键 x 的使用计数</span></span><br><span class="line"><span class="comment"> * // cache=[] 将显示最后一次使用的顺序（最左边的元素是最近的）</span></span><br><span class="line"><span class="comment"> * LFUCache lfu = new LFUCache(2);</span></span><br><span class="line"><span class="comment"> * lfu.put(1, 1);   // cache=[1,_], cnt(1)=1</span></span><br><span class="line"><span class="comment"> * lfu.put(2, 2);   // cache=[2,1], cnt(2)=1, cnt(1)=1</span></span><br><span class="line"><span class="comment"> * lfu.get(1);      // 返回 1</span></span><br><span class="line"><span class="comment"> * ⁠                // cache=[1,2], cnt(2)=1, cnt(1)=2</span></span><br><span class="line"><span class="comment"> * lfu.put(3, 3);   // 去除键 2 ，因为 cnt(2)=1 ，使用计数最小</span></span><br><span class="line"><span class="comment"> * ⁠                // cache=[3,1], cnt(3)=1, cnt(1)=2</span></span><br><span class="line"><span class="comment"> * lfu.get(2);      // 返回 -1（未找到）</span></span><br><span class="line"><span class="comment"> * lfu.get(3);      // 返回 3</span></span><br><span class="line"><span class="comment"> * ⁠                // cache=[3,1], cnt(3)=2, cnt(1)=2</span></span><br><span class="line"><span class="comment"> * lfu.put(4, 4);   // 去除键 1 ，1 和 3 的 cnt 相同，但 1 最久未使用</span></span><br><span class="line"><span class="comment"> * ⁠                // cache=[4,3], cnt(4)=1, cnt(3)=2</span></span><br><span class="line"><span class="comment"> * lfu.get(1);      // 返回 -1（未找到）</span></span><br><span class="line"><span class="comment"> * lfu.get(3);      // 返回 3</span></span><br><span class="line"><span class="comment"> * ⁠                // cache=[3,4], cnt(4)=1, cnt(3)=3</span></span><br><span class="line"><span class="comment"> * lfu.get(4);      // 返回 4</span></span><br><span class="line"><span class="comment"> * ⁠                // cache=[3,4], cnt(4)=2, cnt(3)=3</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 提示：</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 0 &lt;= capacity &lt;= 10^4</span></span><br><span class="line"><span class="comment"> * 0 &lt;= key &lt;= 10^5</span></span><br><span class="line"><span class="comment"> * 0 &lt;= value &lt;= 10^9</span></span><br><span class="line"><span class="comment"> * 最多调用 2 * 10^5 次 get 和 put 方法</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// @lc code=start</span></span><br><span class="line"><span class="comment">// 缓存的节点信息</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> key, val, freq;</span><br><span class="line">    <span class="built_in">Node</span>(<span class="type">int</span> _key, <span class="type">int</span> _val, <span class="type">int</span> _freq) : <span class="built_in">key</span>(_key), <span class="built_in">val</span>(_val), <span class="built_in">freq</span>(_freq) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">LFUCache</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> minfreq, capacity, nowHave;</span><br><span class="line">    unordered_map&lt;<span class="type">int</span>, list&lt;Node&gt;::iterator&gt; key_table;</span><br><span class="line">    unordered_map&lt;<span class="type">int</span>, list&lt;Node&gt;&gt; freq_table;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">increaseFreq</span><span class="params">(<span class="type">int</span> key)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> it = key_table.<span class="built_in">find</span>(key);</span><br><span class="line">        <span class="keyword">auto</span> now = it-&gt;second;</span><br><span class="line">        <span class="type">int</span> value = now-&gt;val;</span><br><span class="line">        <span class="type">int</span> freq = now-&gt;freq;</span><br><span class="line">        freq_table[freq].<span class="built_in">erase</span>(now);</span><br><span class="line">        <span class="keyword">if</span> (freq_table[freq].<span class="built_in">size</span>() == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (minfreq == freq)</span><br><span class="line">                minfreq++;</span><br><span class="line">        &#125;</span><br><span class="line">        freq_table[freq + <span class="number">1</span>].<span class="built_in">push_front</span>(<span class="built_in">Node</span>(key, value, freq + <span class="number">1</span>));</span><br><span class="line">        key_table[key] = freq_table[freq + <span class="number">1</span>].<span class="built_in">begin</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">LFUCache</span>(<span class="type">int</span> _capacity)</span><br><span class="line">    &#123;</span><br><span class="line">        minfreq = <span class="number">0</span>;</span><br><span class="line">        nowHave = <span class="number">0</span>;</span><br><span class="line">        capacity = _capacity;</span><br><span class="line">        key_table.<span class="built_in">clear</span>();</span><br><span class="line">        freq_table.<span class="built_in">clear</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">get</span><span class="params">(<span class="type">int</span> key)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nowHave == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">auto</span> it = key_table.<span class="built_in">find</span>(key);</span><br><span class="line">        <span class="keyword">if</span> (it == key_table.<span class="built_in">end</span>())</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="built_in">increaseFreq</span>(key);</span><br><span class="line">        <span class="keyword">return</span> it-&gt;second-&gt;val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">put</span><span class="params">(<span class="type">int</span> key, <span class="type">int</span> value)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (capacity == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">auto</span> it = key_table.<span class="built_in">find</span>(key);</span><br><span class="line">        <span class="keyword">if</span> (it == key_table.<span class="built_in">end</span>())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (nowHave &lt; capacity)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// TODO</span></span><br><span class="line">                nowHave++;</span><br><span class="line">                freq_table[<span class="number">1</span>].<span class="built_in">push_front</span>(<span class="built_in">Node</span>(key, value, <span class="number">1</span>));</span><br><span class="line">                key_table[key] = freq_table[<span class="number">1</span>].<span class="built_in">begin</span>();</span><br><span class="line">                minfreq = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// TODO</span></span><br><span class="line">                <span class="comment">//删除使用最小切最近的。</span></span><br><span class="line">                <span class="comment">//删除key上面的，再删去freq——table上面的</span></span><br><span class="line">                <span class="comment">//删去freq_table时候要注意，删除之后其他功能一切正常，例如，要维护最小值（删除的是最小值，且最小值被删完了）</span></span><br><span class="line">                <span class="comment">// freq_table被删完，其实不变成没关系</span></span><br><span class="line">                <span class="comment">//之后添加的时候要维持4个情况，应该是nowhave，minfreq 为1，key-table更新，然后freq_table更新</span></span><br><span class="line">                <span class="keyword">auto</span> now = freq_table[minfreq].<span class="built_in">back</span>();</span><br><span class="line">                key_table.<span class="built_in">erase</span>(now.key);</span><br><span class="line">                freq_table[minfreq].<span class="built_in">pop_back</span>();</span><br><span class="line">                <span class="keyword">if</span> (freq_table[minfreq].<span class="built_in">size</span>() == <span class="number">0</span>)</span><br><span class="line">                    freq_table.<span class="built_in">erase</span>(minfreq);</span><br><span class="line">                freq_table[<span class="number">1</span>].<span class="built_in">push_front</span>(<span class="built_in">Node</span>(key, value, <span class="number">1</span>));</span><br><span class="line">                key_table[key] = freq_table[<span class="number">1</span>].<span class="built_in">begin</span>();</span><br><span class="line">                minfreq = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//这个和查找的思路一样</span></span><br><span class="line">            <span class="comment">//找到key找到迭代器，用迭代器去访问元素，这个时候要更新freq——table，删去现在的freq，移动到freq+1，同时维护minfreq，minfreq的size变成0了，纪要把minfreq+1。</span></span><br><span class="line">            <span class="keyword">auto</span> now = it-&gt;second;</span><br><span class="line">            <span class="type">int</span> freq = now-&gt;freq;</span><br><span class="line">            freq_table[freq].<span class="built_in">erase</span>(now);</span><br><span class="line">            <span class="keyword">if</span> (freq_table[freq].<span class="built_in">size</span>() == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (minfreq == freq)</span><br><span class="line">                    minfreq++;</span><br><span class="line">            &#125;</span><br><span class="line">            freq_table[freq + <span class="number">1</span>].<span class="built_in">push_front</span>(<span class="built_in">Node</span>(key, value, freq + <span class="number">1</span>));</span><br><span class="line">            key_table[key] = freq_table[freq + <span class="number">1</span>].<span class="built_in">begin</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your LFUCache object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * LFUCache* obj = new LFUCache(capacity);</span></span><br><span class="line"><span class="comment"> * int param_1 = obj-&gt;get(key);</span></span><br><span class="line"><span class="comment"> * obj-&gt;put(key,value);</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">// @lc code=end</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">LFUCache <span class="title">lfu</span><span class="params">(<span class="number">2</span>)</span></span>;</span><br><span class="line">    lfu.<span class="built_in">put</span>(<span class="number">1</span>, <span class="number">1</span>); <span class="comment">// cache=[1,_], cnt(1)=1</span></span><br><span class="line">    lfu.<span class="built_in">put</span>(<span class="number">2</span>, <span class="number">2</span>); <span class="comment">// cache=[2,1], cnt(2)=1, cnt(1)=1</span></span><br><span class="line">    lfu.<span class="built_in">get</span>(<span class="number">1</span>);    <span class="comment">// 返回 1</span></span><br><span class="line">                   <span class="comment">// cache=[1,2], cnt(2)=1, cnt(1)=2</span></span><br><span class="line">    lfu.<span class="built_in">put</span>(<span class="number">3</span>, <span class="number">3</span>); <span class="comment">// 去除键 2 ，因为 cnt(2)=1 ，使用计数最小</span></span><br><span class="line">                   <span class="comment">// cache=[3,1], cnt(3)=1, cnt(1)=2</span></span><br><span class="line">    lfu.<span class="built_in">get</span>(<span class="number">2</span>);    <span class="comment">// 返回 -1（未找到）</span></span><br><span class="line">    lfu.<span class="built_in">get</span>(<span class="number">3</span>);    <span class="comment">// 返回 3</span></span><br><span class="line">                   <span class="comment">// cache=[3,1], cnt(3)=2, cnt(1)=2</span></span><br><span class="line">    lfu.<span class="built_in">put</span>(<span class="number">4</span>, <span class="number">4</span>); <span class="comment">// 去除键 1 ，1 和 3 的 cnt 相同，但 1 最久未使用</span></span><br><span class="line">                   <span class="comment">// cache=[4,3], cnt(4)=1, cnt(3)=2</span></span><br><span class="line">    lfu.<span class="built_in">get</span>(<span class="number">1</span>);    <span class="comment">// 返回 -1（未找到）</span></span><br><span class="line">    lfu.<span class="built_in">get</span>(<span class="number">3</span>);    <span class="comment">// 返回 3</span></span><br><span class="line">                   <span class="comment">// cache=[3,4], cnt(4)=1, cnt(3)=3</span></span><br><span class="line">    lfu.<span class="built_in">get</span>(<span class="number">4</span>);    <span class="comment">// 返回 4</span></span><br><span class="line">                   <span class="comment">// cache=[3,4], cnt(4)=2, cnt(3)=3</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/DRAM%E7%9A%84%E5%88%B7%E6%96%B0%E6%96%B9%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/03/05/DRAM%E7%9A%84%E5%88%B7%E6%96%B0%E6%96%B9%E5%BC%8F/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="DRAM的刷新方式"><a href="#DRAM的刷新方式" class="headerlink" title="DRAM的刷新方式"></a>DRAM的刷新方式</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>刷新一行的时间等于存储周期</p>
-<p>刷新周期：从对整个存储器刷新结束时起，到对整个DRAM全部刷新一遍为止时间间隔。</p>
-<p>刷新信号周期：相邻两行位元之间刷新的时间间隔单元。</p>
-<p>刷新间隔时间：每单元刷新间隔的时间，</p>
-<p>刷新行数：单个芯片的单个矩阵的行数。</p>
-<p>刷新方式：集中式刷新、分散式刷新和异步式刷新。</p>
-<h2 id="集中式刷新"><a href="#集中式刷新" class="headerlink" title="集中式刷新"></a>集中式刷新</h2><p>64K×1位DRAM芯片中，存储电路由4个独立的128×128的存储矩阵组成。</p>
-<p>设存储器存储周期为500ns，单元刷新间隔是64ms。</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/v2-06204ed2d7fdfaed5ca2397c0461ae2d_r.jpg" alt="img"></p>
-<p>集中对128行刷新一遍所需时间128×500ns&#x3D;64us</p>
-<p>存储周期*行数&#x3D;内部刷新时间&#x3D;死时间</p>
-<h2 id="分散式刷新"><a href="#分散式刷新" class="headerlink" title="分散式刷新"></a>分散式刷新</h2><p><img src="https://pic3.zhimg.com/80/v2-726c97812b5e3d75d19e37d2251fc20a_720w.webp" alt="img"></p>
-<p>在任何一个存储周期内，分为访存和刷新两个子周期。</p>
-<blockquote>
-<p>访存时间内，供CPU和其他主设备访问<br>在刷新时间内，对DRAM的某一行刷新</p>
-</blockquote>
-<p>系统存储周期为存储器存储周期的两倍</p>
-<p>刷新周期缩短，为 128×1μs&#x3D;128μs，2x存储器存储x周期行数</p>
-<p>但是：在2ms的单元刷新间隔时间内，对DRAM刷新了 2ms÷128μs&#x3D;15 遍。</p>
-<h3 id="异步刷新"><a href="#异步刷新" class="headerlink" title="异步刷新"></a>异步刷新</h3><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/v2-91d15c8110c27bf1bb095e84e03a0fd7_r.jpg" alt="img"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/v2-ac6d8b729e54e9fecb6229e72cfb9629_r.jpg" alt="img"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/cache%E5%A4%A7%E9%A2%98%E7%9B%AE%E5%81%9A%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/03/05/cache%E5%A4%A7%E9%A2%98%E7%9B%AE%E5%81%9A%E6%B3%95/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Cache的大题目"><a href="#Cache的大题目" class="headerlink" title="Cache的大题目"></a>Cache的大题目</h2><p>主存容量，字长，块大小，cache容量，求直接映射，全相连映射，组相连映射的格式</p>
-<p>1.主存容量可以得到地址的总位数</p>
-<p>2.cache的容量除以一行的容量得到cache有多少行，直接映射，就是行号，组相连映射除以路数就是组号</p>
-<p>3.无论那种，行内地址的长度和是log一行的容量</p>
-<h2 id="Cache的结构"><a href="#Cache的结构" class="headerlink" title="Cache的结构"></a>Cache的结构</h2><p>标记项（有效位（1位），标记位（同地址的标记位），控制修改位，替换错误位），数据位（cache的内容，行大小）</p>
-<h2 id="直接映射求一个地址在cache的存取的行号"><a href="#直接映射求一个地址在cache的存取的行号" class="headerlink" title="直接映射求一个地址在cache的存取的行号"></a>直接映射求一个地址在cache的存取的行号</h2><p>把地址写成二进制的形式，然后对应直接映射的内存的格式。</p>
-<p>数组如何求地址，计算地址<br>$$<br>&amp;a[x]&#x3D;a+x*T_{a的数据类型的长度站多少字节(按字符寻址)}<br>$$<br>地址除以行的元素数量，在mod行数可以得到，直接映射到哪一行。</p>
-<p>或者，计算地址，除以一行的容量（向下取整 ），结果mod一个cache有多少块</p>
-<h2 id="求命中率，效率，访问时间"><a href="#求命中率，效率，访问时间" class="headerlink" title="求命中率，效率，访问时间"></a>求命中率，效率，访问时间</h2><h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p>$$<br>h_{命中率}&#x3D;\frac{N_c}{N_c+N_m}<br>$$</p>
-<p>$$<br>t_a&#x3D;ht_c+(1-h)ta<br>$$</p>
-<p>$$<br>e&#x3D;\frac{t_c}{t_a}<br>$$</p>
-<h3 id="算命中情况"><a href="#算命中情况" class="headerlink" title="算命中情况"></a>算命中情况</h3><p>访问线性的元素，访问一个cache没有的元素的时候，cache的一整行都会放进去，那么以后的元素就不用担心了。</p>
-<h2 id="LRU，FIFO算法"><a href="#LRU，FIFO算法" class="headerlink" title="LRU，FIFO算法"></a>LRU，FIFO算法</h2><h3 id="该算法分析命中率"><a href="#该算法分析命中率" class="headerlink" title="该算法分析命中率"></a>该算法分析命中率</h3><p>对于循环，首先分析第一次循环（可以求访问主存的次数然后求减法）。</p>
-<p>对于后面的循环，可以想象成遍历的每一行在每一组里面轮流的放，如果满了就替换，如果有不放。</p>
-<p>思考问题的时候，要把<code>遍历的每一行在每一组里面轮流的放</code>这个事件全部想象一遍。</p>
-<h3 id="页面置换算法"><a href="#页面置换算法" class="headerlink" title="页面置换算法"></a>页面置换算法</h3><blockquote>
-<p>适用的情况，把cache的是盛放快的容器，对于不断放入的快，使用最少的替换（最小的单位是块）</p>
-</blockquote>
-<h4 id="LRU"><a href="#LRU" class="headerlink" title="LRU"></a>LRU</h4><p>主存中12345映射到一个组里面，主存访问顺序{1,2,3,4,1,2,5,1,2,3,4,5}</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221113201339274.png" alt="image-20221113201339274"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221113201345483.png" alt="image-20221113201345483"></p>
-<p>LRU算法实际上就是一个队列，删去队列，每次队列人数满了的时候就删去出队，然后进队，再写表的时候保证就改一个位置的值，</p>
-<p>FIFO算法实际上就是一个队列，，不同的是，当队列里面有这个元素的时候，不操作，（LRU会把那个元素移动到末尾）</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/%E5%A0%86%E6%A8%A1%E6%9D%BF+vscode%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/03/05/%E5%A0%86%E6%A8%A1%E6%9D%BF+vscode%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="【模板】堆"><a href="#【模板】堆" class="headerlink" title="【模板】堆"></a>【模板】堆</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个数列，初始为空，请支持下面三种操作：</p>
-<ol>
-<li>给定一个整数 $x$，请将 $x$ 加入到数列中。</li>
-<li>输出数列中最小的数。</li>
-<li>删除数列中最小的数（如果有多个数最小，只删除 $1$ 个）。</li>
-</ol>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行是一个整数，表示操作的次数 $n$。<br>接下来 $n$ 行，每行表示一次操作。每行首先有一个整数 $op$ 表示操作类型。</p>
-<ul>
-<li>若 $op &#x3D; 1$，则后面有一个整数 $x$，表示要将 $x$ 加入数列。</li>
-<li>若 $op &#x3D; 2$，则表示要求输出数列中的最小数。</li>
-<li>若 $op &#x3D; 3$，则表示删除数列中的最小数。如果有多个数最小，只删除 $1$ 个。</li>
-</ul>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>对于每个操作 $2$，输出一行一个整数表示答案。</p>
-<h2 id="样例-1"><a href="#样例-1" class="headerlink" title="样例 #1"></a>样例 #1</h2><h3 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">1 2</span><br><span class="line">1 5</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-
-<h3 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">5</span><br></pre></td></tr></table></figure>
-
-<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p><strong>【数据规模与约定】</strong></p>
-<ul>
-<li>对于 $30%$ 的数据，保证 $n \leq 15$。</li>
-<li>对于 $70%$ 的数据，保证 $n \leq 10^4$。</li>
-<li>对于 $100%$ 的数据，保证 $1 \leq n \leq 10^6$，$1 \leq x \lt 2^{31}$，$op \in {1, 2, 3}$。</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cassert&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pthread.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">minHeap</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    T *heap;</span><br><span class="line">    <span class="type">int</span> maxSize;</span><br><span class="line">    <span class="type">int</span> nowSize;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">minHeap</span>(<span class="type">int</span> _maxSize);</span><br><span class="line">    ~<span class="built_in">minHeap</span>();</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(T value)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">assert</span>(nowSize != maxSize);</span><br><span class="line">        nowSize++;</span><br><span class="line">        heap[nowSize] = value;</span><br><span class="line">        <span class="type">int</span> index = nowSize;</span><br><span class="line">        <span class="keyword">while</span> (index / <span class="number">2</span> != <span class="number">0</span> &amp;&amp; value &lt; heap[index / <span class="number">2</span>])</span><br><span class="line">        &#123;</span><br><span class="line">            heap[index] = heap[index / <span class="number">2</span>];</span><br><span class="line">            index = index / <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        heap[index] = value;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">T <span class="title">top</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">assert</span>(nowSize != <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> heap[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">pop</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">assert</span>(nowSize != <span class="number">0</span>);</span><br><span class="line">        T y = heap[nowSize--];</span><br><span class="line">        <span class="type">int</span> index = <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> child = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">while</span> (child &lt;= nowSize)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (child + <span class="number">1</span> &lt;= nowSize &amp;&amp; heap[child] &gt; heap[child + <span class="number">1</span>])</span><br><span class="line">                child = child + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (heap[child] &gt; y)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            heap[index] = heap[child];</span><br><span class="line">            index = child;</span><br><span class="line">            child = index * <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        heap[index] = y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line">minHeap&lt;T&gt;::<span class="built_in">minHeap</span>(<span class="type">int</span> _maxSize)</span><br><span class="line">&#123;</span><br><span class="line">    maxSize = _maxSize;</span><br><span class="line">    nowSize = <span class="number">0</span>;</span><br><span class="line">    heap = <span class="keyword">new</span> T[maxSize + <span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line">minHeap&lt;T&gt;::~<span class="built_in">minHeap</span>()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">delete</span>[] heap;</span><br><span class="line">    heap = <span class="literal">nullptr</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">minHeap&lt;<span class="type">int</span>&gt; <span class="title">heap</span><span class="params">(<span class="number">1000000</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; ans;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> cmd;</span><br><span class="line">        cin &gt;&gt; cmd;</span><br><span class="line">        <span class="keyword">if</span> (cmd == <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> x;</span><br><span class="line">            cin &gt;&gt; x;</span><br><span class="line">            heap.<span class="built_in">insert</span>(x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (cmd == <span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            ans.<span class="built_in">push_back</span>(heap.<span class="built_in">top</span>());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (cmd == <span class="number">3</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            heap.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;x : ans)</span><br><span class="line">        cout &lt;&lt; x &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>关键步骤：上浮</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> index = nowSize;</span><br><span class="line">       <span class="keyword">while</span> (index / <span class="number">2</span> != <span class="number">0</span> &amp;&amp; value &lt; heap[index / <span class="number">2</span>])</span><br><span class="line">       &#123;</span><br><span class="line">           heap[index] = heap[index / <span class="number">2</span>];</span><br><span class="line">           index = index / <span class="number">2</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       heap[index] = value;</span><br></pre></td></tr></table></figure>
-
-<p>index从nowSize开始，慢慢上浮</p>
-<p>关键步骤：下沉</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">T y = heap[nowSize--];</span><br><span class="line">        <span class="type">int</span> index = <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> child = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">while</span> (child &lt;= nowSize)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (child + <span class="number">1</span> &lt;= nowSize &amp;&amp; heap[child] &gt; heap[child + <span class="number">1</span>])</span><br><span class="line">                child = child + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (heap[child] &gt; y)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            heap[index] = heap[child];</span><br><span class="line">            index = child;</span><br><span class="line">            child = index * <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        heap[index] = y;</span><br></pre></td></tr></table></figure>
-
-<p>index和child2个变量，nowSize会缩小，前提条件是nowSize会缩小</p>
-<h2 id="调试技巧"><a href="#调试技巧" class="headerlink" title="调试技巧"></a>调试技巧</h2><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221118214739359.png" alt="image-20221118214739359"></p>
-<p><code>*(int(*)[size])heap</code>,添加这个监事变量可以观察数组。</p>
-<h2 id="GDB"><a href="#GDB" class="headerlink" title="GDB"></a>GDB</h2><p>GDB产生错误的时候，要几个把TERMINAL的输入全部删了，防止下一次出错</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/C%E8%AF%AD%E8%A8%80%E5%88%B0%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/03/05/C%E8%AF%AD%E8%A8%80%E5%88%B0%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="z-x3D-z-y"><a href="#z-x3D-z-y" class="headerlink" title="z&#x3D;z*y"></a>z&#x3D;z*y</h2><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221122221355844.png" alt="image-20221122221355844"></p>
-<h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><p>首先有一个作为临时存储器</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221122221536945.png" alt="image-20221122221536945"></p>
-<p>seqi+beqz（not true）+addi</p>
-<h2 id="if-else语句"><a href="#if-else语句" class="headerlink" title="if-else语句"></a>if-else语句</h2><p>seqi+beqz+—+j （done）else  </p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221122222026484.png" alt="image-20221122222026484"></p>
-<h2 id="while"><a href="#while" class="headerlink" title="while"></a>while</h2><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221122222044972.png" alt="image-20221122222044972"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/03/05/%E5%B9%B6%E6%9F%A5%E9%9B%86/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="并查集用处"><a href="#并查集用处" class="headerlink" title="并查集用处"></a>并查集用处</h2><ol>
-<li>判断图里面有没有环</li>
-</ol>
-<iframe src="//player.bilibili.com/player.html?aid=38498175&bvid=BV13t411v7Fs&cid=67672061&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-<h2 id="算法的实现"><a href="#算法的实现" class="headerlink" title="算法的实现"></a>算法的实现</h2><h2 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h2><p>一维数组实现一棵树</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221123110713993.png" alt="image-20221123110713993"></p>
-<p>parent[i]表示i的父亲，具体连接方式是把跟节点连接起来，也就是有同一个父亲就表示是在同一个并查集里面</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8%E8%A1%A5%E5%85%85/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/03/05/%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8%E8%A1%A5%E5%85%85/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="页的一些知识点"><a href="#页的一些知识点" class="headerlink" title="页的一些知识点"></a>页的一些知识点</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="页框"><a href="#页框" class="headerlink" title="页框"></a>页框</h3><p>来自内存，内存空间划分为大小相同的分区</p>
-<h3 id="页面"><a href="#页面" class="headerlink" title="页面"></a>页面</h3><p>来自用户的进程，把用户的进程的地址空间划分为相同的区域</p>
-<h3 id="页表"><a href="#页表" class="headerlink" title="页表"></a>页表</h3><p>建立，虚拟地址和物理地址的映射关系（主要是页面的映射，页面，到页框）</p>
-<h4 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h4><p>每一行是也该虚拟地址的页，包含虚拟地址的页号（不用再行里面表示，页表的行号就是虚拟地址的页号），和物理地址的块号，（每一行的长度就是物理地址的块号，加上一些标记位）</p>
-<blockquote>
-<p>假设一个分页虚拟存储系统的虚拟地址为40位，物理地址为36位，页大小为16KB，按字节编址。若页表中的有效位、存储保护位、修改位、使用位共占4位，磁盘地址不在页表中。则该存储系统中每个程序的页表大小为多少（单位：MB）？（说明：1.假设每个程序都能使用全部的虚拟内存；2.页表项的长度必须为字节的整数倍）</p>
-</blockquote>
-<p>公式：虚拟地址的页数*（物理地址页数的位数+标记位）</p>
-<h3 id="TBL"><a href="#TBL" class="headerlink" title="TBL"></a>TBL</h3><p>1.CPU首先得到的是虚拟地址，必须将虚拟地址转换为物理地址才能进行数据访问。这个过程先查TLB，若TLB命中，则得到了物理地址，进行步骤2；否则，继续查找主存中的页表。若仍不命中，则引发缺页中断进行调页。调页过程又可能引发驻留集页替换和页回写过程。</p>
-<p>2.得到物理地址之后，首先访问cache，若命中，CPU直接从cache中读取相应物理地址中的内容；若不命中，则访问主存读取数据，并且更新cache，此过程又可能引发cache的行替换和回写过程。</p>
-<h4 id="具体做题"><a href="#具体做题" class="headerlink" title="具体做题"></a>具体做题</h4><p>首先分析，各个地址的位数的分布，</p>
-<p>虚拟地址：页面号+页内地址</p>
-<p>物理地址：页框号+页内地址</p>
-<p>虚拟地址的页面号：TLB标记+具体是第几组（组号）</p>
-<p>物理地址 ：标记+具体是第几组（组号）+行（块）内地址</p>
-<blockquote>
-<p>假设一个计算机系统中有一个TLB和一个L1 data cache。该系统按字节编址，虚拟地址16位，物理地址12位；页大小为128B，TLB为4-路组相连，共有16个页表项；L1 data cache采用直接映射方式，块大小为4B，共16行。在系统运行的某一时刻，TLB、页表和L1 data cache中的部分内容如下图所示（16进制表示）：</p>
-<p>请问：</p>
-<p>a) 虚拟地址中哪几位表示虚拟页号？</p>
-<p>b) 虚拟页号的哪几位表示TLB标记？ </p>
-<p>c) 物理地址中哪几位表示物理页号？ </p>
-<p>d) 在访问cache时，物理地址哪几位表示行号？</p>
-<p>e) CPU从地址067AH中取出的值为多少？<img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221126104823366.png" alt="image-20221126104823366"></p>
-</blockquote>
-<p>虚拟地址的页数前9位，</p>
-<p>虚拟页号的7位是标记，后买2位是组号（查找要扫描组里面的全部）</p>
-<p>物理地址前5位是页号</p>
-<p>cache的前6位是标记，4位是块号，2位块内标记</p>
-<p>067A&#x3D;0000 0110 0111 1010</p>
-<p>虚拟页号是0000 001100 &#x3D;0C，先查TBL，先组号对上，然后看标记是否一样，没有03，查找页表，页框号是19</p>
-<p>110011 1110 10</p>
-<p>cache里面先查组号，是E，然后看标记为是一样的33，然后块内标记是10 于是4A</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/%E8%87%AA%E9%99%B7%E4%BE%8B%E7%A8%8B%E5%92%8C%E4%B8%AD%E6%96%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/03/05/%E8%87%AA%E9%99%B7%E4%BE%8B%E7%A8%8B%E5%92%8C%E4%B8%AD%E6%96%AD/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="自陷例程序和中断"><a href="#自陷例程序和中断" class="headerlink" title="自陷例程序和中断"></a>自陷例程序和中断</h1><h2 id="造成混乱的情况"><a href="#造成混乱的情况" class="headerlink" title="造成混乱的情况"></a>造成混乱的情况</h2><p>I&#x2F;O行为包含很多被程序所共享的设备寄存器的使用，用户程序员没有谨慎处理，给其他用户程序造成混乱</p>
-<h2 id="特权"><a href="#特权" class="headerlink" title="特权"></a>特权</h2><p>硬件寄存器是有特权的，不拥有适当的特权级别的程序不能被访问</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>自陷（TRAP）指令</p>
-<p>操作系统</p>
-<p>拥有适当的特权级别</p>
-<p>用户程序员不需要在这个层面上理解I&#x2F;O</p>
-<h2 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h2><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129202838290.png" alt="image-20221129202838290"></p>
-<h2 id="TRAP机制"><a href="#TRAP机制" class="headerlink" title="TRAP机制"></a>TRAP机制</h2><h3 id="服务例程"><a href="#服务例程" class="headerlink" title="服务例程"></a>服务例程</h3><p>操作系统的一部分，表示用户程序执行的一组程序</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129203114948.png" alt="image-20221129203114948"></p>
-<h3 id="TRAP向量表"><a href="#TRAP向量表" class="headerlink" title="TRAP向量表"></a>TRAP向量表</h3><p>包括了256个服务例程的起始地址的表，每一个起始地址需要占用4个连续的存储单元</p>
-<p>256个服务例程需要使用256*4个单元，这张表被存储在存储单元的x0000 0000到x0000 03FF中。</p>
-<h4 id="数据区-x2F-代码区"><a href="#数据区-x2F-代码区" class="headerlink" title="数据区&#x2F;代码区"></a>数据区&#x2F;代码区</h4><p>数据区的起始位置地址：代码区起始地址之前的x100个单元</p>
-<h2 id="TRAP指令"><a href="#TRAP指令" class="headerlink" title="TRAP指令"></a>TRAP指令</h2><p>操作系统代表用户程序执行某一个服务例程，然后把控制权交给用户程序</p>
-<p>根据TRAP向量，PC&lt;-相应服务例程首地址</p>
-<p>提供返回路径&#x2F;“链接”</p>
-<h4 id="指令阶段-1"><a href="#指令阶段-1" class="headerlink" title="指令阶段-1"></a>指令阶段-1</h4><p>取指令</p>
-<p>pc&lt;-pc+4</p>
-<p>译码；</p>
-<p>计算有效地址；</p>
-<p>​	TRAP向量扩展到32位，然后左移2位（相当于x4）</p>
-<p>访问内存</p>
-<img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129204306357.png" alt="image-20221129204306357" style="zoom: 50%;" />
-
-<p>写回</p>
-<img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129204318563.png" alt="image-20221129204318563" style="zoom:50%;" />
-
-<p>TRAP服务例程执行结束</p>
-<p>在TRAP服务例程的最后执行一条JR R31的指令，控制就可以返回到用户程序的正确位置</p>
-<h4 id="键盘输入服务例程（TRAP-X06）（GETC）"><a href="#键盘输入服务例程（TRAP-X06）（GETC）" class="headerlink" title="键盘输入服务例程（TRAP X06）（GETC）"></a>键盘输入服务例程（TRAP X06）（GETC）</h4><h4 id="字符输出服务例程（TRAP-X07）（PUT）"><a href="#字符输出服务例程（TRAP-X07）（PUT）" class="headerlink" title="字符输出服务例程（TRAP X07）（PUT）"></a>字符输出服务例程（TRAP X07）（PUT）</h4><h4 id="字符串输出服务例程（TRAP-X08）（OUT）"><a href="#字符串输出服务例程（TRAP-X08）（OUT）" class="headerlink" title="字符串输出服务例程（TRAP X08）（OUT）"></a>字符串输出服务例程（TRAP X08）（OUT）</h4><h4 id="字符输入服务例程（TRAP-X08）（IN）回显到显示器上"><a href="#字符输入服务例程（TRAP-X08）（IN）回显到显示器上" class="headerlink" title="字符输入服务例程（TRAP X08）（IN）回显到显示器上"></a>字符输入服务例程（TRAP X08）（IN）回显到显示器上</h4><h4 id="字符串输入服务例程（TRAP-X0A）（GETS）"><a href="#字符串输入服务例程（TRAP-X0A）（GETS）" class="headerlink" title="字符串输入服务例程（TRAP X0A）（GETS）"></a>字符串输入服务例程（TRAP X0A）（GETS）</h4><h3 id="寄存器的保存与恢复"><a href="#寄存器的保存与恢复" class="headerlink" title="寄存器的保存与恢复"></a>寄存器的保存与恢复</h3><p>如果一个 寄存器内的值在该寄存器被存储其他值之后再次被用到，必须在其他事情发生之前将其保存，再次使用它之前将其恢复</p>
-<h3 id="被调用者保存"><a href="#被调用者保存" class="headerlink" title="被调用者保存"></a>被调用者保存</h3><p>callee-save（键盘输入输出）</p>
-<p>由被用户程序调用的服务例程完成寄存器的保护与恢复。</p>
-<p>被调用的程序需要知道需要使用那些寄存器，而调用者不知道哪些寄存器的值将会被破坏</p>
-<p>caller-save</p>
-<p>由调用程序完成寄存器的保存与恢复</p>
-<h3 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h3><p>如果那些程序知道那些寄存器会被接下来的操作所破坏，处理保存&#x2F;恢复问题应该由那些程序保存。</p>
-<p>小总结</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129211805724.png" alt="image-20221129211805724"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129212113509.png" alt="image-20221129212107023"></p>
-<h2 id="中断驱动的IO"><a href="#中断驱动的IO" class="headerlink" title="中断驱动的IO"></a>中断驱动的IO</h2><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129212553484.png" alt="image-20221129212553484"></p>
-<h2 id="机制"><a href="#机制" class="headerlink" title="机制"></a>机制</h2><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129212612157.png" alt="image-20221129212612157"></p>
-<h2 id="中断信号的产生"><a href="#中断信号的产生" class="headerlink" title="中断信号的产生"></a>中断信号的产生</h2><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129213352053.png" alt="image-20221129213352053"></p>
-<p>就绪位和中断允许位</p>
-<h2 id="INT信号（看书，书上详细）"><a href="#INT信号（看书，书上详细）" class="headerlink" title="INT信号（看书，书上详细）"></a>INT信号（看书，书上详细）</h2><p>中断请求信号（Interrupt Reqest，IRQ）</p>
-<p>IE位（中断允许位）和就绪位的逻辑与</p>
-<p>各个中断设备发出的IRQ信号经过或门，产生INT信号</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129213620462.png" alt="image-20221129213620462"></p>
-<h3 id="KBDR、KBSR寄存器"><a href="#KBDR、KBSR寄存器" class="headerlink" title="KBDR、KBSR寄存器"></a>KBDR、KBSR寄存器</h3><p>KBDR，键盘数据寄存器0到7位庸才存储输入字符的ASCII码</p>
-<p>KBSR，键盘状态寄存器，第15位用来存储同步信息（控制处理器和键盘的同步）</p>
-<h3 id="DDR，DSR寄存器"><a href="#DDR，DSR寄存器" class="headerlink" title="DDR，DSR寄存器"></a>DDR，DSR寄存器</h3><p>DDR输出数据寄存器，DDR【7:0】的存储输出字符的ASCII码，DSR的15位用来同步信息</p>
-<p>DSR输出状态寄存器</p>
-<h3 id="CAUSE：原因寄存器"><a href="#CAUSE：原因寄存器" class="headerlink" title="CAUSE：原因寄存器"></a>CAUSE：原因寄存器</h3><p>某个设备发出IRQ信号，就会在原因寄存器的相应位置上设为1</p>
-<p>原因寄存器是一个特殊寄存器，只有在特权模式下才可以访问，</p>
-<p>CAUSE【15:8】为中断未决位</p>
-<h2 id="测试INT信号"><a href="#测试INT信号" class="headerlink" title="测试INT信号"></a>测试INT信号</h2><p>处理器对INT信号的处理</p>
-<blockquote>
-<p>原来的指令的执行模式：取指令，译码，执行，访问内存和写回5个阶段</p>
-</blockquote>
-<p>为测试中断信号而增加的逻辑</p>
-<p>写回并检测INT信号</p>
-<p>INT为0，表示没有中断，和往常一样返回到取指令阶段</p>
-<p>INT为1，保存并改变抽象的状态，PC加载到x8000 1000执行操作系统的中断服务例程，处理该信号发出的中断请求。</p>
-<h2 id="保存以及改变程序状态"><a href="#保存以及改变程序状态" class="headerlink" title="保存以及改变程序状态"></a>保存以及改变程序状态</h2><p>在进入中断程序之前，（PC加载到x8000 1000之前）</p>
-<p>保存足够的正在运行的程序的状态信息，以便I&#x2F;O设备请求被满足之后，能够返回被中断的程序</p>
-<p>改变程序状态，以便访问恰当的资源，以及避免各种I&#x2F;O设备相互干扰</p>
-<h2 id="程序状态"><a href="#程序状态" class="headerlink" title="程序状态"></a>程序状态</h2><p>作为程序一部分的存储单元的内容</p>
-<p>所有通用寄存器的内容</p>
-<p>寄存器：PC和SR</p>
-<h2 id="PC和EPC"><a href="#PC和EPC" class="headerlink" title="PC和EPC"></a>PC和EPC</h2><p>pc存取下一跳要执行的指令的地址，必须要保持下来，以便当被中断的程序重新执行时，可以回到下一跳指令地址</p>
-<p>DLC中有特殊寄存器EPC用来保存中断发生时的PC中的值。、</p>
-<h2 id="SR"><a href="#SR" class="headerlink" title="SR"></a>SR</h2><h4 id="SR【0】"><a href="#SR【0】" class="headerlink" title="SR【0】"></a>SR【0】</h4><p>表示程序是否可以被I&#x2F;O设备中断，应该被保存(程序到中断服务进程之后会把SR【0】设置为0，表示程序不能被中断程序中断，之后要改回去)</p>
-<p>SR【1】</p>
-<p>表示正在运行的程序是处于特权还是非特权模式</p>
-<h3 id="中断优先级（这地方看书比较清楚）"><a href="#中断优先级（这地方看书比较清楚）" class="headerlink" title="中断优先级（这地方看书比较清楚）"></a>中断优先级（这地方看书比较清楚）</h3><p>DLX有6个硬件优先级，PL0，——-PL5</p>
-<ul>
-<li>数字越高，优先级越高</li>
-<li>I&#x2F;O的速度越快优先级越高</li>
-</ul>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/IMG_20221129_224739.jpg" alt="IMG_20221129_224739"></p>
-<p>+<img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/IMG_20221129_224748.jpg" alt="IMG_20221129_224739"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129225002234.png" alt="image-20221129225002234"></p>
-<h2 id="从中断中返回"><a href="#从中断中返回" class="headerlink" title="从中断中返回"></a>从中断中返回</h2><p>首先，清空CAUSE寄存器，表示处理完所有中断</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DONE： movi2s r0，x0D； 将原因寄存器清空</span><br></pre></td></tr></table></figure>
-
-<p>然后使用RFE指令</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129225318275.png" alt="image-20221129225318275"></p>
-<h2 id="中断嵌套"><a href="#中断嵌套" class="headerlink" title="中断嵌套"></a>中断嵌套</h2><p>低优先级的允许被高优先级的设备中断</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129225552509.png" alt="image-20221129225552509"></p>
-<h2 id="C语言的I-x2F-O"><a href="#C语言的I-x2F-O" class="headerlink" title="C语言的I&#x2F;O"></a>C语言的I&#x2F;O</h2>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/%E6%80%BB%E7%BA%BF%E6%9C%89%E5%85%B3%E7%9A%84%E8%AE%A1%E7%AE%97%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/03/05/%E6%80%BB%E7%BA%BF%E6%9C%89%E5%85%B3%E7%9A%84%E8%AE%A1%E7%AE%97%E9%A2%98/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="所求的概念"><a href="#所求的概念" class="headerlink" title="所求的概念"></a>所求的概念</h2><h3 id="总线带宽"><a href="#总线带宽" class="headerlink" title="总线带宽"></a>总线带宽</h3><p>总线最大的数据传输速率（不去考虑总线总裁和地址传输）</p>
-<h3 id="数据传输速率"><a href="#数据传输速率" class="headerlink" title="数据传输速率"></a>数据传输速率</h3><p>考虑地址传输和握手等因素的数据传输速率</p>
-<h3 id="总线事务"><a href="#总线事务" class="headerlink" title="总线事务"></a>总线事务</h3><p>包括传送地址和总线命令，准备数据和数据传输</p>
-<h2 id="易错点"><a href="#易错点" class="headerlink" title="易错点"></a>易错点</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>空闲间隔每一个总线事务都有</p>
-<p>总线2是分离的32位地址和32位数据的总线。支持最多连续8个字的存储器读操作和写操作总线事务，读操作的过程为：1个时钟周期传送地址，2个时钟周期延迟等待，从第4个时钟周期开始，存储器准备好数据，总线以每个时钟周期一个字的速度传输最多8个字；对于写操作，在第1个时钟周期内第1个数据字和地址一起传输，经过2个时钟周期的等待延迟后，以每个时钟周期1个字的速度传输，最多传输7个余下的数据字。</p>
-<p>假设这两种总线的时钟频率都是100MHz</p>
-<p>连续进行单个字的存储器写操作总线事务，总线2的数据传输率为多少（单位：Mbps）？</p>
-<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>假定连接主存和CPU之间的同步总线具有以下特性：支持4字块和16字块（字长32位）</p>
-<p>两种长度的块传输，总线时钟频率为200MHz，总线宽度为64位，每个64位数据的传送需要1个时钟周期，向主存发送一个地址需要1个时钟周期，每个总线事务之间有2个空闲时钟周期。若访问主存时最初4个字的存取时间为148ns，随后每读4个字的时间为26ns，则在4字块和16字块两种传输方式下，该总线上传输512个字时的数据传输率分别为多少？</p>
-<p>总线时钟频率为200MHz，因而总线时钟周期为1&#x2F;200M&#x3D;5ns。</p>
-<p>对于4字传送方式，每个总线事务由一个地址传送和一个4字的数据块传送组成。首先，CPU发送地址到主存，需要1个时钟周期；主存读开始的4个字，需要148ns&#x2F;5ns&#x3D;30个时钟周期；然后在总线上传输4个字，需要4×32&#x2F;64&#x3D;2个时钟周期；最后，有2个空闲时钟周期。所以，一次总线事务总共需要1+30+2+2&#x3D;35个时钟周期，512个字需512&#x2F;4&#x3D;128个事务，因而整个传送需35×128&#x3D;4480个时钟周期，得到总延时为4480×5ns&#x3D;22400ns。总线的数据传输率为(512×4B)&#x2F;22400ns&#x3D;731.4Mbps。</p>
-<p>对于16字块传送方式，从第二个4 字开始，每读一个4 字的时间为26ns，相当于26ns&#x2F;5ns&#x3D;6 个时钟周期。一次总线事务总共需要1+30+3×max(6,2)+2+2&#x3D;53个时钟周期，512字需512&#x2F;16&#x3D;32个事务，因而整个传送需53×32&#x3D;1696个时钟周期，总线的数据传输率为(512×4B)&#x2F;(1696×5ns)&#x3D;1932.1Mbps。</p>
-<p>（注意：<strong>这里148ns和26ns不是总线时钟周期的整数倍，主存会先准备好数据，等到下一个总线时钟周期开始时传输数据</strong>。）</p>
-<h4 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h4><ol>
-<li>这里148ns和26ns不是总线时钟周期的整数倍，主存会先准备好数据，等到下一个总线时钟周期开始时传输数据</li>
-<li>同步总线，的任务顺序<strong>地址传输，数据准备：数据传输 空闲</strong>，看数据准备和数据发送那个快，哪个快就是等谁</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1c++%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%91%BD%E5%90%8D%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/03/05/%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1c++%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%91%BD%E5%90%8D%E9%97%AE%E9%A2%98/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="面对对象c-中的继承带来的命名问题"><a href="#面对对象c-中的继承带来的命名问题" class="headerlink" title="面对对象c++中的继承带来的命名问题"></a>面对对象c++中的继承带来的命名问题</h1><blockquote>
-<p>详细见Affectless C++ P156</p>
-</blockquote>
-<ol>
-<li><p>Derived类里面有和Base一样名字的成员函数是重载（ overload），相当于Base的类的成员函数被抹除掉了，调用只能调用Derived里面的。（就算参数不一样也可以）</p>
-</li>
-<li><p>在Derived中使用<code>using Base::mf1</code>可以让mf1在Derived的作用域里面可见，但是这种方式会让Base中的所有的mf1在Derived中都可见，可以使用forwarding function（p161）来解决</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//in the Class Derived</span><br><span class="line">public:</span><br><span class="line">	void mf1()&#123;</span><br><span class="line">	Base::mf1();//Derived private 继承 Base</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
-  </nav>
-
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name"></p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/%20%7C%7C%20archive">
-              
-                  <span class="site-state-item-count">43</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
   }
-</script>
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-03-08 10:57:20'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
 
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
   
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
-
-
-
-  
-
-
-  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Hexo"><span class="site-name">Hexo</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Hexo</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/05/%E5%AE%9E%E7%8E%B0LFU%EF%BC%8C%E5%A2%9E%E5%8A%A0%E6%B3%A8%E9%87%8A%E7%9A%84%E4%BB%A3%E7%A0%81/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-05T14:50:11.127Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></span></div><div class="content">LFU 缓存
 
 
-
-
-	
+Category
+Difficulty
+Likes
+Dislikes
 
 
 
+algorithms
+Hard (44.38%)
+616
+-
 
 
-  
+Tags
+
+Companies
+
+请你为 最不经常使用（LFU）缓存算法设计并实现数据结构。
+实现 LFUCache 类：
+
+LFUCache(int capacity) - 用数据结构的容量 capacity 初始化对象
+int get(int key) - 如果键 key 存在于缓存中，则获取键的值，否则返回 -1 。
+void put(int key, int value) - 如果键 key 已存在，则变更其值；如果键不存在，请插入键值对。当缓存达到其容量 capacity 时，则应该在插入新项之前，移除最不经常使用的项。在此问题中，当存在平局（即两个或更多个键具有相同使用频率）时，应该去除 最近最久未使用 的键。
+
+为了确定最不常使用的键，可以为缓存中的每个键维护一个 使用计数器 。使用计数最小的键是最久未使用的键。
+当一个键首次插入到缓存中时，它的使用计数器被设置为 1 (由于 put 操作)。对缓存中的键执行 ge ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/05/DRAM%E7%9A%84%E5%88%B7%E6%96%B0%E6%96%B9%E5%BC%8F/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-05T14:50:11.120Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></span></div><div class="content">DRAM的刷新方式基本概念刷新一行的时间等于存储周期
+刷新周期：从对整个存储器刷新结束时起，到对整个DRAM全部刷新一遍为止时间间隔。
+刷新信号周期：相邻两行位元之间刷新的时间间隔单元。
+刷新间隔时间：每单元刷新间隔的时间，
+刷新行数：单个芯片的单个矩阵的行数。
+刷新方式：集中式刷新、分散式刷新和异步式刷新。
+集中式刷新64K×1位DRAM芯片中，存储电路由4个独立的128×128的存储矩阵组成。
+设存储器存储周期为500ns，单元刷新间隔是64ms。
+
+集中对128行刷新一遍所需时间128×500ns&#x3D;64us
+存储周期*行数&#x3D;内部刷新时间&#x3D;死时间
+分散式刷新
+在任何一个存储周期内，分为访存和刷新两个子周期。
+
+访存时间内，供CPU和其他主设备访问在刷新时间内，对DRAM的某一行刷新
+
+系统存储周期为存储器存储周期的两倍
+刷新周期缩短，为 128×1μs&#x3D;128μs，2x存储器存储x周期行数
+但是：在2ms的单元刷新间隔时间内，对DRAM刷新了 2ms÷128μs&#x3D;15 遍。
+异步刷新
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/05/cache%E5%A4%A7%E9%A2%98%E7%9B%AE%E5%81%9A%E6%B3%95/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-05T14:50:11.116Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></span></div><div class="content">Cache的大题目主存容量，字长，块大小，cache容量，求直接映射，全相连映射，组相连映射的格式
+1.主存容量可以得到地址的总位数
+2.cache的容量除以一行的容量得到cache有多少行，直接映射，就是行号，组相连映射除以路数就是组号
+3.无论那种，行内地址的长度和是log一行的容量
+Cache的结构标记项（有效位（1位），标记位（同地址的标记位），控制修改位，替换错误位），数据位（cache的内容，行大小）
+直接映射求一个地址在cache的存取的行号把地址写成二进制的形式，然后对应直接映射的内存的格式。
+数组如何求地址，计算地址$$&amp;a[x]&#x3D;a+x*T_{a的数据类型的长度站多少字节(按字符寻址)}$$地址除以行的元素数量，在mod行数可以得到，直接映射到哪一行。
+或者，计算地址，除以一行的容量（向下取整 ），结果mod一个cache有多少块
+求命中率，效率，访问时间公式$$h_{命中率}&#x3D;\frac{N_c}{N_c+N_m}$$
+$$t_a&#x3D;ht_c+(1-h)ta$$
+$$e&#x3D;\frac{t_c}{t_a}$$
+算命中情况访 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/05/%E5%A0%86%E6%A8%A1%E6%9D%BF+vscode%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-05T14:50:11.112Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></span></div><div class="content">【模板】堆题目描述给定一个数列，初始为空，请支持下面三种操作：
+
+给定一个整数 $x$，请将 $x$ 加入到数列中。
+输出数列中最小的数。
+删除数列中最小的数（如果有多个数最小，只删除 $1$ 个）。
+
+输入格式第一行是一个整数，表示操作的次数 $n$。接下来 $n$ 行，每行表示一次操作。每行首先有一个整数 $op$ 表示操作类型。
+
+若 $op &#x3D; 1$，则后面有一个整数 $x$，表示要将 $x$ 加入数列。
+若 $op &#x3D; 2$，则表示要求输出数列中的最小数。
+若 $op &#x3D; 3$，则表示删除数列中的最小数。如果有多个数最小，只删除 $1$ 个。
+
+输出格式对于每个操作 $2$，输出一行一个整数表示答案。
+样例 #1样例输入 #112345651 21 5232
+
+样例输出 #11225
+
+提示【数据规模与约定】
+
+对于 $30%$ 的数据，保证 $n \leq 15$。
+对于 $70%$ 的数据，保证 $n \leq 10^4$。
+对于 $100%$ 的数据，保证 $1 \leq n \leq 10^6$，$1 \leq x \lt 2^{31}$ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/05/C%E8%AF%AD%E8%A8%80%E5%88%B0%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-05T14:50:11.107Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></span></div><div class="content">z&#x3D;z*y
+if语句首先有一个作为临时存储器
+
+seqi+beqz（not true）+addi
+if-else语句seqi+beqz+—+j （done）else  
+
+while
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/05/%E5%B9%B6%E6%9F%A5%E9%9B%86/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-05T14:50:11.103Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></span></div><div class="content">并查集用处
+判断图里面有没有环
+
+ 
+
+算法的实现方法1一维数组实现一棵树
+
+parent[i]表示i的父亲，具体连接方式是把跟节点连接起来，也就是有同一个父亲就表示是在同一个并查集里面
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/05/%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8%E8%A1%A5%E5%85%85/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-05T14:50:11.099Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></span></div><div class="content">页的一些知识点概念页框来自内存，内存空间划分为大小相同的分区
+页面来自用户的进程，把用户的进程的地址空间划分为相同的区域
+页表建立，虚拟地址和物理地址的映射关系（主要是页面的映射，页面，到页框）
+具体实现每一行是也该虚拟地址的页，包含虚拟地址的页号（不用再行里面表示，页表的行号就是虚拟地址的页号），和物理地址的块号，（每一行的长度就是物理地址的块号，加上一些标记位）
+
+假设一个分页虚拟存储系统的虚拟地址为40位，物理地址为36位，页大小为16KB，按字节编址。若页表中的有效位、存储保护位、修改位、使用位共占4位，磁盘地址不在页表中。则该存储系统中每个程序的页表大小为多少（单位：MB）？（说明：1.假设每个程序都能使用全部的虚拟内存；2.页表项的长度必须为字节的整数倍）
+
+公式：虚拟地址的页数*（物理地址页数的位数+标记位）
+TBL1.CPU首先得到的是虚拟地址，必须将虚拟地址转换为物理地址才能进行数据访问。这个过程先查TLB，若TLB命中，则得到了物理地址，进行步骤2；否则，继续查找主存中的页表。若仍不命中，则引发缺页中断进行调页。调页过程又可能引发驻留集页替换和页回写过程。
+2.得到 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/05/%E8%87%AA%E9%99%B7%E4%BE%8B%E7%A8%8B%E5%92%8C%E4%B8%AD%E6%96%AD/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-05T14:50:11.095Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></span></div><div class="content">自陷例程序和中断造成混乱的情况I&#x2F;O行为包含很多被程序所共享的设备寄存器的使用，用户程序员没有谨慎处理，给其他用户程序造成混乱
+特权硬件寄存器是有特权的，不拥有适当的特权级别的程序不能被访问
+解决方案自陷（TRAP）指令
+操作系统
+拥有适当的特权级别
+用户程序员不需要在这个层面上理解I&#x2F;O
+系统调用
+TRAP机制服务例程操作系统的一部分，表示用户程序执行的一组程序
+
+TRAP向量表包括了256个服务例程的起始地址的表，每一个起始地址需要占用4个连续的存储单元
+256个服务例程需要使用256*4个单元，这张表被存储在存储单元的x0000 0000到x0000 03FF中。
+数据区&#x2F;代码区数据区的起始位置地址：代码区起始地址之前的x100个单元
+TRAP指令操作系统代表用户程序执行某一个服务例程，然后把控制权交给用户程序
+根据TRAP向量，PC&lt;-相应服务例程首地址
+提供返回路径&#x2F;“链接”
+指令阶段-1取指令
+pc&lt;-pc+4
+译码；
+计算有效地址；
+​	TRAP向量扩展到32位，然后左移2位（相当于x4）
+访问内存
 
 
+写回
 
 
-
-  
-
-
-
-
-
-
-
-
-
-
+TRA ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/05/%E6%80%BB%E7%BA%BF%E6%9C%89%E5%85%B3%E7%9A%84%E8%AE%A1%E7%AE%97%E9%A2%98/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-05T14:50:11.090Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></span></div><div class="content">所求的概念总线带宽总线最大的数据传输速率（不去考虑总线总裁和地址传输）
+数据传输速率考虑地址传输和握手等因素的数据传输速率
+总线事务包括传送地址和总线命令，准备数据和数据传输
+易错点1空闲间隔每一个总线事务都有
+总线2是分离的32位地址和32位数据的总线。支持最多连续8个字的存储器读操作和写操作总线事务，读操作的过程为：1个时钟周期传送地址，2个时钟周期延迟等待，从第4个时钟周期开始，存储器准备好数据，总线以每个时钟周期一个字的速度传输最多8个字；对于写操作，在第1个时钟周期内第1个数据字和地址一起传输，经过2个时钟周期的等待延迟后，以每个时钟周期1个字的速度传输，最多传输7个余下的数据字。
+假设这两种总线的时钟频率都是100MHz
+连续进行单个字的存储器写操作总线事务，总线2的数据传输率为多少（单位：Mbps）？
+2假定连接主存和CPU之间的同步总线具有以下特性：支持4字块和16字块（字长32位）
+两种长度的块传输，总线时钟频率为200MHz，总线宽度为64位，每个64位数据的传送需要1个时钟周期，向主存发送一个地址需要1个时钟周期，每个总线事务之间有2个空闲时钟周期。若访问主存时最 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/05/%E9%9D%A2%E5%AF%B9%E5%AF%B9%E8%B1%A1c++%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%91%BD%E5%90%8D%E9%97%AE%E9%A2%98/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-05T14:50:11.086Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></span></div><div class="content">面对对象c++中的继承带来的命名问题
+详细见Affectless C++ P156
 
 
-  
+Derived类里面有和Base一样名字的成员函数是重载（ overload），相当于Base的类的成员函数被抹除掉了，调用只能调用Derived里面的。（就算参数不一样也可以）
 
+在Derived中使用using Base::mf1可以让mf1在Derived的作用域里面可见，但是这种方式会让Base中的所有的mf1在Derived中都可见，可以使用forwarding function（p161）来解决
+12345//in the Class Derivedpublic:	void mf1()&#123;	Base::mf1();//Derived private 继承 Base	&#125;
 
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-</body>
-</html>
+</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="page-number" href="/page/5/#content-inner">5</a><a class="extend next" rel="next" href="/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/05/2022-10-31-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%81%A2%E5%A4%8D%E4%BA%8C%E5%8F%89%E6%A0%91/" title="No title">No title</a><time datetime="2023-03-05T14:50:11.219Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/05/2022-10-31-%20%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86/" title="No title">No title</a><time datetime="2023-03-05T14:50:11.215Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/05/2022-10-31-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E4%B8%AD%E5%BA%8F%E5%92%8C%E5%89%8D%E5%BA%8F%E7%BB%84%E6%88%90%E4%BA%8C%E5%8F%89%E6%A0%91/" title="No title">No title</a><time datetime="2023-03-05T14:50:11.210Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/05/2022-11-1-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/" title="No title">No title</a><time datetime="2023-03-05T14:50:11.206Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/05/c++%E8%A1%A5%E5%85%85-1/" title="No title">No title</a><time datetime="2023-03-05T14:50:11.201Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">March 2023</span><span class="card-archive-list-count">43</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">43</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-03-08T02:57:20.158Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

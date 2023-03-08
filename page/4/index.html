@@ -1,2269 +1,298 @@
-<!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="en">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.0.0" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.0" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="恢复二叉搜索树给你二叉搜索树的根节点 root ，该树中的 恰好 两个节点的值被错误地交换。请在不改变其结构的情况下，恢复这棵树 。 示例 1：  123输入：root &#x3D; [1,3,null,null,2]输出：[3,1,null,null,2]解释：3 不能是 1 的左孩子，因为 3 &gt; 1 。交换 1 和 3 使二叉搜索树有效。  示例 2：  123输入：root &#x3D; [3,1,4,">
-<meta property="og:type" content="article">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/2023/03/05/2022-10-31-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%81%A2%E5%A4%8D%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
+<meta property="og:url" content="http://example.com/page/4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="恢复二叉搜索树给你二叉搜索树的根节点 root ，该树中的 恰好 两个节点的值被错误地交换。请在不改变其结构的情况下，恢复这棵树 。 示例 1：  123输入：root &#x3D; [1,3,null,null,2]输出：[3,1,null,null,2]解释：3 不能是 1 的左孩子，因为 3 &gt; 1 。交换 1 和 3 使二叉搜索树有效。  示例 2：  123输入：root &#x3D; [3,1,4,">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/10/28/recover1.jpg">
-<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/10/28/recover2.jpg">
-<meta property="article:published_time" content="2023-03-05T14:50:11.219Z">
-<meta property="article:modified_time" content="2022-10-31T07:43:21.772Z">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://assets.leetcode.com/uploads/2020/10/28/recover1.jpg">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '',
-    scheme: 'Muse',
-    version: '6.0.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/page/4/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
     }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://example.com/2023/03/05/2022-10-31-每日一题-恢复二叉树/"/>
-
-
-
-
-
-  <title>Hexo</title>
-  
-
-
-
-
-
-
-
-
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> <div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/The%20application%20of%20the%20inheritance%20of%20interface%20and%20the%20inheritance%20of%20implementation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/03/05/The%20application%20of%20the%20inheritance%20of%20interface%20and%20the%20inheritance%20of%20implementation/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="The-application-of-the-inheritance-of-interface-and-the-inheritance-of-implementation"><a href="#The-application-of-the-inheritance-of-interface-and-the-inheritance-of-implementation" class="headerlink" title="The application of the inheritance of interface and the inheritance of implementation"></a>The application of the inheritance of interface and the inheritance of implementation</h1><blockquote>
-<p>Read the Effective C++ P161 for details</p>
-</blockquote>
-<h2 id="Pure-virtual"><a href="#Pure-virtual" class="headerlink" title="Pure virtual"></a>Pure virtual</h2><blockquote>
-<p>The pure virtual function is armed at making sure derived classed only derive the interface</p>
-</blockquote>
-<p>we cannot give a definition to a function because it’s different in different Class. The pure virtual will be the first choice.</p>
-<h2 id="impure-virtual"><a href="#impure-virtual" class="headerlink" title="impure virtual"></a>impure virtual</h2><p>this function cannot be changed and have a default function</p>
-<h2 id="non-virtual"><a href="#non-virtual" class="headerlink" title="non-virtual"></a>non-virtual</h2><p>this function cannot not be changed. It’s a forced implementation </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/c++%E6%A0%BC%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/03/05/c++%E6%A0%BC%E5%BC%8F/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="C-cout成员方法格式化输出"><a href="#C-cout成员方法格式化输出" class="headerlink" title="C++ cout成员方法格式化输出"></a>C++ cout成员方法格式化输出</h2><p>《<a target="_blank" rel="noopener" href="http://c.biancheng.net/view/7559.html">C++输入流和输出流</a>》一节中，已经针对 cout 讲解了一些常用成员方法的用法。除此之外，ostream 类中还包含一些可实现格式化输出的成员方法，这些成员方法都是从 ios 基类（以及 ios_base 类）中继承来的，cout（以及 cerr、clog）也能调用。</p>
-<p>下面 罗列了 ostream 类中可实现格式化输出的常用成员方法，以及它们各自的用法。</p>
-<table>
-<thead>
-<tr>
-<th>成员函数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>flags(fmtfl)</td>
-<td>当前格式状态全部替换为 fmtfl。注意，fmtfl 可以表示一种格式，也可以表示多种格式。</td>
-</tr>
-<tr>
-<td>precision(n)</td>
-<td>设置输出浮点数的精度为 n。</td>
-</tr>
-<tr>
-<td>width(w)</td>
-<td>指定输出宽度为 w 个字符。</td>
-</tr>
-<tr>
-<td>fill(c)</td>
-<td>在指定输出宽度的情况下，输出的宽度不足时用字符 c 填充（默认情况是用空格填充）。</td>
-</tr>
-<tr>
-<td>setf(fmtfl, mask)</td>
-<td>在当前格式的基础上，追加 fmtfl 格式，并删除 mask 格式。其中，mask 参数可以省略。</td>
-</tr>
-<tr>
-<td>unsetf(mask)</td>
-<td>在当前格式的基础上，删除 mask 格式。</td>
-</tr>
-</tbody></table>
-<p>其中，对于表 1 中 flags() 函数的 fmtfl 参数、setf() 函数中的 fmtfl 参数和 mask 参数以及 unsetf() 函数 mask 参数，可以选择表 2 中列出的这些值。</p>
-<table>
-<thead>
-<tr>
-<th>标 志</th>
-<th>作 用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ios::boolapha</td>
-<td>把 true 和 false 输出为字符串</td>
-</tr>
-<tr>
-<td>ios::left</td>
-<td>输出数据在本域宽范围内向左对齐</td>
-</tr>
-<tr>
-<td>ios::right</td>
-<td>输出数据在本域宽范围内向右对齐</td>
-</tr>
-<tr>
-<td>ios::internal</td>
-<td>数值的符号位在域宽内左对齐，数值右对齐，中间由填充字符填充</td>
-</tr>
-<tr>
-<td>ios::dec</td>
-<td>设置整数的基数为 10</td>
-</tr>
-<tr>
-<td>ios::oct</td>
-<td>设置整数的基数为 8</td>
-</tr>
-<tr>
-<td>ios::hex</td>
-<td>设置整数的基数为 16</td>
-</tr>
-<tr>
-<td>ios::showbase</td>
-<td>强制输出整数的基数（八进制数以 0 开头，十六进制数以 0x 打头）</td>
-</tr>
-<tr>
-<td>ios::showpoint</td>
-<td>强制输出浮点数的小点和尾数 0</td>
-</tr>
-<tr>
-<td>ios::uppercase</td>
-<td>在以科学记数法格式 E 和以十六进制输出字母时以大写表示</td>
-</tr>
-<tr>
-<td>ios::showpos</td>
-<td>对正数显示“+”号</td>
-</tr>
-<tr>
-<td>ios::scientific</td>
-<td>浮点数以科学记数法格式输出</td>
-</tr>
-<tr>
-<td>ios::fixed</td>
-<td>浮点数以定点格式（小数形式）输出</td>
-</tr>
-<tr>
-<td>ios::unitbuf</td>
-<td>每次输出之后刷新所有的流</td>
-</tr>
-</tbody></table>
-<p>举个例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;    </span><br><span class="line">	double a = 1.23;    //设定后续输出的浮点数的精度为 4 </span><br><span class="line">	cout.precision(4);   </span><br><span class="line">	cout &lt;&lt;&quot;precision: &quot;&lt;&lt; a &lt;&lt; endl;    //设定后续以科学计数法的方式输出浮点数   </span><br><span class="line">	cout.setf(ios::scientific); </span><br><span class="line">	cout &lt;&lt;&quot;scientific：&quot;&lt;&lt; a &lt;&lt; endl;  </span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>程序执行结果为：</p>
-<p>precision: 1.23<br>scientific：1.2300e+00</p>
-<blockquote>
-<p>注意，当 cout 采用此方式进行格式化输出时，其后不能立即输出数据，而只能像示例程序中那样，再用一个 cout 输出数据。</p>
-</blockquote>
-<p>值得一提的是，当调用 unsetf() 或者 2 个参数的 setf() 函数时，为了提高编写代码的效率，可以给 mask 参数传递如下 3 个组合格式：</p>
-<ul>
-<li>ios::adjustfield：等价于 ios::left | ios::right | ios::internal；</li>
-<li>ios::basefield：等价于 ios::dec | ios::oct | ios::hex；</li>
-<li>ios::floatfield：等价于 ios::scientific | ios::fixed。</li>
-</ul>
-<p>举个例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;using namespace std;int main()&#123;    double f = 123;    //设定后续以科学计数法表示浮点数    cout.setf(ios::scientific);    cout &lt;&lt; f &lt;&lt; &#x27;\n&#x27;;    //删除之前有关浮点表示的设定    cout.unsetf(ios::floatfield);    cout &lt;&lt; f;    return 0;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>程序执行结果为：</p>
-<p>1.230000e+02<br>123</p>
-<h2 id="使用流操纵算子格式化输出"><a href="#使用流操纵算子格式化输出" class="headerlink" title="使用流操纵算子格式化输出"></a>使用流操纵算子格式化输出</h2><p>表 3 罗列了 <iomanip> 头文件中定义的一些常用的格式控制符，它们都可用于格式化输出。</p>
-<table>
-<thead>
-<tr>
-<th>流操纵算子</th>
-<th>作  用</th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>*dec</td>
-<td>以十进制形式输出整数</td>
-<td>常用</td>
-</tr>
-<tr>
-<td>hex</td>
-<td>以十六进制形式输出整数</td>
-<td></td>
-</tr>
-<tr>
-<td>oct</td>
-<td>以八进制形式输出整数</td>
-<td></td>
-</tr>
-<tr>
-<td>fixed</td>
-<td>以普通小数形式输出浮点数</td>
-<td></td>
-</tr>
-<tr>
-<td>scientific</td>
-<td>以科学计数法形式输出浮点数</td>
-<td></td>
-</tr>
-<tr>
-<td>left</td>
-<td>左对齐，即在宽度不足时将填充字符添加到右边</td>
-<td></td>
-</tr>
-<tr>
-<td>*right</td>
-<td>右对齐，即在宽度不足时将填充字符添加到左边</td>
-<td></td>
-</tr>
-<tr>
-<td>setbase(b)</td>
-<td>设置输出整数时的进制，b&#x3D;8、10 或 16</td>
-<td></td>
-</tr>
-<tr>
-<td>setw(w)</td>
-<td>指定输出宽度为 w 个字符，或输入字符串时读入 w 个字符。注意，该函数所起的作用是一次性的，即只影响下一次 cout 输出。</td>
-<td></td>
-</tr>
-<tr>
-<td>setfill(c)</td>
-<td>在指定输出宽度的情况下，输出的宽度不足时用字符 c 填充（默认情况是用空格填充）</td>
-<td></td>
-</tr>
-<tr>
-<td>setprecision(n)</td>
-<td>设置输出浮点数的精度为 n。  在使用非 fixed 且非 scientific 方式输出的情况下，n 即为有效数字最多的位数，如果有效数字位数超过 n，则小数部分四舍五人，或自动变为科学计 数法输出并保留一共 n 位有效数字。  在使用 fixed 方式和 scientific 方式输出的情况下，n 是小数点后面应保留的位数。</td>
-<td></td>
-</tr>
-<tr>
-<td>setiosflags(mask)</td>
-<td>在当前格式状态下，追加 mask 格式，mask 参数可选择表 2 中的所有值。</td>
-<td></td>
-</tr>
-<tr>
-<td>resetiosflags(mask)</td>
-<td>在当前格式状态下，删除 mask 格式，mask 参数可选择表 2 中的所有值。</td>
-<td></td>
-</tr>
-<tr>
-<td>boolapha</td>
-<td>把 true 和 false 输出为字符串</td>
-<td>不常用</td>
-</tr>
-<tr>
-<td>*noboolalpha</td>
-<td>把 true 和 false 输出为 0、1</td>
-<td></td>
-</tr>
-<tr>
-<td>showbase</td>
-<td>输出表示数值的进制的前缀</td>
-<td></td>
-</tr>
-<tr>
-<td>*noshowbase</td>
-<td>不输出表示数值的进制.的前缀</td>
-<td></td>
-</tr>
-<tr>
-<td>showpoint</td>
-<td>总是输出小数点</td>
-<td></td>
-</tr>
-<tr>
-<td>*noshowpoint</td>
-<td>只有当小数部分存在时才显示小数点</td>
-<td></td>
-</tr>
-<tr>
-<td>showpos</td>
-<td>在非负数值中显示 +</td>
-<td></td>
-</tr>
-<tr>
-<td>*noshowpos</td>
-<td>在非负数值中不显示 +</td>
-<td></td>
-</tr>
-<tr>
-<td>uppercase</td>
-<td>十六进制数中使用 A~E。若输出前缀，则前缀输出 0X，科学计数法中输出 E</td>
-<td></td>
-</tr>
-<tr>
-<td>*nouppercase</td>
-<td>十六进制数中使用 a~e。若输出前缀，则前缀输出 0x，科学计数法中输出 e。</td>
-<td></td>
-</tr>
-<tr>
-<td>internal</td>
-<td>数值的符号（正负号）在指定宽度内左对齐，数值右对 齐，中间由填充字符填充。</td>
-<td></td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>注意：“流操纵算子”一栏带有星号 * 的格式控制符，默认情况下就会使用。例如在默认情况下，整数是用十进制形式输出的，等效于使用了 dec 格式控制符。</p>
-</blockquote>
-<p>和 cout 成员方法的用法不同，下面程序演示了表 3 中这些格式控制符的用法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;iomanip&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;    //以十六进制输出整数   </span><br><span class="line">cout &lt;&lt; hex &lt;&lt; 16 &lt;&lt; endl;  //删除之前设定的进制格式，以默认的 10 进制输出整数 </span><br><span class="line">cout &lt;&lt; resetiosflags(ios::basefield)&lt;&lt; 16 &lt;&lt; endl;  </span><br><span class="line">double a = 123;    //以科学计数法的方式输出浮点数  </span><br><span class="line">cout &lt;&lt; scientific &lt;&lt; a &lt;&lt; endl;    //删除之前设定的科学计数法的方法  </span><br><span class="line">cout &lt;&lt; resetiosflags(ios::scientific) &lt;&lt; a &lt;&lt; endl; </span><br><span class="line">return 0;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>程序执行结果为：</p>
-<p>10<br>16<br>1.230000e+02<br>123</p>
-<blockquote>
-<p>注意，如果两个相互矛盾的标志同时被设置，如先设置 setiosflags(ios::fixed)，然后又设置 setiosflags(ios::scientific)，那么结果可能就是两个标志都不起作用。因此，在设置了某标志，又要设置其他与之矛盾的标志时，就应该用 resetiosflags 清除原先的标志。</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/%E5%AE%9E%E9%AA%8C%E8%A6%81%E7%94%A8%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/03/05/%E5%AE%9E%E9%AA%8C%E8%A6%81%E7%94%A8%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="RIP"><a href="#RIP" class="headerlink" title="RIP"></a>RIP</h2><h3 id="配置的命令格式"><a href="#配置的命令格式" class="headerlink" title="配置的命令格式"></a>配置的命令格式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Router(config)#router rip</span><br><span class="line">Router(config-router)#network &lt;network-number&gt; #属于上面的网络都运行RIP路由协议</span><br></pre></td></tr></table></figure>
-
-<h3 id="基本知识点"><a href="#基本知识点" class="headerlink" title="基本知识点"></a>基本知识点</h3><ol>
-<li>RIP 是一种距离向量协议，它以预定间隔将其整个路由表广播到每个邻居路由器。默认间隔为<strong>30秒</strong>。</li>
-<li>RIP使用<strong>跳数</strong>作为度量标准，最大跳数为<strong>15</strong>，达到16跳的报文自动抛弃。、</li>
-<li>RIP v1能够在多达六个等价路径上进行**负载平衡(Load Balancing)**，默认情况下为四个路径，最多6个，跳数相同才能完成负载均衡，跳数不同不满足条件、</li>
-<li>它不会在其更新中发送子网掩码信息:意味着必须用同样的子网掩码，不支持VLSM或无类域间路由(CIDR，Classless Interdomain Routing)。</li>
-<li>它以255.255.255.255的广播形式发送更新:只能发给邻居，不能通过路由器转发。</li>
-<li>它不支持身份验证(authentication):只要启动RIP就可以接受到信息，也就意味着只要接入网络并且启动RIP进程，就可以了解到整个网络拓扑</li>
-</ol>
-<h3 id="RIP的更新规则"><a href="#RIP的更新规则" class="headerlink" title="RIP的更新规则"></a>RIP的更新规则</h3><ol>
-<li>把发来的路由表的下一跳都改为发来的路由器编号，距离都加1</li>
-<li>如果原来的路由表没有目的网络，更新<br>如果原来的路由表有下一跳和目的网络一样的，不管距离大小，都更新<br>如果原来的路由表，有相同目的网络的但是下一跳不一样，保留距离小的。<br>没有的物理表，保持原样</li>
-</ol>
-<p>路由表ex：</p>
-<table>
-<thead>
-<tr>
-<th>目的网络</th>
-<th>距离</th>
-<th>下一跳路由器</th>
-</tr>
-</thead>
-</table>
-<h2 id="VLAN和Trunk"><a href="#VLAN和Trunk" class="headerlink" title="VLAN和Trunk"></a>VLAN和Trunk</h2><h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><p>骨干（backbone&#x2F;trunk link）：交换设备和交换设备之间所使用的连接（不然有几个 VLAN 就需要几条线，浪费端<br>口）</p>
-<p>（1）Access Links（接入链路）：<br>接入链路是在交换机上只属于一个 VLAN 的链路，任何接入的设备并不知情有 VLAN 的存在（VLAN 对每台设备<br>是透明的）<br>（2）Trunk VLANS（中继链路）：<br>点对点，支持多个 VLANs；主要用来连接交换机和交换机；不需要属于某个特定的 VLAN；可能有一个本地 VLAN；<br>支持在快速以太网和 G 比特以太网；节省端口</p>
-<h3 id="配置的命令格式-1"><a href="#配置的命令格式-1" class="headerlink" title="配置的命令格式"></a>配置的命令格式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int f0/2</span><br><span class="line">switchport mode access</span><br><span class="line">switchport access vlan 2</span><br><span class="line">int f0/3</span><br><span class="line">switchport mode trunk</span><br></pre></td></tr></table></figure>
-
-<h2 id="静态NAT"><a href="#静态NAT" class="headerlink" title="静态NAT"></a>静态NAT</h2><p>​	1、指定NAT内部接口&#96;</p>
-<p>​         在内网相应接口的接口配置模式下执行：<code>ip nat inside</code></p>
-<p>​	2、指定NAT外部接口&#96;</p>
-<p>​         在外网相应接口的接口配置模式下执行：<code>ip nat outside</code></p>
-<p>​	3、在内部本地地址与内部全局地址之间建立静态地址转换关系：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip nat inside source static 内部本地地址 内部全局地址</span><br></pre></td></tr></table></figure>
-
-<p>​    4、(实际上用第三条就可以了)在外部全局地址与外部本地地址之间建立静态地址转换关系：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip nat outside source static 外部全局地址 外部本地地址</span><br></pre></td></tr></table></figure>
-
-
-
-<ol start="5">
-<li><code>show ip nat translations</code>   展示配置的情况</li>
-</ol>
-<h2 id="ACL"><a href="#ACL" class="headerlink" title="ACL"></a>ACL</h2><h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><p><code>Router(config)#access-list &lt;access-list-number&gt; &lt;permit/deny&gt; &lt;test-conditions&gt;</code></p>
-<p><code>&lt;test-conditions&gt;</code>参数是IP掩码和通配符掩码</p>
-<p><code>show access-list</code>展示ACL配置</p>
-<p><code>&lt;protocol&gt; access-group access-list-number &lt;in/out&gt;</code></p>
-<p>IP掩码：Ipv4地址</p>
-<p>通配符掩码：</p>
-<ul>
-<li><p><strong>0位表示检查该位位置</strong></p>
-</li>
-<li><p><strong>1表示忽略该位位置</strong></p>
-</li>
-</ul>
-<h3 id="扩展ACL"><a href="#扩展ACL" class="headerlink" title="扩展ACL"></a>扩展ACL</h3><p>扩展ACL的编号范围为100-199，并”扩展”了标准ACL的功能。</p>
-<p>可以基于目的地址，<strong>ip协议的部分(更加细分):您可以编写语句以仅拒绝”ICMP”等协议或”RIP”和”IGRP”之类的路由协议</strong>，协议套件的上层（TFTP”或”HTTP”之类的协议，eq，gt，lt和neq(等于，大于，小于和不等于)之类的操作数来指定如何处理特定协议）</p>
-<ul>
-<li>由于扩展的ACL具有目标信息，因此<strong>您希望将其放置在尽可能靠近源的位置。</strong></li>
-</ul>
-<h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><p>在<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%B7%AF%E7%94%B1%E5%99%A8&spm=1001.2101.3001.7020">路由器</a>上读取第三层及第四层包头中的信息如源地址，目的地址，源端口，目的端口等，根据预先定 义好的规则对包进行过滤，从而达到访问控制的目的。</p>
-<p>类型：</p>
-<p>标准访问控制列表：一般应用在out出站接口。建议配置在离目标端最近的路由上</p>
-<p>扩展访问控制列表：配置在离源端最近的路由上，一般应用在入站in方向</p>
-<p>命名访问控制列表：允许在标准和扩展访问列表中使用名称代替表号</p>
-<p>准则：</p>
-<ul>
-<li><p>按照顺序对ACL语句进行测试</p>
-</li>
-<li><p>ACL末尾有一个隐含的”deny any”语句:如果数据包与ACL中的任何语句都不匹配，则将其丢弃。</p>
-</li>
-</ul>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20230103234438456.png" alt="image-20230103234438456"></p>
-<p><strong>ICMP（Internet Control Message Protocol）网际控制报文协议</strong></p>
-<p>允许主机或路由器报告差错情况和提供有关异常情况的报告，为了更有效的转发ip数据报和提高交付成功的机会。</p>
-<p>包括ICMP差错报告报文、ICMP询问报文。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/%E6%A0%B7%E6%9C%AC%E7%BB%9F%E8%AE%A1,%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1%EF%BC%8C%E7%9F%A9%E4%BC%B0%E8%AE%A1%EF%BC%8C%E6%97%A0%E5%81%8F%E6%80%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/03/05/%E6%A0%B7%E6%9C%AC%E7%BB%9F%E8%AE%A1,%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1%EF%BC%8C%E7%9F%A9%E4%BC%B0%E8%AE%A1%EF%BC%8C%E6%97%A0%E5%81%8F%E6%80%A7/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/IMG_20221129_145754.jpg" alt="IMG_20221129_145754"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/IMG_20221129_151215.jpg" alt="IMG_20221129_151215"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129154500798.png" alt="image-20221129154500798"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129154515316.png" alt="image-20221129154515316"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/03/05/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <iframe src="//player.bilibili.com/player.html?aid=690427890&bvid=BV1624y117o6&cid=900595312&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-<p>基本概念</p>
-<p>检验均值</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20230125155909795.png" alt="image-20230125155909795"></p>
-<p>原假设H0备选假设H1</p>
-<p>拒绝域</p>
-<p>计算统计量，拒绝域,接受域，原假设，备择假设</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20230125160708915.png" alt="image-20230125160708915"></p>
-<p>计算统计量查看拒绝域</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/Cache%E7%9A%84%E4%B8%80%E9%83%A8%E5%88%86%E8%AE%B2%E8%A7%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/03/05/Cache%E7%9A%84%E4%B8%80%E9%83%A8%E5%88%86%E8%AE%B2%E8%A7%A3/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Cacha"><a href="#Cacha" class="headerlink" title="Cacha"></a>Cacha</h1><p>Cache主要是为了解决内存墙带来的CPU和主存协作问题</p>
-<h3 id="程序访问的局部性"><a href="#程序访问的局部性" class="headerlink" title="程序访问的局部性"></a>程序访问的局部性</h3><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031713220.png" alt="image-20221103171316185"></p>
-<h3 id="平均访问时间"><a href="#平均访问时间" class="headerlink" title="平均访问时间"></a>平均访问时间</h3><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031713718.png" alt="image-20221103171347687"></p>
-<h2 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h2><h3 id="直接映射"><a href="#直接映射" class="headerlink" title="直接映射"></a>直接映射</h3><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031716762.png" alt="image-20221103171611723">、</p>
-<p>M是块数，C是行数</p>
-<p>上面定义了Cacha直接映射时候的地址的结构，有C行所有logC的值是Cacha的行号和块内的地址。</p>
-<p>然后一次存储单元是8个字，所有有16个单元就是说，寻址能力是4，所有前2位是用来区分映射到不同行的不同的块</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031716043.png" alt="image-20221103171619997"></p>
-<p>通过cache字块的地址来找到对应的行，如果标记一样就命中。</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031716235.png" alt="image-20221103171629191"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031716548.png"></p>
-<p>优点；</p>
-<ul>
-<li>简单</li>
-<li>快速映射</li>
-<li>快速检查</li>
-</ul>
-<p>缺点</p>
-<ul>
-<li>抖动现象：如果程序需要重复访问两个来自同一行不同块的字，需要不断的交换cache中，cache的命中率将会降低，</li>
-</ul>
-<p>适用于大容量的cache</p>
-<ul>
-<li>行数变多，发生冲突失效的概率降低</li>
-<li>硬件电路简单，增大容量对Tc的影响不明显</li>
-</ul>
-<h3 id="关联映射"><a href="#关联映射" class="headerlink" title="关联映射"></a>关联映射</h3><p>一主存块可以装入cache的任意一行</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031637483.png" alt="image-20221103163757442"></p>
-<p>取消行的编号，直接储存块的编号</p>
-<p>优点</p>
-<p>避免抖动</p>
-<p>缺点</p>
-<ul>
-<li>实现起来比较复杂</li>
-<li>cache搜索代价大，检测时候要访问cache的每一行</li>
-</ul>
-<p>适合小容量cache</p>
-<ul>
-<li>cache更容易产生抖动</li>
-<li>cache的搜素时间短</li>
-</ul>
-<h3 id="组关联映射"><a href="#组关联映射" class="headerlink" title="组关联映射"></a>组关联映射</h3><p>K-路组映射</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031639665.png" alt="image-20221103163949633"></p>
-<p>k，一组中有k行</p>
-<p>主存的块可以被映射到固定组的任意一行</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031643520.png" alt="image-20221103164332474"></p>
-<h2 id="替换算法"><a href="#替换算法" class="headerlink" title="替换算法"></a>替换算法</h2><p>替换算法通过硬件来实现，设计替换算法的目的是提高命中率</p>
-<h3 id="LRU"><a href="#LRU" class="headerlink" title="LRU"></a>LRU</h3><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031656547.png" alt="image-20221103165625492"></p>
-<p>标记最近使用的元素：</p>
-<p>当一个元素使用的时候，自己1，傍边的0（表示自己比傍边的经常访问)</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031708270.jpeg" alt="IMG_20221103_170753"></p>
-<p>简单点，使用了就归0，其他的加1，如果要加入新的，就把数最大的给踢了，加入最新的。</p>
-<p>需要的位数，对于每一组，要k个logk来做标记</p>
-<p>LRU的提高效果没有那么高</p>
-<h3 id="FIFO"><a href="#FIFO" class="headerlink" title="FIFO"></a>FIFO</h3><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031719984.png" alt="image-20221103171924946"></p>
-<h3 id="LFU"><a href="#LFU" class="headerlink" title="LFU"></a>LFU</h3><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031723263.png" alt="image-20221103172322225"></p>
-<h3 id="随机替换算法"><a href="#随机替换算法" class="headerlink" title="随机替换算法"></a>随机替换算法</h3><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031724694.png" alt="image-20221103172449656"></p>
-<h2 id="写策略"><a href="#写策略" class="headerlink" title="写策略"></a>写策略</h2><h3 id="写直达"><a href="#写直达" class="headerlink" title="写直达"></a>写直达</h3><p>所有写操作都同时对cache和主存进行</p>
-<p>优点</p>
-<p>确保主存中的数据总是和cache中的数据一致，总是最新的（例如多CPU 同步的场景）</p>
-<p>缺点</p>
-<p>产生大量的主存访问，减慢写操作</p>
-<h3 id="写回法"><a href="#写回法" class="headerlink" title="写回法"></a>写回法</h3><p>优点</p>
-<ul>
-<li>减少了访问主存的次数</li>
-</ul>
-<p>缺点</p>
-<ul>
-<li>部分主存的数据可能不是最新的<ul>
-<li>I&#x2F;O模块存取时可能无法获得最新的数据，为解决该问题会使得电 路设计更加复杂且有可能带来性能瓶颈</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031743483.png" alt="image-20221103174308449"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031743879.png" alt="image-20221103174351848"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211031746026.png" alt="image-20221103174618992"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20230131205534052.png" alt="image-20230131205534052"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/%E7%A1%AC%E7%A3%81%E7%9B%98%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E8%AE%A1%E7%AE%97%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/03/05/%E7%A1%AC%E7%A3%81%E7%9B%98%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E8%AE%A1%E7%AE%97%E9%A2%98/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="硬磁盘存储器访问时间"><a href="#硬磁盘存储器访问时间" class="headerlink" title="硬磁盘存储器访问时间"></a>硬磁盘存储器访问时间</h1><h2 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h2><h3 id="寻道时间"><a href="#寻道时间" class="headerlink" title="寻道时间"></a>寻道时间</h3><p>磁头定位到磁道的时间</p>
-<h3 id="旋转延迟"><a href="#旋转延迟" class="headerlink" title="旋转延迟"></a>旋转延迟</h3><p>等待相应扇区的起始位置移动带磁头，通常是旋转半圈的时间</p>
-<h3 id="传送时间"><a href="#传送时间" class="headerlink" title="传送时间"></a>传送时间</h3><p>传输数据的时间（也就是磁头在有数据的部分都移动一遍）</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221204230119632.png" alt="image-20221204230119632"></p>
-<p>平均访问时间&#x3D;平均寻道时间+平均旋转延迟+传送时间</p>
-<p>相邻磁道，每个磁道都要考虑旋转延迟，只要考虑第一个磁道的寻道时间（题目给了具体寻道时间的话就要全部给出）。</p>
-<h3 id="存取情况（顺序存取）"><a href="#存取情况（顺序存取）" class="headerlink" title="存取情况（顺序存取）"></a>存取情况（顺序存取）</h3><h3 id="存取在相邻的磁道"><a href="#存取在相邻的磁道" class="headerlink" title="存取在相邻的磁道"></a>存取在相邻的磁道</h3><p>寻道时间只算一次，旋转延迟取转半圈的时间。传送时间正常求</p>
-<p>寻道时间+旋转延迟*磁道数+所有的传送时间</p>
-<h3 id="随机存取"><a href="#随机存取" class="headerlink" title="随机存取"></a>随机存取</h3><p>每读取一个扇区就要寻道和旋转延迟</p>
-<p>扇区数*（寻道时间+旋转延迟+一个扇区的传送时间）</p>
-<h1 id="磁盘调度"><a href="#磁盘调度" class="headerlink" title="磁盘调度"></a>磁盘调度</h1><h3 id="先来先服务（FCFS）"><a href="#先来先服务（FCFS）" class="headerlink" title="先来先服务（FCFS）"></a>先来先服务（FCFS）</h3><p>按照请求访问磁盘的先后次序进行处理</p>
-<p>优点：公平简单 </p>
-<p>缺点：如果有大量访问磁盘的任务，且请求访问的磁道很分散，则性 能上很差，寻道时间长</p>
-<p>具体计算：按照请求顺序，看移动的磁道（移动就是单纯的相减）</p>
-<h2 id="扇区传送时间可以用数据传输速度来代替（数据传输率，不只考虑纯读取时候的时间）"><a href="#扇区传送时间可以用数据传输速度来代替（数据传输率，不只考虑纯读取时候的时间）" class="headerlink" title="扇区传送时间可以用数据传输速度来代替（数据传输率，不只考虑纯读取时候的时间）"></a>扇区传送时间可以用数据传输速度来代替（数据传输率，不只考虑纯读取时候的时间）</h2><h3 id="最短寻道时间优先（SSTF）"><a href="#最短寻道时间优先（SSTF）" class="headerlink" title="最短寻道时间优先（SSTF）"></a>最短寻道时间优先（SSTF）</h3><p>优先处理起始位置与当前磁头位置最接近的读写任务</p>
-<p>优点：每次的寻道时间最短（局部最优），平均寻道时间缩短</p>
-<p>缺点：可能产生饥饿现象，尤其是位于两端的磁道请求</p>
-<p>具体计算：找最近的之后再去移动</p>
-<h3 id="扫描-x2F-电梯（SCAN）"><a href="#扫描-x2F-电梯（SCAN）" class="headerlink" title="扫描&#x2F;电梯（SCAN）"></a>扫描&#x2F;电梯（SCAN）</h3><p>总是按照一个方向进行磁盘调度，直到该方向上的边缘，然后改变方向</p>
-<p>优点：性能好，寻道时间短，不会有产生饥饿现象</p>
-<p>缺点：总是按照一个方向进行磁盘调度，直到该方向上的边缘，然后改变方向</p>
-<p>具体计算：先朝一个方向到头然后朝另一个方向到头，</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221204232254912.png" alt="image-20221204232254912"></p>
-<p>可以画数轴计算</p>
-<h3 id="循环扫描（S-SCAN）"><a href="#循环扫描（S-SCAN）" class="headerlink" title="循环扫描（S-SCAN）"></a>循环扫描（S-SCAN）</h3><p>和上面相同，不过方向不会改变</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221204232357380.png" alt="image-20221204232357380"></p>
-<h3 id="C-LOOK"><a href="#C-LOOK" class="headerlink" title="C-LOOK"></a>C-LOOK</h3><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221204232604342.png" alt="image-20221204232604342"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/%E6%A0%91%E7%9A%84%E5%BA%94%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/03/05/%E6%A0%91%E7%9A%84%E5%BA%94%E7%94%A8/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> BinaryNode <span class="title function_">find</span><span class="params">(Conparable x,BinaryNode t)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(t==<span class="literal">null</span>)</span><br><span class="line">	 <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">	 <span class="keyword">if</span>(x.compareTo(t.element)&lt;<span class="number">0</span>)</span><br><span class="line">	 	<span class="keyword">return</span> find(x,t.left);</span><br><span class="line">	 <span class="keyword">if</span>(x.comparaTo(t.element)&gt;<span class="number">0</span>)</span><br><span class="line">	 	<span class="keyword">return</span> find(x,t.rigth);</span><br><span class="line">	 <span class="keyword">else</span></span><br><span class="line">	 	<span class="keyword">return</span> t;</span><br><span class="line">&#125;<span class="comment">//复杂度是数的高度，搜索次数是对数量级的。</span></span><br></pre></td></tr></table></figure>
-<p>二叉搜索数的节点是不可以重复的。<br>二叉搜索树的插入</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(t==<span class="literal">null</span>)</span><br><span class="line">	t=<span class="keyword">new</span> <span class="title class_">BinaryNode</span>(x,<span class="literal">null</span>,<span class="literal">null</span>);<span class="comment">//找找，找到头</span></span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(x.compareTo(t.element)&lt;<span class="number">0</span>)</span><br><span class="line">t.left=insert(x.t.left);</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(x.comparaTo(t.element)&gt;<span class="number">0</span>)</span><br><span class="line">t.right=insert(x.t.right);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	;</span><br><span class="line"><span class="keyword">return</span> t；<span class="comment">//这种方式的插入不是太好，要保证二叉搜索树是一个比较接近满二叉搜索树的</span></span><br></pre></td></tr></table></figure>
-<p>二叉搜素树的删除</p>
-<p><img src="http://pic.mikumifa.cn/2022/11/02/c741b895ab658.png"></p>
-<p>删除的3种情况</p>
-<p>删除树叶直接删</p>
-<p>有一个子树的直接接上去，</p>
-<p>有2个子树的，把左子树的最大的节点（左子树，然后一直朝右走）</p>
-<p><img src="http://pic.mikumifa.cn/2022/11/02/e32a91742e8a8.png"></p>
-<p>树的遍历的时候在递归的开头设下边界限制，那么后面就不需要单独判断是还不是null</p>
-<p>复杂度是数的高度，先找，找到之后，3种情况</p>
-<ol>
-<li>都有节点，就把右子树最小的（或者做子树最大的值放上去，然后递归的调用删除element 的情况（实际上就是把最小的给删掉就可以了））</li>
-</ol>
-<p>2，如果不是null，直接接到下一个节点就可以了，（找最小值的方法可以直接的找最右边或者最左边）</p>
-<h2 id="AVL-Tree"><a href="#AVL-Tree" class="headerlink" title="AVL Tree"></a>AVL Tree</h2><p>每一个子树的左子树和友子树的高度差1</p>
-<p><strong>平衡因子（</strong>bf）：结点的左子树的深度减去右子树的深度。<br>即： <strong>结点的平衡因子 &#x3D; 左子树的高度 - 右子树的高度</strong> 。</p>
-<p>一个节点有一个缓存</p>
-<p>有n个元素，他的树的高度是logn，查找的复杂度是log2n</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211041731428.png" alt="image-20221104172737286"></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">如果是null就插入（插入在末尾）</span><br><span class="line">每次insert之后看一下左右高度有没有问题，并且更新自身高度(递归结束后才判断就很秒)</span><br><span class="line">如果高度有问题，就看是左旋还是右旋</span><br></pre></td></tr></table></figure>
-
-<p>几种情况</p>
-<ol>
-<li>右子树的右子树</li>
-</ol>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211041417706.png" alt="image-20221104141728646"></p>
-<p>左旋操作，右子树的左节点和原来的头节点结合，原来的右子树的和原来的头结点结合</p>
-<p>2.右子树的左子树（内侧）</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211041418059.png" alt="image-20221104141842012"></p>
-<p>RL可以理解成3个节点区中间节点是根节点·</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221104193801138.png" alt="image-20221104193801138"></p>
-<p>左旋和右旋转</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (balanceFactor &gt; 1 &amp;&amp; getBalanceFactor(node.left) &lt; 0) &#123;</span><br><span class="line">       node.left = leftRotate(node.left);</span><br><span class="line">       return rightRotate(node);</span><br><span class="line">   &#125;//先做旋转变成普通情况然后再右旋转</span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xiaojin21cen/article/details/97602146">数据结构 —— 图解AVL树(平衡二叉树)</a></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211041428262.png" alt="image-20221104142832211"></p>
-<p>左单旋转代码</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211041459545.png" alt="image-20221104145933507"></p>
-<p>AVL的删除，</p>
-<p>首先同样的，攒删除的代码后面加上判断时候要左旋和右旋转，并且要更新高度</p>
-<p>删除的方法是替换成后继，然后递归的删除后继。</p>
-<h2 id="B-TREES"><a href="#B-TREES" class="headerlink" title="B-TREES"></a>B-TREES</h2><p>m路搜索树。有m-1个k值</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image%2F202211041518169.png" alt="image-20221104151859131"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221104175307044.png" alt="image-20221104175307044"></p>
-<p>m路子树最多m-1个k值</p>
-<h1 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h1><p>如果一层没有满，就在那一层插入，否则下一层</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221104175719414.png" alt="image-20221104175719414"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221104175740381.png" alt="image-20221104175740381"></p>
-<h2 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h2><p>1，删除后没有任何影响</p>
-<p>上图的50,84</p>
-<p>2 ，删除后者一层没有了，把上一次最大或者最小的提上去</p>
-<h2 id="下平衡的二叉树"><a href="#下平衡的二叉树" class="headerlink" title="下平衡的二叉树"></a>下平衡的二叉树</h2><p>跟节点至少2个，中间节点至少m&#x2F;2（向上取整）</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221104180636876.png" alt="image-20221104180636876"></p>
-<h2 id="高度和节点数"><a href="#高度和节点数" class="headerlink" title="高度和节点数"></a>高度和节点数</h2><p>h最多有h个节点，最多有(m^h-1)(m-1)个结点，从1开始技计数，每层是h-1</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221104181025950.png" alt="image-20221104181025950"></p>
-<p>在二阶B树中，每一个内部节点都有至少2个子女，并且所有的外部节点都必须在同一级上，所以2阶B树是满阶二叉树</p>
-<p>在三阶B树中(通常被我们叫做2-3树)，每一个内部节点有2个或者3个子女</p>
-<h3 id="B树的性质"><a href="#B树的性质" class="headerlink" title="B树的性质"></a>B树的性质</h3><p>外部节点的层数相同，外部节点的个数是关键字+1，外部节点的个数是总共的k值加1.</p>
-<h3 id="B树的搜索算法。"><a href="#B树的搜索算法。" class="headerlink" title="B树的搜索算法。"></a>B树的搜索算法。</h3><p>对于高度为h的B树，访问磁盘的次数最多为h次</p>
-<h2 id="B数的插入算法"><a href="#B数的插入算法" class="headerlink" title="B数的插入算法"></a>B数的插入算法</h2><blockquote>
-<p>关键点，key的多少，</p>
-<p>关键字总是插在最后面</p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Jh411q7xP">B-树的插入</a></p>
-</blockquote>
-<ol>
-<li>做插入的时候优先插入叶节点:<ul>
-<li>如果叶节点还没有满的时候，直接插入即可</li>
-<li>如果叶节点已经满了的时候，会进行分类，将中间节点的一个值拉到上级结点(这个结点在中间，并入跟节点)。</li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/130698465">B树和B+树的插入、删除图文详解 - 知乎 (zhihu.com)</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV11h411W74p">https://www.bilibili.com/video/BV11h411W74p</a></li>
-</ul>
-</li>
-</ol>
-<h2 id="B树的删除算法"><a href="#B树的删除算法" class="headerlink" title="B树的删除算法"></a>B树的删除算法</h2><p>首先判断删除的关键码是否都在B树中，不在的话直接退出。</p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/130698465">B树和B+树的插入、删除图文详解 - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV11h411W74p">https://www.bilibili.com/video/BV11h411W74p</a></p>
-<ol>
-<li><p>叶节点</p>
-<ol>
-<li><p>如果超过m&#x2F;2向上取整的关键码。直接删除</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221104183611625.png" alt="image-20221104183611625"></p>
-</li>
-<li><p>如果不够，邻居富有的解邻居(设计根的操作，347-》353-》367平移)</p>
-</li>
-<li><p>如果不够，和父亲借，然后和邻居合并（把根拖下去合并）</p>
-</li>
-<li><p>如果父亲借了之后就没了，就让直接合并</p>
-</li>
-</ol>
-</li>
-</ol>
-<p>2.如果删除的是非叶节点</p>
-<p>把这个节点替换成最小的或者最大的关键码。</p>
-<p>递归调用下面的(递归成删除叶子节点)</p>
-<h2 id="B-tree的定义"><a href="#B-tree的定义" class="headerlink" title="B+ tree的定义"></a>B+ tree的定义</h2><ol>
-<li>树中每个非叶结点最多有m棵子树</li>
-<li>根结点(非叶结点)至少有2棵子树</li>
-<li>除根结点外，每个非叶结点至少有(m&#x2F;2)(向上取整)棵子树；有n棵子树的非叶结点有n-1个关键码</li>
-<li>所有叶结点都处于同一层次上，包含了全部关键码及指向相应数据对象存放地址，关键码按关键码从小到大顺序链接</li>
-<li>每个叶结点中子树棵树n可以＞m，也可以＜m。 假设叶结点可容纳的最大关键码数为m1，则指向对象的指针数也有m1，这时子树棵数n应满足((m1&#x2F;2)(向上取整)，m1)</li>
-<li>根结点本身又是叶结点，则结点格式同叶结点</li>
-</ol>
-<h2 id="B-tree的特点"><a href="#B-tree的特点" class="headerlink" title="B+ tree的特点"></a>B+ tree的特点</h2><ol>
-<li>有两个头指针</li>
-<li>一个指向B+树的根结点，可以进行自顶向下的随机搜索</li>
-<li>一个指向关键码最小的叶结点，进行顺序搜索；</li>
-<li>保证树过深，用来进行平衡</li>
-</ol>
-<h2 id="B-tree的运算"><a href="#B-tree的运算" class="headerlink" title="B+ tree的运算"></a>B+ tree的运算</h2><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221104194318667.png" alt="image-20221104194318667"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221104194405770.png" alt="image-20221104194405770"></p>
-<h2 id="搜索算法"><a href="#搜索算法" class="headerlink" title="搜索算法"></a>搜索算法</h2><p>基本上同B树，所不同的是一直查到叶结点上的这个关键码为止</p>
-<h2 id="插入算法"><a href="#插入算法" class="headerlink" title="插入算法"></a>插入算法</h2><ol>
-<li>仅在叶结点上进行。每插入一关键码，判别子树棵树＞m1，如果大于，则将该结点分裂：((m1+1)&#x2F;2)(向上取整)，((m1+1)&#x2F;2)(向上取整)</li>
-<li>问题变为传递到索引结点上可能的分裂，这时上限以m来确定(同B-树)</li>
-</ol>
-<h2 id="删除算法"><a href="#删除算法" class="headerlink" title="删除算法"></a>删除算法</h2><ol>
-<li>在叶结点上删除一个关键码后要保证结点中的子树棵数仍然不小 于(m1&#x2F;2)(向上取整).</li>
-<li>删除操作与B树类似，但上层索引中的关键码可保留，作为引导搜索的”分界关键码”的作用.</li>
-</ol>
-<h2 id="视频讲解"><a href="#视频讲解" class="headerlink" title="视频讲解"></a>视频讲解</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1rB4y1Q7e6">https://www.bilibili.com/video/BV1rB4y1Q7e6</a></p>
-<p><strong><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221104185518500.png" alt="image-20221104185518500"></strong></p>
-<ul>
-<li><p>每个节点最大m个孩子节点</p>
-</li>
-<li><p>每一个节点的结构（p是指向孩子节点的额，n是个数，k是关键字）</p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221104185611290.png" alt="image-20221104185611290"></p>
-</li>
-<li><p>除根节点外，其他节点至少[m&#x2F;2]个孩子节点(向上取整)</p>
-</li>
-<li><p>若根节点不是叶子节点，根节点至少2个孩子节点</p>
-</li>
-<li><p>平衡节点为0，叶子节点在同一层</p>
-</li>
-</ul>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221104190444874.png" alt="image-20221104190444874"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">bool isTree(Graph &amp;G)&#123;</span><br><span class="line">	for(int i=1;i&lt;=G.vexnum;i++)&#123;</span><br><span class="line">		visited[i]=FALSE;</span><br><span class="line">	&#125;</span><br><span class="line">	int Vnum=0,Enum=0;</span><br><span class="line">	DFS(G,1,Vnum,Enum,visited);</span><br><span class="line">	if(Vnum==G.vexnum&amp;&amp;Enum==2*(G.vexnum-1))&#123;	//无向图，边数应为结点数-1的2倍 </span><br><span class="line">		return true;</span><br><span class="line">	&#125;</span><br><span class="line">	else return false;</span><br><span class="line">&#125; </span><br><span class="line">void DFS(Graph &amp;G,int v,int&amp; Vnum,int&amp; Enum,int visted[])&#123;</span><br><span class="line">	visited[v]=TRUE;</span><br><span class="line">	Vnum++;</span><br><span class="line">	int w=FirstNeighbor(G,v);</span><br><span class="line">	while(w!=1)&#123;</span><br><span class="line">		Enum++;</span><br><span class="line">		if(!visited[w])&#123;</span><br><span class="line">			DFS(G,w,Vnum,Enum,visited);</span><br><span class="line">		&#125;</span><br><span class="line">		w=NextNeighbor(G,v,w);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>判断无向图是否是一颗树</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/03/05/%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="0置信区间的题目"><a href="#0置信区间的题目" class="headerlink" title=".0置信区间的题目"></a>.0置信区间的题目</h2><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/IMG_20221129_141105.jpg" alt="IMG_20221129_141105"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/IMG_20221129_141110.jpg" alt="IMG_20221129_141110"><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129144308517.png" alt="image-20221129144308517"></p>
-<p>000000000000000000000000000000000000000000000<img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20221129144214659.png" alt="image-20221129144214659"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/05/%E6%A6%82%E7%8E%87%E8%AE%BA%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/03/05/%E6%A6%82%E7%8E%87%E8%AE%BA%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-05T22:50:11+08:00">2023-03-05</time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/IMG_20221105_110218.jpg" alt="IMG_20221105_110218"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/IMG_20221105_110223.jpg" alt="IMG_20221105_110223"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/IMG_20221105_110250.jpg" alt="IMG_20221105_110250"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/IMG_20221105_110254.jpg" alt="IMG_20221105_110254"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/IMG_20221105_110304.jpg" alt="IMG_20221105_110304"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/IMG_20221105_110308.jpg" alt="IMG_20221105_110308"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/IMG_20221105_110314.jpg" alt="IMG_20221105_110314"></p>
-<p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/IMG_20221105_110318.jpg" alt="IMG_20221105_110318">                                              </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
-  </nav>
-
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name"></p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/%20%7C%7C%20archive">
-              
-                  <span class="site-state-item-count">43</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.0.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
   }
-</script>
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-03-08 10:57:20'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
 
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
   
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Hexo"><span class="site-name">Hexo</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Hexo</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/05/The%20application%20of%20the%20inheritance%20of%20interface%20and%20the%20inheritance%20of%20implementation/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-05T14:50:11.082Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></span></div><div class="content">The application of the inheritance of interface and the inheritance of implementation
+Read the Effective C++ P161 for details
 
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
+Pure virtual
+The pure virtual function is armed at making sure derived classed only derive the interface
 
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.0"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.0"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
+we cannot give a definition to a function because it’s different in different Class. The pure virtual will be the first choice.
+impure virtualthis function cannot be changed and have a default function
+non-virtualthis function cannot not be changed. It’s a forced imp ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/05/c++%E6%A0%BC%E5%BC%8F/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-05T14:50:11.077Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></span></div><div class="content">C++ cout成员方法格式化输出《C++输入流和输出流》一节中，已经针对 cout 讲解了一些常用成员方法的用法。除此之外，ostream 类中还包含一些可实现格式化输出的成员方法，这些成员方法都是从 ios 基类（以及 ios_base 类）中继承来的，cout（以及 cerr、clog）也能调用。
+下面 罗列了 ostream 类中可实现格式化输出的常用成员方法，以及它们各自的用法。
 
 
 
-  
+成员函数
+说明
+
+
+
+flags(fmtfl)
+当前格式状态全部替换为 fmtfl。注意，fmtfl 可以表示一种格式，也可以表示多种格式。
+
+
+precision(n)
+设置输出浮点数的精度为 n。
+
+
+width(w)
+指定输出宽度为 w 个字符。
+
+
+fill(c)
+在指定输出宽度的情况下，输出的宽度不足时用字符 c 填充（默认情况是用空格填充）。
+
+
+setf(fmtfl, mask)
+在当前格式的基础上，追加 fmtfl 格式，并删除 mask 格式。其中，mask 参数可以省略。
+
+
+unsetf(mask)
+在当前格式的基础上，删除 mask 格式。
+
+
+其中，对于表 1 中 f ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/05/%E5%AE%9E%E9%AA%8C%E8%A6%81%E7%94%A8%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-05T14:50:11.072Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></span></div><div class="content">RIP配置的命令格式12Router(config)#router ripRouter(config-router)#network &lt;network-number&gt; #属于上面的网络都运行RIP路由协议
+
+基本知识点
+RIP 是一种距离向量协议，它以预定间隔将其整个路由表广播到每个邻居路由器。默认间隔为30秒。
+RIP使用跳数作为度量标准，最大跳数为15，达到16跳的报文自动抛弃。、
+RIP v1能够在多达六个等价路径上进行**负载平衡(Load Balancing)**，默认情况下为四个路径，最多6个，跳数相同才能完成负载均衡，跳数不同不满足条件、
+它不会在其更新中发送子网掩码信息:意味着必须用同样的子网掩码，不支持VLSM或无类域间路由(CIDR，Classless Interdomain Routing)。
+它以255.255.255.255的广播形式发送更新:只能发给邻居，不能通过路由器转发。
+它不支持身份验证(authentication):只要启动RIP就可以接受到信息，也就意味着只要接入网络并且启动RIP进程，就可以了解到整个网络拓扑
+
+RIP的更新规则
+把 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/05/%E6%A0%B7%E6%9C%AC%E7%BB%9F%E8%AE%A1,%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1%EF%BC%8C%E7%9F%A9%E4%BC%B0%E8%AE%A1%EF%BC%8C%E6%97%A0%E5%81%8F%E6%80%A7/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-05T14:50:11.068Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></span></div><div class="content">
+
+
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/05/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-05T14:50:11.063Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></span></div><div class="content"> 
+
+基本概念
+检验均值
+
+原假设H0备选假设H1
+拒绝域
+计算统计量，拒绝域,接受域，原假设，备择假设
+
+计算统计量查看拒绝域
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/05/Cache%E7%9A%84%E4%B8%80%E9%83%A8%E5%88%86%E8%AE%B2%E8%A7%A3/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-05T14:50:11.058Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></span></div><div class="content">CachaCache主要是为了解决内存墙带来的CPU和主存协作问题
+程序访问的局部性
+平均访问时间
+映射直接映射、
+M是块数，C是行数
+上面定义了Cacha直接映射时候的地址的结构，有C行所有logC的值是Cacha的行号和块内的地址。
+然后一次存储单元是8个字，所有有16个单元就是说，寻址能力是4，所有前2位是用来区分映射到不同行的不同的块
+
+通过cache字块的地址来找到对应的行，如果标记一样就命中。
+
+
+优点；
+
+简单
+快速映射
+快速检查
+
+缺点
+
+抖动现象：如果程序需要重复访问两个来自同一行不同块的字，需要不断的交换cache中，cache的命中率将会降低，
+
+适用于大容量的cache
+
+行数变多，发生冲突失效的概率降低
+硬件电路简单，增大容量对Tc的影响不明显
+
+关联映射一主存块可以装入cache的任意一行
+
+取消行的编号，直接储存块的编号
+优点
+避免抖动
+缺点
+
+实现起来比较复杂
+cache搜索代价大，检测时候要访问cache的每一行
+
+适合小容量cache
+
+cache更容易产生抖动
+cache的搜素时间短
+
+组关联映射K-路组映射
+
+k，一组中有k行
+主存的块可以被映射 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/05/%E7%A1%AC%E7%A3%81%E7%9B%98%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E8%AE%A1%E7%AE%97%E9%A2%98/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-05T14:50:11.053Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></span></div><div class="content">硬磁盘存储器访问时间组成寻道时间磁头定位到磁道的时间
+旋转延迟等待相应扇区的起始位置移动带磁头，通常是旋转半圈的时间
+传送时间传输数据的时间（也就是磁头在有数据的部分都移动一遍）
+
+平均访问时间&#x3D;平均寻道时间+平均旋转延迟+传送时间
+相邻磁道，每个磁道都要考虑旋转延迟，只要考虑第一个磁道的寻道时间（题目给了具体寻道时间的话就要全部给出）。
+存取情况（顺序存取）存取在相邻的磁道寻道时间只算一次，旋转延迟取转半圈的时间。传送时间正常求
+寻道时间+旋转延迟*磁道数+所有的传送时间
+随机存取每读取一个扇区就要寻道和旋转延迟
+扇区数*（寻道时间+旋转延迟+一个扇区的传送时间）
+磁盘调度先来先服务（FCFS）按照请求访问磁盘的先后次序进行处理
+优点：公平简单 
+缺点：如果有大量访问磁盘的任务，且请求访问的磁道很分散，则性 能上很差，寻道时间长
+具体计算：按照请求顺序，看移动的磁道（移动就是单纯的相减）
+扇区传送时间可以用数据传输速度来代替（数据传输率，不只考虑纯读取时候的时间）最短寻道时间优先（SSTF）优先处理起始位置与当前磁头位置最接近的读写任务
+优点：每次的寻道时间最短（局部最优） ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/05/%E6%A0%91%E7%9A%84%E5%BA%94%E7%94%A8/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-05T14:50:11.049Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></span></div><div class="content">二叉搜索树12345678910private BinaryNode find(Conparable x,BinaryNode t)&#123;	if(t==null)	 return null;	 if(x.compareTo(t.element)&lt;0)	 	return find(x,t.left);	 if(x.comparaTo(t.element)&gt;0)	 	return find(x,t.rigth);	 else	 	return t;&#125;//复杂度是数的高度，搜索次数是对数量级的。
+二叉搜索数的节点是不可以重复的。二叉搜索树的插入
+123456789if(t==null)	t=new BinaryNode(x,null,null);//找找，找到头else if(x.compareTo(t.element)&lt;0)t.left=insert(x.t.left);else if(x.comparaTo(t.element)&gt;0)t.right=insert(x.t.right);else	;return t；//这种方式的插入不是太好，要保证 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/05/%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-05T14:50:11.041Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></span></div><div class="content">.0置信区间的题目
+
+000000000000000000000000000000000000000000000
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/05/%E6%A6%82%E7%8E%87%E8%AE%BA%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-05T14:50:11.036Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></span></div><div class="content">
 
 
 
 
 
-  
 
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-</body>
-</html>
+                                              
+</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/3/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/#content-inner">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/#content-inner">5</a><a class="extend next" rel="next" href="/page/5/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/05/2022-10-31-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E6%81%A2%E5%A4%8D%E4%BA%8C%E5%8F%89%E6%A0%91/" title="No title">No title</a><time datetime="2023-03-05T14:50:11.219Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/05/2022-10-31-%20%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86/" title="No title">No title</a><time datetime="2023-03-05T14:50:11.215Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/05/2022-10-31-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E4%B8%AD%E5%BA%8F%E5%92%8C%E5%89%8D%E5%BA%8F%E7%BB%84%E6%88%90%E4%BA%8C%E5%8F%89%E6%A0%91/" title="No title">No title</a><time datetime="2023-03-05T14:50:11.210Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/05/2022-11-1-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A8/" title="No title">No title</a><time datetime="2023-03-05T14:50:11.206Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/05/c++%E8%A1%A5%E5%85%85-1/" title="No title">No title</a><time datetime="2023-03-05T14:50:11.201Z" title="Created 2023-03-05 22:50:11">2023-03-05</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">March 2023</span><span class="card-archive-list-count">43</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">43</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-03-08T02:57:20.158Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
