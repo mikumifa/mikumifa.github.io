@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>java swing的小学生答题测试</title>
+      <link href="/2023/06/23/java-swing%E7%9A%84%E5%B0%8F%E5%AD%A6%E7%94%9F%E7%AD%94%E9%A2%98%E6%B5%8B%E8%AF%95/"/>
+      <url>/2023/06/23/java-swing%E7%9A%84%E5%B0%8F%E5%AD%A6%E7%94%9F%E7%AD%94%E9%A2%98%E6%B5%8B%E8%AF%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="问题的内容"><a href="#问题的内容" class="headerlink" title="问题的内容"></a>问题的内容</h1><p>帮同学写的一份大作业, 具体是一个帮助小学生答题的小程序, 生成100到题目, 然后2小时答完, 要输出答题的结构到文件里面.</p><h1 id="经验总结"><a href="#经验总结" class="headerlink" title="经验总结"></a>经验总结</h1><h2 id="SWING的使用"><a href="#SWING的使用" class="headerlink" title="SWING的使用"></a>SWING的使用</h2><p>主窗口的结构</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">frame.getContentPane().add(mainPanel);// 主窗口体面mainPanel主画布</span><br><span class="line">//主画布添加控制画布和题目的画布</span><br><span class="line">mainPanel.add(controlPanel, BorderLayout.NORTH);</span><br><span class="line">mainPanel.add(examPanel, BorderLayout.CENTER);</span><br><span class="line">//控制画布 加入label和JtextField</span><br><span class="line">//题目设置为cardLayout之后,暂时不用</span><br></pre></td></tr></table></figure><h2 id="使用到的工具函数"><a href="#使用到的工具函数" class="headerlink" title="使用到的工具函数"></a>使用到的工具函数</h2><h3 id="随机生成数字"><a href="#随机生成数字" class="headerlink" title="随机生成数字"></a>随机生成数字</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">private String generateQuestion() &#123;</span><br><span class="line">    Random rand = new Random();</span><br><span class="line">    int a = rand.nextInt(101);</span><br><span class="line">    int b = rand.nextInt(101 - a);</span><br><span class="line">    int c = rand.nextInt(101 - a - b);</span><br><span class="line"></span><br><span class="line">    return a + (rand.nextBoolean() ? &quot; + &quot; : &quot; - &quot;) + b + (rand.nextBoolean() ? &quot; + &quot; : &quot; - &quot;) + c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h3 id="字典的排序"><a href="#字典的排序" class="headerlink" title="字典的排序"></a>字典的排序</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用TreeMap,TreeMap添加的所有的字典都会安装顺序排序, 并且可以给他传入Comparator&lt;string&gt;来重写比较</span></span><br><span class="line">TreeMap&lt;String, String&gt; sortedMap = <span class="keyword">new</span> <span class="title class_">TreeMap</span>&lt;&gt;(<span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;String&gt;()&#123;...&#125;</span><br><span class="line">                                                 );</span><br><span class="line">     sortedMap.putAll(answerMap);</span><br></pre></td></tr></table></figure><h3 id="提取数字"><a href="#提取数字" class="headerlink" title="提取数字"></a>提取数字</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="type">int</span> <span class="title function_">extractLabel</span><span class="params">(String str)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">startIndex</span> <span class="operator">=</span> str.indexOf(<span class="string">&quot;(&quot;</span>); <span class="comment">//用户定位</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">endIndex</span> <span class="operator">=</span> str.indexOf(<span class="string">&quot;)&quot;</span>);</span><br><span class="line">    <span class="type">String</span> <span class="variable">labelStr</span> <span class="operator">=</span> str.substring(startIndex + <span class="number">1</span>, endIndex);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> Integer.parseInt(labelStr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="按钮添加事件"><a href="#按钮添加事件" class="headerlink" title="按钮添加事件"></a>按钮添加事件</h3><p><code>startExamButton.addActionListener</code>函数来完成</p><h3 id="全部代码"><a href="#全部代码" class="headerlink" title="全部代码"></a>全部代码</h3>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> 玩具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>软工I lab3 记录</title>
       <link href="/2023/06/15/%E8%BD%AF%E5%B7%A5I-lab3-%E8%AE%B0%E5%BD%95/"/>
       <url>/2023/06/15/%E8%BD%AF%E5%B7%A5I-lab3-%E8%AE%B0%E5%BD%95/</url>
