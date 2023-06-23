@@ -8,13 +8,13 @@
       <link href="/2023/06/15/%E8%BD%AF%E5%B7%A5I-lab3-%E8%AE%B0%E5%BD%95/"/>
       <url>/2023/06/15/%E8%BD%AF%E5%B7%A5I-lab3-%E8%AE%B0%E5%BD%95/</url>
       
-        <content type="html"><![CDATA[<h1 id="软工I-lab3-记录"><a href="#软工I-lab3-记录" class="headerlink" title="软工I lab3 记录"></a>软工I lab3 记录</h1><p>忘记 各个对象的意思了, 直接去看构造之后的结果</p><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20230615165205683.png" alt="image-20230615165205683"></p><p>输入的是<code>\f.\x.x</code></p><p>可以确定, 思路是对body求值, 替换参数</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="软工I-lab3-记录"><a href="#软工I-lab3-记录" class="headerlink" title="软工I lab3 记录"></a>软工I lab3 记录</h1><p>忘记 各个对象的意思了, 直接去看构造之后的结果</p><p><img src="https://blog-1314638240.cos.ap-nanjing.myqcloud.com/image/image-20230615165205683.png" alt="image-20230615165205683"></p><p>输入的是<code>\f.\x.x</code></p><p>可以确定, 思路是对body求值, 替换参数</p><p>未完待续…</p>]]></content>
       
       
       
         <tags>
             
-            <tag> 作业记录 </tag>
+            <tag> java </tag>
             
         </tags>
       
