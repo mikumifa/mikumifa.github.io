@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>docker note</title>
+      <link href="/2023/06/27/docker-note/"/>
+      <url>/2023/06/27/docker-note/</url>
+      
+        <content type="html"><![CDATA[<h2 id="docker-tag"><a href="#docker-tag" class="headerlink" title="docker tag"></a>docker tag</h2><p>把xxx打一个tag</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker tag centos centos:v1</span><br></pre></td></tr></table></figure><p>同时加上路径名字和仓库的名字, 用来标记远程仓库</p><h2 id="docker-push"><a href="#docker-push" class="headerlink" title="docker push"></a>docker push</h2><p>后面加上路径名字是上传</p><h2 id="dokcer-run"><a href="#dokcer-run" class="headerlink" title="dokcer run"></a>dokcer run</h2><p>docker run 后面加上参数 之类的</p><h3 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h3><ul><li>-p 端口</li><li>–name 制定名字</li><li>-d 后台</li></ul><h2 id="docker-exec"><a href="#docker-exec" class="headerlink" title="docker exec"></a>docker exec</h2><p>镜像里面执行命令</p><h3 id="常用-1"><a href="#常用-1" class="headerlink" title="常用"></a>常用</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec xxx  -itd /bin/bash </span><br></pre></td></tr></table></figure><h2 id="docker-build"><a href="#docker-build" class="headerlink" title="docker build"></a>docker build</h2><p>​路径可以是本地镜像,也可以是网络的镜像名字, 也可以是dockerfile的路径</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker build -t runoob/ubuntu:v1 . </span><br><span class="line">docker build github.com/creack/docker-firefox</span><br><span class="line">docker build -f /path/to/a/Dockerfile .</span><br></pre></td></tr></table></figure><h2 id="docker-rename"><a href="#docker-rename" class="headerlink" title="docker rename"></a>docker rename</h2><p>容器改名字</p><h2 id="docker-attach"><a href="#docker-attach" class="headerlink" title="docker attach"></a>docker attach</h2><p>进入容器</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>java swing的小学生答题测试</title>
       <link href="/2023/06/23/java-swing%E7%9A%84%E5%B0%8F%E5%AD%A6%E7%94%9F%E7%AD%94%E9%A2%98%E6%B5%8B%E8%AF%95/"/>
       <url>/2023/06/23/java-swing%E7%9A%84%E5%B0%8F%E5%AD%A6%E7%94%9F%E7%AD%94%E9%A2%98%E6%B5%8B%E8%AF%95/</url>
